@@ -1,9 +1,7 @@
+import { AppProvider } from "./routes";
+
 function App() {
-  return (
-    <div className="flex">
-      <h1 className="flex">hello</h1>
-    </div>
-  );
+  return <AppProvider />;
 }
 
 export default App;
