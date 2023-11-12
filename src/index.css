@@ -44,8 +44,19 @@
   h6 {
     @apply text-[16px];
   }
+}
 
-  p {
-    @apply text;
+@layer utilities {
+  .content-container {
+    @apply w-full max-w-[1224px] mx-auto;
   }
+
+  .font-body-lg {
+    @apply text-[18px] font-light;
+  }
+
+  /* It's not supported by all browser */
+  /* .link-container:has(.nav-link.active) {
+    background-color: red;
+  } */
 }
