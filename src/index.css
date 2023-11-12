@@ -55,6 +55,10 @@
     @apply text-[18px] font-light;
   }
 
+  .font-button-lg {
+    @apply text-[16px] font-normal;
+  }
+
   /* It's not supported by all browser */
   /* .link-container:has(.nav-link.active) {
     background-color: red;
