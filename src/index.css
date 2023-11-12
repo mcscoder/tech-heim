@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-inter;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-[44px];
+  }
+
+  h2 {
+    @apply text-[40px];
+  }
+
+  h3 {
+    @apply text-[32px];
+  }
+
+  h4 {
+    @apply text-[24px];
+  }
+
+  h5 {
+    @apply text-[20px];
+  }
+
+  h6 {
+    @apply text-[16px];
+  }
+
+  p {
+    @apply text;
+  }
+}
