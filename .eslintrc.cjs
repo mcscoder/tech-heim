@@ -28,6 +28,7 @@ module.exports = {
   plugins: ["@typescript-eslint", "react", "prettier"],
   rules: {
     "react/react-in-jsx-scope": 0,
+    "react/no-unescaped-entities": 0,
   },
   ignorePatterns: ["**/*.css", "**/*.scss"],
 };
