@@ -10,11 +10,22 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { inputID, onChange, label, startIcon, endIcon, placeholder = "", ...props },
+  {
+    inputID,
+    onChange,
+    label,
+    startIcon,
+    endIcon,
+    placeholder = "",
+    className = "",
+    ...props
+  },
   ref
 ) {
   return (
-    <div className="group h-fit relative text-gray-b4 focus-within:text-primary-100">
+    <div
+      className={`group h-fit relative text-gray-b4 focus-within:text-primary-100 ${className}`}
+    >
       {label && (
         <label
           htmlFor={inputID}

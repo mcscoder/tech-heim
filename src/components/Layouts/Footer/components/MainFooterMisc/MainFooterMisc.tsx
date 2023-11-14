@@ -9,6 +9,7 @@ export const MainFooterMisc = () => {
         startIcon={<UserIcon />}
         endIcon={<ArrowRightIcon />}
         placeholder="E-mail-address"
+        className="w-[350px]"
       />
       <div className="flex items-center gap-4">
         {socialLinks.map((socialLink, index) => {
