@@ -1,3 +1,15 @@
+import { MainFooter, MainFooterContent, PolicyFooter } from "./components";
+import { PolicyFooterContent } from "./components/PolicyFooterContent";
+
 export const Footer = () => {
-  return <h1>Footer</h1>;
+  return (
+    <footer className="flex flex-col">
+      <MainFooter>
+        <MainFooterContent />
+      </MainFooter>
+      <PolicyFooter>
+        <PolicyFooterContent />
+      </PolicyFooter>
+    </footer>
+  );
 };

@@ -55,6 +55,18 @@
     @apply text-[18px] font-light;
   }
 
+  .font-body-md {
+    @apply text-[16px] font-light leading-6;
+  }
+
+  .font-button-lg {
+    @apply text-[16px] font-normal;
+  }
+
+  .font-mobile-caption {
+    @apply text-[12px] font-medium;
+  }
+
   /* It's not supported by all browser */
   /* .link-container:has(.nav-link.active) {
     background-color: red;

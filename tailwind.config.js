@@ -29,6 +29,11 @@ export default {
         error: "#C91433",
         errorLight: "#FAE7EB",
         success: "#198754",
+        gray: {
+          b4: "#B4B4B4",
+          71: "#717171",
+          cb: "#CBCBCB",
+        },
       },
       boxShadow: {
         1: "-2px 2px 15px -1px rgba(113, 113, 113, 0.12)",
