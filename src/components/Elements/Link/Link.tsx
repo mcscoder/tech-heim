@@ -25,7 +25,7 @@ export const Link = ({
   ...props
 }: LinkProps) => {
   const Comp = to ? ReactLink : "a";
-  const linkClasses = `inline-flex items-center justify-center ${className} ${
+  const linkClasses = `inline-flex items-center ${className} ${
     children && "gap-1"
   }`;
 

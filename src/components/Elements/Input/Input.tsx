@@ -7,6 +7,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  endIconType?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
@@ -16,6 +17,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     label,
     startIcon,
     endIcon,
+    endIconType = "button",
     placeholder = "",
     className = "",
     ...props
@@ -39,11 +41,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           {startIcon}
         </span>
       )}
-      <Button
-        variant="onlyIcon"
-        endIcon={endIcon}
-        className="absolute right-0 h-full flex items-center mr-3"
-      />
       <input
         type="text"
         onChange={onChange}
@@ -55,6 +52,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         } ${endIcon ? "pr-11" : "pr-3"}`}
         {...props}
       />
+      {endIcon && (
+        <div className="absolute right-0 top-0 bottom-0 flex items-center mr-3">
+          <Button
+            variant="onlyIcon"
+            endIcon={endIcon}
+            className=""
+            type={endIconType}
+          />
+        </div>
+      )}
     </div>
   );
 });
