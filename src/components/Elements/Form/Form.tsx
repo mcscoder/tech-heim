@@ -3,7 +3,7 @@ import { Message } from "..";
 interface FormProps {
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
   children: React.ReactNode;
-  error?: string;
+  error?: string | null | undefined;
   className?: string;
 }
 
