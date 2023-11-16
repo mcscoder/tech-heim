@@ -51,6 +51,10 @@
     @apply w-full max-w-[1224px] mx-auto;
   }
 
+  .font-body-xl {
+    @apply text-[20px] font-light leading-7;
+  }
+
   .font-body-lg {
     @apply text-[18px] font-light;
   }
@@ -59,12 +63,20 @@
     @apply text-[16px] font-light leading-6;
   }
 
+  .font-body-sm {
+    @apply text-[14px] font-light;
+  }
+
   .font-button-lg {
     @apply text-[16px] font-normal;
   }
 
   .font-mobile-caption {
     @apply text-[12px] font-medium;
+  }
+
+  .font-underline-primary {
+    @apply text-[16px] font-medium leading-[22px] underline;
   }
 
   /* It's not supported by all browser */

@@ -21,6 +21,12 @@ import FacebookColorIcon from "@/assets/icons/facebook-color.svg?react";
 import TwitterColorIcon from "@/assets/icons/twitter-color.svg?react";
 import InstagramColorIcon from "@/assets/icons/instagram-color.svg?react";
 import YoutubeColorIcon from "@/assets/icons/youtube-color.svg?react";
+import EMailIcon from "@/assets/icons/e-mail.svg?react";
+import KeyIcon from "@/assets/icons/key.svg?react";
+import EyeIcon from "@/assets/icons/eye.svg?react";
+import EyeSlashIcon from "@/assets/icons/eye-slash.svg?react";
+import GoogleIcon from "@/assets/icons/google.svg?react";
+import FacebookFilledIcon from "@/assets/icons/facebook-filled.svg?react";
 
 export {
   LogoIcon,
@@ -46,4 +52,10 @@ export {
   TwitterColorIcon,
   InstagramColorIcon,
   YoutubeColorIcon,
+  EMailIcon,
+  KeyIcon,
+  EyeIcon,
+  EyeSlashIcon,
+  GoogleIcon,
+  FacebookFilledIcon,
 };
