@@ -1,5 +1,6 @@
 import { AuthTypes } from "@/types";
 import { AuthAction, AuthActionTypes } from "..";
+import { UserRegister } from "@/types/Auth";
 
 export interface AuthState {
   users: AuthTypes.User[];
@@ -63,6 +64,38 @@ export const authReducer = (
         login: {
           user,
           error: null,
+        },
+      };
+    }
+    case AuthActionTypes.REGISTER: {
+      const payload = action.payload;
+      const user = state.users.find((u) => u.email === payload.email);
+      if (user) {
+        return {
+          ...state,
+          register: {
+            error: "Email is exist",
+            success: false,
+          },
+        };
+      }
+
+      const newUser: UserRegister = {
+        fullName: payload.fullName,
+        email: payload.email,
+        password: payload.password,
+      };
+
+      return {
+        ...state,
+        users: [...state.users, newUser],
+        login: {
+          error: null,
+          user: newUser,
+        },
+        register: {
+          error: null,
+          success: true,
         },
       };
     }
