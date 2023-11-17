@@ -3,7 +3,7 @@ import { AuthAction, AuthActionTypes } from "..";
 import { UserRegister } from "@/types/Auth";
 
 export interface AuthState {
-  users: AuthTypes.User[];
+  users: AuthTypes.User[] | null;
   login: {
     user: AuthTypes.User | null;
     error: string | null;
@@ -15,14 +15,7 @@ export interface AuthState {
 }
 
 export const initialAuthState: AuthState = {
-  users: [
-    {
-      id: "1",
-      email: "mcs@gmail.com",
-      fullName: "Son Mai",
-      password: "mcs",
-    },
-  ],
+  users: null,
   login: {
     user: null,
     error: null,
@@ -40,7 +33,7 @@ export const authReducer = (
   switch (action.type) {
     case AuthActionTypes.LOGIN: {
       const payload = action.payload;
-      const user = state.users.find((u) => u.email === payload.email) || null;
+      const user = state.users?.find((u) => u.email === payload.email) || null;
       if (!user) {
         return {
           ...state,
@@ -69,7 +62,7 @@ export const authReducer = (
     }
     case AuthActionTypes.REGISTER: {
       const payload = action.payload;
-      const user = state.users.find((u) => u.email === payload.email);
+      const user = state.users?.find((u) => u.email === payload.email);
       if (user) {
         return {
           ...state,
@@ -88,7 +81,7 @@ export const authReducer = (
 
       return {
         ...state,
-        users: [...state.users, newUser],
+        users: state.users !== null ? [...state.users, newUser] : [newUser],
         login: {
           error: null,
           user: newUser,
@@ -110,6 +103,13 @@ export const authReducer = (
           ...state.register,
           error: null,
         },
+      };
+    }
+    case AuthActionTypes.UPDATE_USER: {
+      const users = action.payload;
+      return {
+        ...state,
+        users: users,
       };
     }
     default:

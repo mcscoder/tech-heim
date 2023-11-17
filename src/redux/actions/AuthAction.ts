@@ -5,6 +5,7 @@ export enum AuthActionTypes {
   LOGOUT = "LOGOUT",
   REGISTER = "REGISTER",
   RESET_ERROR = "RESET_ERROR",
+  UPDATE_USER = "UPDATE_USER",
 }
 
 export type AuthAction =
@@ -21,6 +22,10 @@ export type AuthAction =
     }
   | {
       type: AuthActionTypes.RESET_ERROR;
+    }
+  | {
+      type: AuthActionTypes.UPDATE_USER;
+      payload: AuthTypes.User[];
     };
 
 export const login = (user: AuthTypes.UserLogin): AuthAction => {
@@ -46,5 +51,12 @@ export const logout = (): AuthAction => {
 export const resetError = (): AuthAction => {
   return {
     type: AuthActionTypes.RESET_ERROR,
+  };
+};
+
+export const updateUser = (user: AuthTypes.User[]): AuthAction => {
+  return {
+    type: AuthActionTypes.UPDATE_USER,
+    payload: user,
   };
 };
