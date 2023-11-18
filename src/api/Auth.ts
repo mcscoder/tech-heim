@@ -1,3 +1,5 @@
 import { getRequest } from "./Api";
 
-export const getUsers = getRequest("users");
+export const getUsers = () => {
+  return getRequest("users");
+};

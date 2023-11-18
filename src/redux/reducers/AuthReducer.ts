@@ -1,29 +1,14 @@
 import { AuthTypes } from "@/types";
 import { AuthAction, AuthActionTypes } from "..";
-import { UserRegister } from "@/types/Auth";
 
 export interface AuthState {
-  users: AuthTypes.User[] | null;
-  login: {
-    user: AuthTypes.User | null;
-    error: string | null;
-  };
-  register: {
-    error: string | null;
-    success: boolean;
-  };
+  user: AuthTypes.User | null;
+  error: string | null;
 }
 
 export const initialAuthState: AuthState = {
-  users: null,
-  login: {
-    user: null,
-    error: null,
-  },
-  register: {
-    error: null,
-    success: false,
-  },
+  user: null,
+  error: null,
 };
 
 export const authReducer = (
@@ -32,86 +17,19 @@ export const authReducer = (
 ): AuthState => {
   switch (action.type) {
     case AuthActionTypes.LOGIN: {
-      const payload = action.payload;
-      const user = state.users?.find((u) => u.email === payload.email) || null;
-      if (!user) {
+      const user = action.payload;
+      if (user === null) {
         return {
-          ...state,
-          login: {
-            user: null,
-            error: "User not found!",
-          },
-        };
-      }
-      if (user.password !== payload.password) {
-        return {
-          ...state,
-          login: {
-            user: null,
-            error: "Password is incorrect",
-          },
+          user: user,
+          error: "Incorrect E-mail or password",
         };
       }
       return {
-        ...state,
-        login: {
-          user,
-          error: null,
-        },
+        user: user,
+        error: null,
       };
     }
-    case AuthActionTypes.REGISTER: {
-      const payload = action.payload;
-      const user = state.users?.find((u) => u.email === payload.email);
-      if (user) {
-        return {
-          ...state,
-          register: {
-            error: "Email is exist",
-            success: false,
-          },
-        };
-      }
 
-      const newUser: UserRegister = {
-        fullName: payload.fullName,
-        email: payload.email,
-        password: payload.password,
-      };
-
-      return {
-        ...state,
-        users: state.users !== null ? [...state.users, newUser] : [newUser],
-        login: {
-          error: null,
-          user: newUser,
-        },
-        register: {
-          error: null,
-          success: true,
-        },
-      };
-    }
-    case AuthActionTypes.RESET_ERROR: {
-      return {
-        ...state,
-        login: {
-          ...state.login,
-          error: null,
-        },
-        register: {
-          ...state.register,
-          error: null,
-        },
-      };
-    }
-    case AuthActionTypes.UPDATE_USER: {
-      const users = action.payload;
-      return {
-        ...state,
-        users: users,
-      };
-    }
     default:
       return state;
   }

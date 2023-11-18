@@ -1,8 +1,7 @@
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
-import { register, resetError } from "@/redux";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 
 export const RegisterForm = () => {
   const context = useContext(AuthContext);
@@ -11,27 +10,19 @@ export const RegisterForm = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    context?.authDispatch(resetError());
-  }, []);
-
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const fullName = fullNameInputRef.current?.value || "";
-    const email = emailInputRef.current?.value || "";
-    const password = passwordInputRef.current?.value || "";
-
-    context?.authDispatch(
-      register({ fullName: fullName, email: email, password: password })
-    );
+    // const fullName = fullNameInputRef.current?.value || "";
+    // const email = emailInputRef.current?.value || "";
+    // const password = passwordInputRef.current?.value || "";
   };
 
   return (
     <Form
       onSubmit={handleFormSubmit}
       className="flex flex-col gap-3"
-      error={context?.authState.register.error}
+      error={context?.authState.error}
     >
       <h3 className="text-center">Create your account</h3>
       <Input
