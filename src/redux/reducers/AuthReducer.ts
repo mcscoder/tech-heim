@@ -44,6 +44,13 @@ export const authReducer = (
       };
     }
 
+    case AuthActionTypes.RESET_ERROR: {
+      return {
+        ...state,
+        error: null,
+      };
+    }
+
     default:
       return state;
   }

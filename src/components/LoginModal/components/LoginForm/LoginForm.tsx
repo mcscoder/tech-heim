@@ -2,14 +2,18 @@ import { getUsers } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
-import { login } from "@/redux";
+import { login, resetError } from "@/redux";
 import { AuthTypes } from "@/types";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 
 export const LoginForm = () => {
   const context = useContext(AuthContext);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    context?.authDispatch(resetError());
+  }, []);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

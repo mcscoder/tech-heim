@@ -16,6 +16,9 @@ export type AuthAction =
   | {
       type: AuthActionTypes.REGISTER;
       payload: AuthTypes.User | null;
+    }
+  | {
+      type: AuthActionTypes.RESET_ERROR;
     };
 
 export const login = (user: AuthTypes.User | null): AuthAction => {
@@ -29,5 +32,11 @@ export const register = (user: AuthTypes.User | null): AuthAction => {
   return {
     type: AuthActionTypes.REGISTER,
     payload: user,
+  };
+};
+
+export const resetError = (): AuthAction => {
+  return {
+    type: AuthActionTypes.RESET_ERROR,
   };
 };

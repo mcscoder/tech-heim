@@ -2,9 +2,9 @@ import { getUsers, postUser } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
-import { register } from "@/redux";
+import { register, resetError } from "@/redux";
 import { AuthTypes } from "@/types";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 
 export const RegisterForm = () => {
   const context = useContext(AuthContext);
@@ -12,6 +12,10 @@ export const RegisterForm = () => {
   const fullNameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    context?.authDispatch(resetError());
+  }, []);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
