@@ -1,7 +1,9 @@
+import { getUsers } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
 import { login, resetError } from "@/redux";
+import { AuthTypes } from "@/types";
 import { useContext, useEffect, useRef } from "react";
 
 export const LoginForm = () => {
@@ -19,21 +21,28 @@ export const LoginForm = () => {
     const email = emailInputRef.current?.value || "";
     const password = passwordInputRef.current?.value || "";
 
-    context?.authDispatch(login({ email: email, password: password }));
-    console.log(context?.authState.login.error);
+    getUsers().then((users: AuthTypes.User[]) => {
+      const user =
+        users.find(
+          (user: AuthTypes.User) =>
+            user.email === email && user.password === password
+        ) || null;
+      context?.authDispatch(login(user));
+    });
   };
 
   return (
     <Form
       onSubmit={handleFormSubmit}
       className="flex flex-col gap-3"
-      error={context?.authState.login.error}
+      error={context?.authState.error}
     >
       <h3 className="text-center">Log in to Tech Heim</h3>
       <Input
         startIcon={<EMailIcon />}
         placeholder="E-mail"
         ref={emailInputRef}
+        required
       />
       <Input
         startIcon={<KeyIcon />}
@@ -41,6 +50,7 @@ export const LoginForm = () => {
         endIcon={<EyeIcon />}
         type="password"
         ref={passwordInputRef}
+        required
       />
       <Link className="justify-end text-primary-100 hover:text-Primary">
         Forgot Password?

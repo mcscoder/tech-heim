@@ -8,7 +8,8 @@ import { useContext, useState } from "react";
 export const AccountButton = () => {
   const [isDisplay, setDisplay] = useState<boolean>(false);
   const loginContext = useContext(AuthContext);
-  const isAuthenticated = loginContext?.authState.login.user;
+
+  const isAuthenticated = loginContext?.authState.user; // null if not yet authenticated
 
   return (
     <>

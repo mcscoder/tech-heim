@@ -1,7 +1,9 @@
+import { getUsers, postUser } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
 import { register, resetError } from "@/redux";
+import { AuthTypes } from "@/types";
 import { useContext, useEffect, useRef } from "react";
 
 export const RegisterForm = () => {
@@ -22,16 +24,31 @@ export const RegisterForm = () => {
     const email = emailInputRef.current?.value || "";
     const password = passwordInputRef.current?.value || "";
 
-    context?.authDispatch(
-      register({ fullName: fullName, email: email, password: password })
-    );
+    getUsers().then((users: AuthTypes.User[]) => {
+      const user =
+        users.find(
+          (user: AuthTypes.User) =>
+            user.email === email && user.password === password
+        ) || null;
+      // if user is present that mean user is exists
+      if (user) {
+        context?.authDispatch(register(null));
+        return;
+      }
+      // if not we send a post request to create new user
+      postUser({ fullName: fullName, email: email, password: password }).then(
+        (user: AuthTypes.User) => {
+          context?.authDispatch(register(user));
+        }
+      );
+    });
   };
 
   return (
     <Form
       onSubmit={handleFormSubmit}
       className="flex flex-col gap-3"
-      error={context?.authState.register.error}
+      error={context?.authState.error}
     >
       <h3 className="text-center">Create your account</h3>
       <Input
@@ -51,6 +68,7 @@ export const RegisterForm = () => {
         placeholder="Password"
         endIcon={<EyeIcon />}
         ref={passwordInputRef}
+        type="password"
         required
       />
       <div className="flex items-center gap-2">
