@@ -1,6 +1,9 @@
+import { getUsers, postUser } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
+import { register } from "@/redux";
+import { AuthTypes } from "@/types";
 import { useContext, useRef } from "react";
 
 export const RegisterForm = () => {
@@ -13,9 +16,28 @@ export const RegisterForm = () => {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // const fullName = fullNameInputRef.current?.value || "";
-    // const email = emailInputRef.current?.value || "";
-    // const password = passwordInputRef.current?.value || "";
+    const fullName = fullNameInputRef.current?.value || "";
+    const email = emailInputRef.current?.value || "";
+    const password = passwordInputRef.current?.value || "";
+
+    getUsers().then((users: AuthTypes.User[]) => {
+      const user =
+        users.find(
+          (user: AuthTypes.User) =>
+            user.email === email && user.password === password
+        ) || null;
+      // if user is present that mean user is exists
+      if (user) {
+        context?.authDispatch(register(null));
+        return;
+      }
+      // if not we send a post request to create new user
+      postUser({ fullName: fullName, email: email, password: password }).then(
+        (user: AuthTypes.User) => {
+          context?.authDispatch(register(user));
+        }
+      );
+    });
   };
 
   return (
@@ -42,6 +64,7 @@ export const RegisterForm = () => {
         placeholder="Password"
         endIcon={<EyeIcon />}
         ref={passwordInputRef}
+        type="password"
         required
       />
       <div className="flex items-center gap-2">

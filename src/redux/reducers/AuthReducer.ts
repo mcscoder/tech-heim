@@ -30,6 +30,20 @@ export const authReducer = (
       };
     }
 
+    case AuthActionTypes.REGISTER: {
+      const user = action.payload;
+      if (user === null) {
+        return {
+          user: null,
+          error: "E-mail already exists",
+        };
+      }
+      return {
+        user: user,
+        error: null,
+      };
+    }
+
     default:
       return state;
   }

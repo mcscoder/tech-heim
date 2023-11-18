@@ -6,3 +6,9 @@ export const getRequest = async (endPont: ApiEndPointTypes) => {
   const response = await axios.get(requestURL);
   return response.data;
 };
+
+export const postRequest = async (endPont: ApiEndPointTypes, data: object) => {
+  const requestURL = `${apiURL}${apiEndPoint[endPont]}`;
+  const response = await axios.post(requestURL, data);
+  return response.data;
+};

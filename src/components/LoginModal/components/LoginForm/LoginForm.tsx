@@ -38,6 +38,7 @@ export const LoginForm = () => {
         startIcon={<EMailIcon />}
         placeholder="E-mail"
         ref={emailInputRef}
+        required
       />
       <Input
         startIcon={<KeyIcon />}
@@ -45,6 +46,7 @@ export const LoginForm = () => {
         endIcon={<EyeIcon />}
         type="password"
         ref={passwordInputRef}
+        required
       />
       <Link className="justify-end text-primary-100 hover:text-Primary">
         Forgot Password?
