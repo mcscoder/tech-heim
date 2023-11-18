@@ -19,6 +19,9 @@ export type AuthAction =
     }
   | {
       type: AuthActionTypes.RESET_ERROR;
+    }
+  | {
+      type: AuthActionTypes.LOGOUT;
     };
 
 export const login = (user: AuthTypes.User | null): AuthAction => {
@@ -38,5 +41,11 @@ export const register = (user: AuthTypes.User | null): AuthAction => {
 export const resetError = (): AuthAction => {
   return {
     type: AuthActionTypes.RESET_ERROR,
+  };
+};
+
+export const logout = (): AuthAction => {
+  return {
+    type: AuthActionTypes.LOGOUT,
   };
 };
