@@ -1,8 +1,8 @@
 import { Link } from "@/components/Elements";
-import { FooterLinkGroupObject } from "@/constants/AppPath";
+import { LinkGroupObject } from "@/constants/AppPath";
 
 interface MainFooterLinkGroupProps {
-  footerLinkGroup: FooterLinkGroupObject;
+  footerLinkGroup: LinkGroupObject;
 }
 
 export const MainFooterLinkGroup = ({

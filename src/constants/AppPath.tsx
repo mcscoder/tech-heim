@@ -44,12 +44,12 @@ export const navigationLinks: NavigationLinkObject[] = [
   },
 ];
 
-export interface FooterLinkGroupObject {
+export interface LinkGroupObject {
   title?: string;
   navigationLink: NavigationLinkObject[];
 }
 
-export const footerLinkGroups: FooterLinkGroupObject[] = [
+export const footerLinkGroups: LinkGroupObject[] = [
   {
     title: "Company",
     navigationLink: [
@@ -156,5 +156,86 @@ export const policyLinks: NavigationLinkObject[] = [
   {
     path: "#",
     label: "Imprint",
+  },
+];
+
+export const searchSuggestItems: LinkGroupObject[] = [
+  {
+    title: "Most used keywords",
+    navigationLink: [
+      {
+        path: "#",
+        label: "MacBook Pro ",
+      },
+      {
+        path: "#",
+        label: "AirPods Pro",
+      },
+      {
+        path: "#",
+        label: "Samsung S9",
+      },
+      {
+        path: "#",
+        label: "Tablet",
+      },
+      {
+        path: "#",
+        label: "Xiaomi",
+      },
+      {
+        path: "#",
+        label: "JBL speaker",
+      },
+      {
+        path: "#",
+        label: "Canon",
+      },
+      {
+        path: "#",
+        label: "AirPods Max",
+      },
+      {
+        path: "#",
+        label: "Asus",
+      },
+      {
+        path: "#",
+        label: "MagSafe",
+      },
+    ],
+  },
+  {
+    title: "The Most Searched Items",
+    navigationLink: [
+      {
+        path: "#",
+        label: "Tablets",
+      },
+      {
+        path: "#",
+        label: "Headphones",
+      },
+      {
+        path: "#",
+        label: "Smartphones",
+      },
+      {
+        path: "#",
+        label: "Smartwatch",
+      },
+      {
+        path: "#",
+        label: "Laptops",
+      },
+      {
+        path: "#",
+        label: "USB Drive",
+      },
+      {
+        path: "#",
+        label: "Phone Cases",
+      },
+    ],
   },
 ];
