@@ -33,6 +33,8 @@ export default {
           b4: "#B4B4B4",
           71: "#717171",
           cb: "#CBCBCB",
+          d2d: "#2D2D2D",
+          e9e: "#9E9E9E",
         },
       },
       boxShadow: {

@@ -6,3 +6,4 @@ export * from "./Form";
 export * from "./Message";
 export * from "./CheckBox";
 export * from "./Menu";
+export * from "./IconText";
