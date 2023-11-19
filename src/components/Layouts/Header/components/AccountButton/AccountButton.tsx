@@ -4,12 +4,17 @@ import { ProfileMenu } from "@/components/ProfileMenu";
 import { UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
 // import { UserIcon } from "@/constants";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export const AccountButton = () => {
   const [loginModal, setLoginModal] = useState<boolean>(false);
   const [profileMenu, setProfileMenu] = useState<boolean>(false);
   const loginContext = useContext(AuthContext);
+
+  useEffect(() => {
+    setLoginModal(false);
+    setProfileMenu(false);
+  }, [loginContext?.authState.user]);
 
   const isAuthenticated = loginContext?.authState.user; // null if not yet authenticated
 
