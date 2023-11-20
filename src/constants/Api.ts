@@ -1,4 +1,4 @@
-export const apiURL = "https://6554582663cafc694fe65931.mockapi.io";
+export const apiURL = "http://any:3000";
 export const apiEndPoint = {
   users: "/users",
 };

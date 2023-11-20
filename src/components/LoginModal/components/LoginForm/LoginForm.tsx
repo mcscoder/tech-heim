@@ -1,4 +1,4 @@
-import { getUsers } from "@/api/Auth";
+import { userLoginAuth } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
@@ -21,14 +21,12 @@ export const LoginForm = () => {
     const email = emailInputRef.current?.value || "";
     const password = passwordInputRef.current?.value || "";
 
-    getUsers().then((users: AuthTypes.User[]) => {
-      const user =
-        users.find(
-          (user: AuthTypes.User) =>
-            user.email === email && user.password === password
-        ) || null;
-      context?.authDispatch(login(user));
-    });
+    userLoginAuth({ email: email, password: password }).then(
+      (users: AuthTypes.User[]) => {
+        const user: AuthTypes.User = users[0] || null;
+        context?.authDispatch(login(user));
+      }
+    );
   };
 
   return (
