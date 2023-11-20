@@ -1,4 +1,4 @@
-import { getUsers, postUser } from "@/api/Auth";
+import { userLoginAuth, userRegisterAuth } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
@@ -24,24 +24,24 @@ export const RegisterForm = () => {
     const email = emailInputRef.current?.value || "";
     const password = passwordInputRef.current?.value || "";
 
-    getUsers().then((users: AuthTypes.User[]) => {
-      const user =
-        users.find(
-          (user: AuthTypes.User) =>
-            user.email === email && user.password === password
-        ) || null;
-      // if user is present that mean user is exists
-      if (user) {
-        context?.authDispatch(register(null));
-        return;
-      }
-      // if not we send a post request to create new user
-      postUser({ fullName: fullName, email: email, password: password }).then(
-        (user: AuthTypes.User) => {
-          context?.authDispatch(register(user));
+    userLoginAuth({ email: email, password: password }).then(
+      (users: AuthTypes.User[]) => {
+        const user = users[0] || null;
+        // if user is present that mean user is exists
+        if (user) {
+          context?.authDispatch(register(null));
+          return;
         }
-      );
-    });
+        // if not we send a post request to create new user
+        userRegisterAuth({
+          fullName: fullName,
+          email: email,
+          password: password,
+        }).then((user: AuthTypes.User) => {
+          context?.authDispatch(register(user));
+        });
+      }
+    );
   };
 
   return (
