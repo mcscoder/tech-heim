@@ -52,6 +52,7 @@ export const authReducer = (
     }
 
     case AuthActionTypes.LOGOUT: {
+      location.reload();
       return {
         ...state,
         user: null,

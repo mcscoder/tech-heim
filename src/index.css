@@ -67,8 +67,16 @@
     @apply text-[14px] font-light;
   }
 
+  .font-body-xs {
+    @apply text-[12px] font-light;
+  }
+
   .font-button-lg {
     @apply text-[16px] font-normal;
+  }
+
+  .font-caption-sm {
+    @apply text-[10px] font-medium;
   }
 
   .font-mobile-caption {

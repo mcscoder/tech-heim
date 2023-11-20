@@ -12,7 +12,7 @@ import {
 export const Header = () => {
   return (
     <header className="border-b border-primary-25 shadow-1 mb-[-1px]">
-      <div className="content-container h-[100px] flex items-center justify-between ">
+      <div className="content-container h-[100px] flex items-center justify-between relative z-10">
         <LogoIcon />
         <Navbar>
           <Navigation>

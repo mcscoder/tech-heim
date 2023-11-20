@@ -27,6 +27,17 @@ import EyeIcon from "@/assets/icons/eye.svg?react";
 import EyeSlashIcon from "@/assets/icons/eye-slash.svg?react";
 import GoogleIcon from "@/assets/icons/google.svg?react";
 import FacebookFilledIcon from "@/assets/icons/facebook-filled.svg?react";
+import UserCircleIcon from "@/assets/icons/user-circle.svg?react";
+import CartBagIcon from "@/assets/icons/cart-bag.svg?react";
+import HeartIcon from "@/assets/icons/heart.svg?react";
+import DollarCircleIcon from "@/assets/icons/dollar-circle.svg?react";
+import LogoutIcon from "@/assets/icons/logout.svg?react";
+import DeliveryIcon from "@/assets/icons/delivery.svg?react";
+import GuaranteedIcon from "@/assets/icons/guaranteed.svg?react";
+import TrashIcon from "@/assets/icons/trash.svg?react";
+import MinusIcon from "@/assets/icons/minus.svg?react";
+import PlusIcon from "@/assets/icons/plus.svg?react";
+import CartIcon from "@/assets/icons/cart.svg?react";
 
 export {
   LogoIcon,
@@ -58,4 +69,15 @@ export {
   EyeSlashIcon,
   GoogleIcon,
   FacebookFilledIcon,
+  UserCircleIcon,
+  HeartIcon,
+  CartBagIcon,
+  DollarCircleIcon,
+  LogoutIcon,
+  DeliveryIcon,
+  GuaranteedIcon,
+  TrashIcon,
+  MinusIcon,
+  PlusIcon,
+  CartIcon,
 };
