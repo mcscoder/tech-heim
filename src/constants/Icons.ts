@@ -39,6 +39,8 @@ import MinusIcon from "@/assets/icons/minus.svg?react";
 import PlusIcon from "@/assets/icons/plus.svg?react";
 import CartIcon from "@/assets/icons/cart.svg?react";
 import StarIcon from "@/assets/icons/star.svg?react";
+import ArrowCircleLeftIcon from "@/assets/icons/arrow-circle-left.svg?react";
+import ArrowCircleRightIcon from "@/assets/icons/arrow-circle-right.svg?react";
 
 export {
   LogoIcon,
@@ -82,4 +84,6 @@ export {
   PlusIcon,
   CartIcon,
   StarIcon,
+  ArrowCircleLeftIcon,
+  ArrowCircleRightIcon,
 };

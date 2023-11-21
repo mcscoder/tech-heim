@@ -9,3 +9,4 @@ export * from "./Menu";
 export * from "./IconText";
 export * from "./ProductCard";
 export * from "./Category";
+export * from "./Carousel";
