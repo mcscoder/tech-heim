@@ -1,3 +1,12 @@
+import { Hero, SalesSection, Wrapper } from "./components";
+import { Categories } from "./components/Categories/Categories";
+
 export const Home = () => {
-  return <h1 className="text-error-light font-black">Home</h1>;
+  return (
+    <Wrapper>
+      <Hero />
+      <Categories />
+      <SalesSection />
+    </Wrapper>
+  );
 };

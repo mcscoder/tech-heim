@@ -38,6 +38,7 @@ import TrashIcon from "@/assets/icons/trash.svg?react";
 import MinusIcon from "@/assets/icons/minus.svg?react";
 import PlusIcon from "@/assets/icons/plus.svg?react";
 import CartIcon from "@/assets/icons/cart.svg?react";
+import StarIcon from "@/assets/icons/star.svg?react";
 
 export {
   LogoIcon,
@@ -80,4 +81,5 @@ export {
   MinusIcon,
   PlusIcon,
   CartIcon,
+  StarIcon,
 };
