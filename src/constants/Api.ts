@@ -4,5 +4,6 @@ export const apiEndPoint = {
   homeCategories: "/home-categories",
   productSales: "/product-sales",
   productNews: "/product-news",
+  productBestSellers: "/product-best-sellers",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;
