@@ -4,6 +4,7 @@ import {
   Wrapper,
   Categories,
   NewProducts,
+  BestSellersSection,
 } from "./components";
 
 export const Home = () => {
@@ -13,6 +14,7 @@ export const Home = () => {
       <Categories />
       <SalesSection />
       <NewProducts />
+      <BestSellersSection />
     </Wrapper>
   );
 };

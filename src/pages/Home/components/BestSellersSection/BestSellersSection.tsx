@@ -2,11 +2,11 @@ import { ProductCard, SectionTitle } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
 import { ArrowRightIcon } from "@/constants";
 
-export const NewProducts = () => {
+export const BestSellersSection = () => {
   return (
-    <div className="content-container flex flex-col gap-8">
+    <section className="content-container flex flex-col gap-8">
       <SectionTitle
-        title="New Products"
+        title="Best Sellers"
         linkIcon={<ArrowRightIcon />}
         linkLabel="View all"
       />
@@ -41,6 +41,6 @@ export const NewProducts = () => {
           rate={4.5}
         />
       </ProductGridWrapper>
-    </div>
+    </section>
   );
 };
