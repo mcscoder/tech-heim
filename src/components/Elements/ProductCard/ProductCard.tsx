@@ -1,6 +1,6 @@
 import { StarIcon } from "@/constants";
 import { Link, LinkProps } from "react-router-dom";
-import { IconText } from "..";
+import { IconText, PercentDiscount } from "..";
 import { formatUSD } from "@/utils";
 
 type ProductCardProps = LinkProps & {
@@ -22,8 +22,15 @@ export const ProductCard = ({
   return (
     <Link
       to={to}
-      className="group p-4 bg-white rounded-lg shadow-1 hover:shadow-2 hover:scale-105 duration-100 flex flex-col gap-4 border border-transparent hover:border-primary-75"
+      className="group p-4 bg-white rounded-lg shadow-1 hover:shadow-2 hover:scale-105 duration-100 flex flex-col gap-4 border border-transparent hover:border-primary-75 relative"
     >
+      {lastPrice && (
+        <PercentDiscount
+          className="absolute top-2 left-0"
+          lastPrice={lastPrice}
+          currentPrice={currentPrice}
+        />
+      )}
       <div className="border-b group-hover:border-b-primary-75 pb-4 duration-100">
         <img
           src={imgURL}
