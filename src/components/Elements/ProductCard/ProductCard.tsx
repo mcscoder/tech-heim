@@ -3,6 +3,15 @@ import { Link, LinkProps } from "react-router-dom";
 import { IconText, PercentDiscount } from "..";
 import { formatUSD } from "@/utils";
 
+export interface ProductCardApi {
+  id: number;
+  title: string;
+  imgURL: string;
+  lastPrice?: number;
+  currentPrice: number;
+  rate: number;
+}
+
 type ProductCardProps = LinkProps & {
   imgURL: string;
   title: string;

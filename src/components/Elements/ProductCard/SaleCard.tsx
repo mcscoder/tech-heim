@@ -2,6 +2,14 @@ import { formatUSD } from "@/utils";
 import { Link, LinkProps } from "react-router-dom";
 import { PercentDiscount } from "..";
 
+export interface SaleCardApi {
+  id: number;
+  imgURL: string;
+  title: string;
+  lastPrice: number;
+  currentPrice: number;
+}
+
 type SaleCardProps = LinkProps & {
   imgURL: string;
   title: string;
