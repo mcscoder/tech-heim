@@ -44,6 +44,9 @@ export default {
       fontFamily: {
         inter: "Inter, sans-serif",
       },
+      gridTemplateColumns: {
+        productWrapper: "repeat(auto-fill, minmax(230px, 1fr))",
+      },
     },
   },
   plugins: [],

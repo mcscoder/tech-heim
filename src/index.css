@@ -51,6 +51,10 @@
     @apply w-full max-w-[1224px] mx-auto;
   }
 
+  .product-grid-wrapper {
+    @apply grid grid-cols-productWrapper gap-6;
+  }
+
   .font-body-xl {
     @apply text-[20px] font-light leading-7;
   }
