@@ -1,6 +1,6 @@
-import { PercentDiscount } from "@/pages/Home/components/SalesSection/PercentDiscount";
 import { formatUSD } from "@/utils";
 import { Link, LinkProps } from "react-router-dom";
+import { PercentDiscount } from "..";
 
 type SaleCardProps = LinkProps & {
   imgURL: string;
