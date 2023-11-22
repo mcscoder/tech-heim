@@ -4,3 +4,4 @@ export * from "./Categories";
 export * from "./SalesSection";
 export * from "./NewProducts";
 export * from "./BestSellersSection";
+export * from "./TopBrandsSection";
