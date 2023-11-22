@@ -10,3 +10,4 @@ export * from "./IconText";
 export * from "./ProductCard";
 export * from "./Category";
 export * from "./Carousel";
+export * from "./SectionTitle";
