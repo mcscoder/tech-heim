@@ -7,7 +7,7 @@ export interface ProductCardApi {
   id: number;
   title: string;
   imgURL: string;
-  lastPrice?: number;
+  lastPrice: number | undefined;
   currentPrice: number;
   rate: number;
 }
@@ -15,7 +15,7 @@ export interface ProductCardApi {
 type ProductCardProps = LinkProps & {
   imgURL: string;
   title: string;
-  lastPrice?: number;
+  lastPrice: number | undefined;
   currentPrice: number;
   rate: number;
 };
