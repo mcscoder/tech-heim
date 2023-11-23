@@ -1,3 +1,22 @@
+import {
+  HeroSection,
+  SaleSection,
+  Wrapper,
+  CategorySection,
+  NewProductSection,
+  BestSellerSection,
+  TopBrandSection,
+} from "./components";
+
 export const Home = () => {
-  return <h1 className="text-error-light font-black">Home</h1>;
+  return (
+    <Wrapper>
+      <HeroSection />
+      <CategorySection />
+      <SaleSection />
+      <NewProductSection />
+      <BestSellerSection />
+      <TopBrandSection />
+    </Wrapper>
+  );
 };

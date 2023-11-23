@@ -17,7 +17,7 @@ interface IconProps {
   endIcon?: React.ReactNode;
 }
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   IconProps & {
     variant?: keyof typeof VARIANTS;
     children?: React.ReactNode;
