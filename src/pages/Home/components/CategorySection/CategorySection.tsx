@@ -26,10 +26,10 @@ export const CategorySection = () => {
 
   return (
     <section className="content-container flex justify-between my-2">
-      {categories.map((category, index) => {
+      {categories.map((category) => {
         return (
           <Category
-            key={index}
+            key={category.id}
             to={productCategoryRoute(`${category.id}`)}
             category={category.category}
             imgURL={category.imgURL}

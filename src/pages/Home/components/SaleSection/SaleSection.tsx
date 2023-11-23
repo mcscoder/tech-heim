@@ -49,9 +49,9 @@ export const SaleSection = () => {
         className="flex-1 flex flex-col gap-2 p-2"
         slidesPerView={4}
       >
-        {productSales.map((product, index) => {
+        {productSales.map((product) => {
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={product.id}>
               <SaleCard
                 to={productRoute(`${product.id}`)}
                 title={product.title}
