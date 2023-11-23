@@ -1,6 +1,6 @@
 import {
   HeroSection,
-  SalesSection,
+  SaleSection,
   Wrapper,
   CategorySection,
   NewProductSection,
@@ -13,7 +13,7 @@ export const Home = () => {
     <Wrapper>
       <HeroSection />
       <CategorySection />
-      <SalesSection />
+      <SaleSection />
       <NewProductSection />
       <BestSellersSection />
       <TopBrandsSection />
