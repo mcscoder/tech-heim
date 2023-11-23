@@ -1,5 +1,5 @@
 import {
-  Hero,
+  HeroSection,
   SalesSection,
   Wrapper,
   CategorySection,
@@ -11,7 +11,7 @@ import {
 export const Home = () => {
   return (
     <Wrapper>
-      <Hero />
+      <HeroSection />
       <CategorySection />
       <SalesSection />
       <NewProductSection />

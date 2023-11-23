@@ -1,5 +1,5 @@
 export * from "./Wrapper";
-export * from "./Hero";
+export * from "./HeroSection";
 export * from "./CategorySection";
 export * from "./SalesSection";
 export * from "./NewProductSection";

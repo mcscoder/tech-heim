@@ -1,8 +1,8 @@
 import { Button } from "@/components/Elements";
 
-export const Hero = () => {
+export const HeroSection = () => {
   return (
-    <div className="content-container flex items-center mt-2">
+    <section className="content-container flex items-center mt-2">
       <div className="flex flex-col items-start gap-28 flex-[1.1]">
         <div className="flex flex-col gap-8">
           <h1 className="text-primary-700 text-[64px] font-semibold">
@@ -26,6 +26,6 @@ export const Hero = () => {
           alt="laptop"
         />
       </div>
-    </div>
+    </section>
   );
 };
