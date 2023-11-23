@@ -8,9 +8,9 @@ import {
   SonyLogo,
 } from "@/constants";
 
-export const TopBrandsSection = () => {
+export const TopBrandSection = () => {
   return (
-    <div className="content-container flex flex-col gap-8">
+    <section className="content-container flex flex-col gap-8">
       <SectionTitle title="Top Brands" />
       <div className="flex items-center justify-between py-8">
         <AppleLogo />
@@ -20,6 +20,6 @@ export const TopBrandsSection = () => {
         <HuaweiLogo />
         <LenovoLogo />
       </div>
-    </div>
+    </section>
   );
 };

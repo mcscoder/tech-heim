@@ -5,7 +5,7 @@ import {
   CategorySection,
   NewProductSection,
   BestSellersSection,
-  TopBrandsSection,
+  TopBrandSection,
 } from "./components";
 
 export const Home = () => {
@@ -16,7 +16,7 @@ export const Home = () => {
       <SaleSection />
       <NewProductSection />
       <BestSellersSection />
-      <TopBrandsSection />
+      <TopBrandSection />
     </Wrapper>
   );
 };
