@@ -12,3 +12,4 @@ export * from "./Category";
 export * from "./Carousel";
 export * from "./SectionTitle";
 export * from "./PercentDiscount";
+export * from "./ProductCategory";

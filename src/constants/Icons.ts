@@ -41,6 +41,15 @@ import CartIcon from "@/assets/icons/cart.svg?react";
 import StarIcon from "@/assets/icons/star.svg?react";
 import ArrowCircleLeftIcon from "@/assets/icons/arrow-circle-left.svg?react";
 import ArrowCircleRightIcon from "@/assets/icons/arrow-circle-right.svg?react";
+import AccessoriesIcon from "@/assets/icons/accessories.svg?react";
+import CameraIcon from "@/assets/icons/camera.svg?react";
+import DataIcon from "@/assets/icons/data.svg?react";
+import GameIcon from "@/assets/icons/game.svg?react";
+import HeadPhoneIcon from "@/assets/icons/head-phone.svg?react";
+import LaptopIcon from "@/assets/icons/laptop.svg?react";
+import MobileIcon from "@/assets/icons/mobile.svg?react";
+import TabletIcon from "@/assets/icons/tablet.svg?react";
+import WatchStatusIcon from "@/assets/icons/watch-status.svg?react";
 
 export {
   LogoIcon,
@@ -86,4 +95,13 @@ export {
   StarIcon,
   ArrowCircleLeftIcon,
   ArrowCircleRightIcon,
+  AccessoriesIcon,
+  CameraIcon,
+  DataIcon,
+  GameIcon,
+  HeadPhoneIcon,
+  LaptopIcon,
+  MobileIcon,
+  TabletIcon,
+  WatchStatusIcon,
 };
