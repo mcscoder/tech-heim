@@ -7,7 +7,7 @@ export interface ProductFilterProps {
   filters: FilterProps[];
 }
 
-export const ProductFilter = ({ title, filters }: ProductFilterProps) => {
+export const FilterGroup = ({ title, filters }: ProductFilterProps) => {
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const handleExpanding = () => {
