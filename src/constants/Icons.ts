@@ -50,8 +50,14 @@ import LaptopIcon from "@/assets/icons/laptop.svg?react";
 import MobileIcon from "@/assets/icons/mobile.svg?react";
 import TabletIcon from "@/assets/icons/tablet.svg?react";
 import WatchStatusIcon from "@/assets/icons/watch-status.svg?react";
+import ArrowDownRoundedIcon from "@/assets/icons/arrow-down-rounded.svg?react";
+import ArrowUpRoundedIcon from "@/assets/icons/arrow-up-rounded.svg?react";
+import TickIcon from "@/assets/icons/tick.svg?react";
 
 export {
+  ArrowUpRoundedIcon,
+  TickIcon,
+  ArrowDownRoundedIcon,
   LogoIcon,
   SearchIcon,
   BagIcon,
