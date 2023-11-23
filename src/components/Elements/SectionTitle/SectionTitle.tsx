@@ -3,6 +3,7 @@ import { Link } from "..";
 
 interface SectionTitleProps {
   title: string;
+  path?: string;
   linkLabel?: string;
   linkIcon?: React.ReactNode;
   className?: string;
@@ -10,6 +11,7 @@ interface SectionTitleProps {
 
 export const SectionTitle = ({
   title,
+  path,
   linkLabel,
   linkIcon,
   className = "",
@@ -21,6 +23,7 @@ export const SectionTitle = ({
       <h3>{title}</h3>
       {(linkIcon || linkLabel) && (
         <Link
+          to={path}
           {...(linkIcon && { endIcon: linkIcon })}
           className="font-button-lg hover:text-Primary duration-100"
         >
