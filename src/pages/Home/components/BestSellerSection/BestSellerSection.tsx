@@ -8,7 +8,7 @@ import { ProductGridWrapper } from "@/components/Layouts";
 import { ArrowRightIcon, productRoute } from "@/constants";
 import { useEffect, useState } from "react";
 
-export const BestSellersSection = () => {
+export const BestSellerSection = () => {
   const [bestSellerProduct, setBestSellerProduct] = useState<
     ProductCardApi[] | null
   >(null);
