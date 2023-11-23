@@ -2,7 +2,7 @@ import {
   Hero,
   SalesSection,
   Wrapper,
-  Categories,
+  CategorySection,
   NewProducts,
   BestSellersSection,
   TopBrandsSection,
@@ -12,7 +12,7 @@ export const Home = () => {
   return (
     <Wrapper>
       <Hero />
-      <Categories />
+      <CategorySection />
       <SalesSection />
       <NewProducts />
       <BestSellersSection />

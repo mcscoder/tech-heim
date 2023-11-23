@@ -9,7 +9,7 @@ export interface HomeCategoriesApi {
   imgURL: string;
 }
 
-export const Categories = () => {
+export const CategorySection = () => {
   const [categories, setCategories] = useState<HomeCategoriesApi[] | null>(
     null
   );
@@ -25,17 +25,17 @@ export const Categories = () => {
   }
 
   return (
-    <div className="content-container flex justify-between my-2">
-      {categories.map((item, index) => {
+    <section className="content-container flex justify-between my-2">
+      {categories.map((category, index) => {
         return (
           <Category
             key={index}
-            to={productCategoryRoute(`${item.id}`)}
-            category={item.category}
-            imgURL={item.imgURL}
+            to={productCategoryRoute(`${category.id}`)}
+            category={category.category}
+            imgURL={category.imgURL}
           />
         );
       })}
-    </div>
+    </section>
   );
 };
