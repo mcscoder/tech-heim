@@ -8,7 +8,7 @@ import { ProductGridWrapper } from "@/components/Layouts";
 import { ArrowRightIcon, productRoute } from "@/constants";
 import { useEffect, useState } from "react";
 
-export const NewProducts = () => {
+export const NewProductSection = () => {
   const [newProducts, setNewProducts] = useState<ProductCardApi[] | null>(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const NewProducts = () => {
   }
 
   return (
-    <div className="content-container flex flex-col gap-8">
+    <section className="content-container flex flex-col gap-8">
       <SectionTitle
         title="New Products"
         linkIcon={<ArrowRightIcon />}
@@ -43,6 +43,6 @@ export const NewProducts = () => {
           );
         })}
       </ProductGridWrapper>
-    </div>
+    </section>
   );
 };

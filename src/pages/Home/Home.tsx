@@ -3,7 +3,7 @@ import {
   SalesSection,
   Wrapper,
   CategorySection,
-  NewProducts,
+  NewProductSection,
   BestSellersSection,
   TopBrandsSection,
 } from "./components";
@@ -14,7 +14,7 @@ export const Home = () => {
       <Hero />
       <CategorySection />
       <SalesSection />
-      <NewProducts />
+      <NewProductSection />
       <BestSellersSection />
       <TopBrandsSection />
     </Wrapper>
