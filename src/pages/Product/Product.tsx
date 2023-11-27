@@ -1,3 +1,10 @@
+import { Categories, MainProductSection, Wrapper } from "./components";
+
 export const Product = () => {
-  return <h1>Product</h1>;
+  return (
+    <Wrapper>
+      <Categories />
+      <MainProductSection />
+    </Wrapper>
+  );
 };
