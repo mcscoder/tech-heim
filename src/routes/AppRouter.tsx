@@ -1,5 +1,5 @@
 import { DefaultLayout } from "@/components/Layouts";
-import { Blog, Contact, FAQ, Home } from "@/pages";
+import { Blog, Contact, FAQ, Home, ProductDetail } from "@/pages";
 import { ProductProvider } from "@/providers";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -15,6 +15,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "product",
         Component: ProductProvider,
+      },
+      {
+        path: "product/:productId",
+        Component: ProductDetail,
       },
       {
         path: "blog",

@@ -14,3 +14,4 @@ export * from "./SectionTitle";
 export * from "./PercentDiscount";
 export * from "./ProductCategory";
 export * from "./ProductFilter";
+export * from "./Comment";
