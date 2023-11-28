@@ -8,6 +8,7 @@ export interface PaymentProductCardProps {
   imageURL: string;
   lastPrice: number | undefined;
   currentPrice: number;
+  quantity: number;
 }
 
 export const PaymentProductCard = ({
@@ -15,8 +16,9 @@ export const PaymentProductCard = ({
   imageURL,
   lastPrice,
   currentPrice,
+  quantity,
 }: PaymentProductCardProps) => {
-  const [quantity, setQuantity] = useState<number>(1);
+  const [productQuantity, setQuantity] = useState<number>(quantity);
 
   return (
     <div className="flex items-center gap-6 px-4 py-2 shadow-1">
@@ -53,7 +55,7 @@ export const PaymentProductCard = ({
             <p className="font-body-lg">{formatUSD(currentPrice)}</p>
           </div>
           <Count
-            quantity={quantity}
+            quantity={productQuantity}
             setQuantity={setQuantity}
           />
         </div>
