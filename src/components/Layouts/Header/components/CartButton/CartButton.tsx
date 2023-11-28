@@ -1,7 +1,11 @@
 import { Cart } from "@/components/Cart";
 import { Button } from "@/components/Elements";
 import { BagIcon } from "@/constants";
-import { useState } from "react";
+import { createContext, useState } from "react";
+
+export const CartButtonContext = createContext<React.Dispatch<
+  React.SetStateAction<boolean>
+> | null>(null);
 
 export const CartButton = () => {
   const [cartActive, setCartActive] = useState<boolean>(false);
@@ -11,13 +15,13 @@ export const CartButton = () => {
   };
 
   return (
-    <>
+    <CartButtonContext.Provider value={setCartActive}>
       <Button
         onClick={handleCartButton}
         variant="onlyIcon"
         startIcon={<BagIcon />}
       />
       {cartActive && <Cart />}
-    </>
+    </CartButtonContext.Provider>
   );
 };
