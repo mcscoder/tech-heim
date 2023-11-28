@@ -53,6 +53,9 @@ import WatchStatusIcon from "@/assets/icons/watch-status.svg?react";
 import ArrowDownRoundedIcon from "@/assets/icons/arrow-down-rounded.svg?react";
 import ArrowUpRoundedIcon from "@/assets/icons/arrow-up-rounded.svg?react";
 import TickIcon from "@/assets/icons/tick.svg?react";
+import BagHappyIcon from "@/assets/icons/bag-happy.svg?react";
+import TruckIcon from "@/assets/icons/truck.svg?react";
+import CardIcon from "@/assets/icons/card.svg?react";
 
 export {
   ArrowUpRoundedIcon,
@@ -110,4 +113,7 @@ export {
   MobileIcon,
   TabletIcon,
   WatchStatusIcon,
+  BagHappyIcon,
+  CardIcon,
+  TruckIcon,
 };
