@@ -27,7 +27,12 @@ export const Overlay = ({
       className={`fixed ${VARIANTS[variant]} right-0 bottom-0 left-0 z-40 bg-black bg-opacity-60 ${className}`}
       {...props}
     >
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
+      <div
+        className="flex"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
+      </div>
     </div>
   );
 };

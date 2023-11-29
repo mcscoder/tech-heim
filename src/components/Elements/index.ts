@@ -18,3 +18,4 @@ export * from "./Comment";
 export * from "./Count";
 export * from "./Stepper";
 export * from "./PaymentDetail";
+export * from "./Method";
