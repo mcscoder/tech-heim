@@ -19,3 +19,4 @@ export * from "./Count";
 export * from "./Stepper";
 export * from "./PaymentDetail";
 export * from "./Method";
+export * from "./ContactMethod";

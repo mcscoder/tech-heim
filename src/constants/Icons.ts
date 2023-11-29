@@ -58,8 +58,14 @@ import TruckIcon from "@/assets/icons/truck.svg?react";
 import CardIcon from "@/assets/icons/card.svg?react";
 import EditIcon from "@/assets/icons/edit.svg?react";
 import CloseIcon from "@/assets/icons/close.svg?react";
+import LocationAddIcon from "@/assets/icons/location-add.svg?react";
+import SmsIcon from "@/assets/icons/sms.svg?react";
+import CallIncomingIcon from "@/assets/icons/call-incoming.svg?react";
 
 export {
+  LocationAddIcon,
+  SmsIcon,
+  CallIncomingIcon,
   CloseIcon,
   EditIcon,
   ArrowUpRoundedIcon,
