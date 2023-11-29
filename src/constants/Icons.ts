@@ -56,8 +56,12 @@ import TickIcon from "@/assets/icons/tick.svg?react";
 import BagHappyIcon from "@/assets/icons/bag-happy.svg?react";
 import TruckIcon from "@/assets/icons/truck.svg?react";
 import CardIcon from "@/assets/icons/card.svg?react";
+import EditIcon from "@/assets/icons/edit.svg?react";
+import CloseIcon from "@/assets/icons/close.svg?react";
 
 export {
+  CloseIcon,
+  EditIcon,
   ArrowUpRoundedIcon,
   TickIcon,
   ArrowDownRoundedIcon,
