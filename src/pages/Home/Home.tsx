@@ -1,7 +1,7 @@
+import { Wrapper } from "@/components/Layouts";
 import {
   HeroSection,
   SaleSection,
-  Wrapper,
   CategorySection,
   NewProductSection,
   BestSellerSection,
@@ -10,7 +10,7 @@ import {
 
 export const Home = () => {
   return (
-    <Wrapper>
+    <Wrapper className="gap-12 mb-10">
       <HeroSection />
       <CategorySection />
       <SaleSection />

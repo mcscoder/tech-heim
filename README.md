@@ -26,3 +26,112 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 # tech-heim
+
+```json
+[
+  {
+    // product table
+    "id": 1,
+    "name": "...", // string
+    "currentPrice": "...", // double
+    "lastPrice": "...", // double
+    "quantity": "...", // int
+    "sold": "...", // int
+
+    //productImage table
+    "productImage": [
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      }
+      // ...
+    ]
+  },
+  {
+    // product table
+    "id": 2,
+    "name": "...", // string
+    "currentPrice": "...", // double
+    "lastPrice": "...", // double
+    "quantity": "...", // int
+    "sold": "...", // int
+
+    //productImage table
+    "productImage": [
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      }
+      // ...
+    ]
+  }
+  // ...
+]
+```
+
+```json
+[
+  {
+    // productGroup table
+    "id": 1,
+    "title": "...", // string
+
+    // productType table
+    "productType": [
+      {
+        "id": 1,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 2,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 3,
+        "title": "...", // string
+        "description": "..." // string
+      }
+      // ...
+    ]
+  },
+  {
+    // productGroup table
+    "id": 2,
+    "title": "...", // string
+
+    // productType table
+    "productType": [
+      {
+        "id": 1,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 2,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 3,
+        "title": "...", // string
+        "description": "..." // string
+      }
+      // ...
+    ]
+  }
+  // ...
+]
+
+```

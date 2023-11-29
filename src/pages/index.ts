@@ -4,3 +4,4 @@ export * from "./Blog";
 export * from "./FAQ";
 export * from "./Contact";
 export * from "./ProductDetail";
+export * from "./PaymentProcess";

@@ -15,3 +15,7 @@ export * from "./PercentDiscount";
 export * from "./ProductCategory";
 export * from "./ProductFilter";
 export * from "./Comment";
+export * from "./Count";
+export * from "./Stepper";
+export * from "./PaymentDetail";
+export * from "./Method";
