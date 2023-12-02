@@ -18,13 +18,15 @@ export const Filter = ({ id, title }: FilterProps) => {
       productContext.params,
       "productTypeId"
     )?.split("-");
-    if (productTypeId !== undefined) {
+
+    if (productTypeId === undefined) {
+      setActivated(false);
+    } else {
       setActivated(productTypeId.includes(`${id}`));
     }
-  }, []);
+  }, [getParamValue(productContext.params, "productTypeId")]);
 
   const handleActivated = () => {
-    setActivated(!activated);
     productContext.setParams({
       ...productTypeId(productContext.params, `${id}`, activated),
     });

@@ -88,3 +88,11 @@ export const sort = (
     sort: value,
   };
 };
+
+export const clearProductType = (
+  params: URLSearchParams
+): ProductTypes.SearchParamTypes => {
+  const currentParams: ProductTypes.SearchParamTypes = getParams(params);
+  delete currentParams.productTypeId;
+  return currentParams;
+};

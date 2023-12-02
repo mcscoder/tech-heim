@@ -20,3 +20,4 @@ export * from "./Stepper";
 export * from "./PaymentDetail";
 export * from "./Method";
 export * from "./ContactMethod";
+export * from "./Chip";
