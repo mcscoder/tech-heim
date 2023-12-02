@@ -23,8 +23,10 @@ export const MainProductSection = () => {
     return getParamValue(productContext.params, "productTypeId")?.split("-");
   }, [getParamValue(productContext.params, "productTypeId")]);
 
-  //
   useEffect(() => {
+    if (location.search === "") {
+      return;
+    }
     ProductApi.getProductGroup(location.search).then(
       (productGroups: ProductFilterProps[]) => {
         setProductGroups(productGroups);
@@ -33,12 +35,19 @@ export const MainProductSection = () => {
   }, [getParamValue(productContext.params, "categoryId")]);
 
   useEffect(() => {
+    if (location.search === "") {
+      return;
+    }
     ProductApi.getProduct(location.search).then(
       (products: ProductCardApi[]) => {
         setProducts(products);
       }
     );
   }, [productContext.params]);
+
+  if (productGroups === null || products === null) {
+    return <></>;
+  }
 
   return (
     <section className="content-container flex flex-col gap-10">
