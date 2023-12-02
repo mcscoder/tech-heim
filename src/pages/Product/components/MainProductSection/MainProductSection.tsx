@@ -1,53 +1,50 @@
-import { FilterGroup, ProductCard, SidebarFilter } from "@/components/Elements";
+import { ProductApi } from "@/api";
+import {
+  FilterGroup,
+  ProductCard,
+  ProductFilterProps,
+  SidebarFilter,
+} from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
+import { ProductContext } from "@/contexts/Product";
+import { getParamValue, urlQuery } from "@/utils";
+import { useContext, useEffect, useState } from "react";
 
 export const MainProductSection = () => {
+  const productContext = useContext(ProductContext);
+  const [productGroups, setProductGroups] = useState<
+    ProductFilterProps[] | null
+  >(null);
+
+  //
+  useEffect(() => {
+    ProductApi.getProductGroup(urlQuery).then(
+      (productGroups: ProductFilterProps[]) => {
+        console.log(productGroups);
+        setProductGroups(productGroups);
+      }
+    );
+  }, [getParamValue(productContext.params, "categoryId")]);
+
   return (
     <section className="content-container flex gap-6">
       <SidebarFilter>
+        {productGroups?.map((productGroup, index) => {
+          return (
+            <FilterGroup
+              key={index}
+              {...productGroup}
+            />
+          );
+        })}
         <FilterGroup
+          id={1}
           title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
+          productType={[
+            { id: 1, title: "Asus" },
+            { id: 2, title: "Acer" },
+            { id: 3, title: "Apple" },
+            { id: 4, title: "Dell" },
           ]}
         />
       </SidebarFilter>
