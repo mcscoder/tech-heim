@@ -21,7 +21,7 @@ export const FilterGroup = ({ title, productType }: ProductFilterProps) => {
         className={`flex items-center justify-between p-4`}
         onClick={handleExpanding}
       >
-        <p>{title}</p>
+        <p className="font-body-xl !font-normal">{title}</p>
         {expanded ? <ArrowUpRoundedIcon /> : <ArrowDownRoundedIcon />}
       </button>
       {expanded && (

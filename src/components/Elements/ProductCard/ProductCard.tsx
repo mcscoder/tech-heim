@@ -1,33 +1,31 @@
 import { StarIcon } from "@/constants";
-import { Link, LinkProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IconText, PercentDiscount } from "..";
 import { formatUSD } from "@/utils";
 
 export interface ProductCardApi {
   id: number;
-  title: string;
-  imgURL: string;
-  lastPrice: number | undefined;
+  name: string;
+  imageURLs: { imageURL: string }[];
+  lastPrice: number | null;
   currentPrice: number;
   rate: number;
 }
 
-type ProductCardProps = LinkProps & {
-  imgURL: string;
-  title: string;
-  lastPrice: number | undefined;
-  currentPrice: number;
-  rate: number;
+type ProductCardProps = ProductCardApi & {
+  to: string;
 };
 
 export const ProductCard = ({
-  imgURL,
-  title,
+  // id,
+  name,
+  imageURLs = [],
   lastPrice,
   currentPrice,
   rate,
   to,
 }: ProductCardProps) => {
+  console.log(imageURLs[0].imageURL);
   return (
     <Link
       to={to}
@@ -42,12 +40,12 @@ export const ProductCard = ({
       )}
       <div className="border-b group-hover:border-b-primary-75 pb-4 duration-100">
         <img
-          src={imgURL}
-          alt={title}
+          src={imageURLs[0].imageURL}
+          alt={name}
         />
       </div>
       <p className="font-body-md group-hover:text-Primary line-clamp-2 duration-100">
-        {title}
+        {name}
       </p>
       <div className="flex items-end justify-between">
         <div className="flex flex-col items-start">

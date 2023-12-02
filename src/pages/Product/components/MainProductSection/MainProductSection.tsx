@@ -3,6 +3,7 @@ import {
   Chip,
   FilterGroup,
   ProductCard,
+  ProductCardApi,
   ProductFilterProps,
   SidebarFilter,
 } from "@/components/Elements";
@@ -16,6 +17,8 @@ export const MainProductSection = () => {
   const [productGroups, setProductGroups] = useState<
     ProductFilterProps[] | null
   >(null);
+  const [products, setProducts] = useState<ProductCardApi[] | null>(null);
+
   const productTypeIds = useMemo(() => {
     return getParamValue(productContext.params, "productTypeId")?.split("-");
   }, [getParamValue(productContext.params, "productTypeId")]);
@@ -24,11 +27,18 @@ export const MainProductSection = () => {
   useEffect(() => {
     ProductApi.getProductGroup(location.search).then(
       (productGroups: ProductFilterProps[]) => {
-        console.log(productGroups);
         setProductGroups(productGroups);
       }
     );
   }, [getParamValue(productContext.params, "categoryId")]);
+
+  useEffect(() => {
+    ProductApi.getProduct(location.search).then(
+      (products: ProductCardApi[]) => {
+        setProducts(products);
+      }
+    );
+  }, [productContext.params]);
 
   return (
     <section className="content-container flex flex-col gap-10">
@@ -63,78 +73,15 @@ export const MainProductSection = () => {
           })}
         </SidebarFilter>
         <ProductGridWrapper className="flex-1">
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
-          <ProductCard
-            to={"#"}
-            title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-            imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-            lastPrice={40}
-            currentPrice={34.3}
-            rate={4.5}
-          />
+          {products?.map((product, index) => {
+            return (
+              <ProductCard
+                key={index}
+                to={"#"}
+                {...product}
+              />
+            );
+          })}
         </ProductGridWrapper>
       </div>
     </section>
