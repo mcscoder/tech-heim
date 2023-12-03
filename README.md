@@ -1,28 +1,274 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 1. Product item
+- Endpoint: `/product`
+- Method: `GET`
+- Search params:
+  - `categoryId=id`
+    - Example: `/product?categoryId=2`
+  - `productTypeId=id1-id2-id3-id4-...-idn`
+    - Example: `/product?productTypedId=1-2-6-29-42`
+  - `sort=(ascending || descending)`
+    - Example:
+      - `/product?sort=ascending`
+      - `/product?sort=descending`
+- Combine all of search params, Example:
+  - `/product?categoryId=2&productTypeId=2-3-9-34-56&sort=ascending`
 
-Currently, two official plugins are available:
+### Response json
+```json
+[
+  {
+    // product table
+    "id": 1,
+    "name": "...", // string
+    "currentPrice": "...", // double
+    "lastPrice": "...", // double
+    "quantity": "...", // int
+    "sold": "...", // int
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    //productImage table
+    "productImage": [
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      }
+      // ...
+    ]
+  },
+  {
+    // product table
+    "id": 2,
+    "name": "...", // string
+    "currentPrice": "...", // double
+    "lastPrice": "...", // double
+    "quantity": "...", // int
+    "sold": "...", // int
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+    // productImage table
+    "productImage": [
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      },
+      {
+        "imageURL": "..." // string
+      }
+      // ...
+    ]
+  }
+  // ...
+]
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# tech-heim
+# 2. Product group
+- Endpoint: `/productGroup`
+- Method: `GET`
+- Search params:
+  - `categoryId=id`
+    - example: `/productGroup?categoryId=2`
+
+### Response json
+```json
+[
+  {
+    // productGroup table
+    "id": 1,
+    "title": "...", // string
+
+    // productType table
+    "productType": [
+      {
+        "id": 1,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 2,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 3,
+        "title": "...", // string
+        "description": "..." // string
+      }
+      // ...
+    ]
+  },
+  {
+    // productGroup table
+    "id": 2,
+    "title": "...", // string
+
+    // productType table
+    "productType": [
+      {
+        "id": 1,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 2,
+        "title": "...", // string
+        "description": "..." // string
+      },
+      {
+        "id": 3,
+        "title": "...", // string
+        "description": "..." // string
+      }
+      // ...
+    ]
+  }
+  // ...
+]
+
+```
+
+# 3. User authentication
+- Endpoint: `/user/authentication`
+- Method: `POST`
+
+### Request body
+```json
+{
+  "email": "...", // string
+  "password": "...", //string
+}
+```
+
+### Response json
+```json
+{
+  "token": "...", // string
+}
+```
+
+# 4. User data
+- Endpoint: `/user`
+- Method: `GET`
+
+### Request header
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Response json
+```json
+{
+  "firstName": "...", // string
+  "lastName": "...", // string
+  "email": "...", // string
+}
+```
+
+# 5. User cart
+## Get product from cart
+- Endpoint: `/user/cart`
+- Method: `GET`
+
+### Request header
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Response json
+```json
+[
+  {
+    // product table
+    "id": 1,
+    "name": "...", // string
+    "currentPrice": "...", // double
+    "lastPrice": "...", // double
+
+    // productImage table
+    "productImage": [
+      {
+        "imageURL": "..." // string
+      }
+      {
+        "imageURL": "..." // string
+      }
+      // ...
+    ],
+
+    // user_product table
+    "quantity": "...", // int
+  }
+  {
+    // product table
+    "id": 2,
+    "name": "...", // string
+    "currentPrice": "...", // double
+    "lastPrice": "...", // double
+
+    // productImage table
+    "productImage": [
+      {
+        "imageURL": "..." // string
+      }
+      {
+        "imageURL": "..." // string
+      }
+      // ...
+    ],
+
+    // user_product table
+    "quantity": "...", // int
+  }
+  // ...
+]
+```
+
+## Add product into cart
+- Endpoint: `/user/cart`
+- Method: `POST`
+
+### Request header
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Request body
+```json
+{
+  "id": 1, // productId
+}
+```
+
+### Response json
+```json
+{
+  // product table
+  "id": 1,
+  "name": "...", // string
+  "currentPrice": "...", // double
+  "lastPrice": "...", // double
+
+  // productImage table
+  "productImage": [
+    {
+      "imageURL": "..." // string
+    }
+    // ...
+  ],
+
+  // user_product table
+  "quantity": "...", // int
+}
+```
