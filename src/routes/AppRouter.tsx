@@ -1,5 +1,6 @@
 import { DefaultLayout } from "@/components/Layouts";
 import {
+  Account,
   Blog,
   Cart,
   Checkout,
@@ -8,6 +9,7 @@ import {
   Home,
   Payment,
   PaymentProcess,
+  PersonalData,
   ProductDetail,
 } from "@/pages";
 import { ProductProvider } from "@/providers";
@@ -57,6 +59,16 @@ export const appRouter = createBrowserRouter([
           {
             path: "payment",
             Component: Payment,
+          },
+        ],
+      },
+      {
+        path: "account",
+        Component: Account,
+        children: [
+          {
+            path: "personal-data",
+            Component: PersonalData,
           },
         ],
       },
