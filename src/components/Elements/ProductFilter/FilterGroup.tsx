@@ -3,11 +3,12 @@ import { useState } from "react";
 import { Filter, FilterProps } from ".";
 
 export interface ProductFilterProps {
+  id: number;
   title: string;
-  filters: FilterProps[];
+  productType: FilterProps[];
 }
 
-export const FilterGroup = ({ title, filters }: ProductFilterProps) => {
+export const FilterGroup = ({ title, productType }: ProductFilterProps) => {
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const handleExpanding = () => {
@@ -20,16 +21,16 @@ export const FilterGroup = ({ title, filters }: ProductFilterProps) => {
         className={`flex items-center justify-between p-4`}
         onClick={handleExpanding}
       >
-        <p>{title}</p>
+        <p className="font-body-xl !font-normal">{title}</p>
         {expanded ? <ArrowUpRoundedIcon /> : <ArrowDownRoundedIcon />}
       </button>
       {expanded && (
         <div className="flex flex-col items-start gap-4 pb-8 px-4">
-          {filters.map((filter, index) => {
+          {productType.map((type, index) => {
             return (
               <Filter
                 key={index}
-                {...filter}
+                {...type}
               />
             );
           })}

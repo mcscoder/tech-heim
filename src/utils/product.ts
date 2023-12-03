@@ -42,12 +42,39 @@ export const categoryId = (
 
 export const productTypeId = (
   params: URLSearchParams,
-  value: string
+  value: string,
+  remove: boolean = false
 ): ProductTypes.SearchParamTypes => {
   const currentParams: ProductTypes.SearchParamTypes = getParams(params);
+  const productTypeId = currentParams.productTypeId?.split("-");
+
+  // Handle initial productTypeId
+  if (productTypeId === undefined) {
+    return {
+      ...currentParams,
+      productTypeId: value,
+    };
+  }
+
+  // Handle add or remove filter
+  if (remove) {
+    // Handle remove
+    const indexToRemove = productTypeId.indexOf(value);
+    productTypeId.splice(indexToRemove, 1);
+  } else {
+    // Handle add
+    productTypeId.push(value);
+  }
+
+  // Remove object key if there is nothing filter
+  if (productTypeId.length === 0) {
+    delete currentParams.productTypeId;
+    return currentParams;
+  }
+
   return {
     ...currentParams,
-    productTypeId: value,
+    productTypeId: productTypeId.join("-"),
   };
 };
 
@@ -60,4 +87,12 @@ export const sort = (
     ...currentParams,
     sort: value,
   };
+};
+
+export const clearProductType = (
+  params: URLSearchParams
+): ProductTypes.SearchParamTypes => {
+  const currentParams: ProductTypes.SearchParamTypes = getParams(params);
+  delete currentParams.productTypeId;
+  return currentParams;
 };

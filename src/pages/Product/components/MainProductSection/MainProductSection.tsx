@@ -1,130 +1,98 @@
-import { FilterGroup, ProductCard, SidebarFilter } from "@/components/Elements";
+import { ProductApi } from "@/api";
+import {
+  Chip,
+  FilterGroup,
+  ProductCard,
+  ProductCardApi,
+  ProductFilterProps,
+  SidebarFilter,
+} from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
+import { ProductContext } from "@/contexts/Product";
+import { getParamValue } from "@/utils";
+import { useContext, useEffect, useMemo, useState } from "react";
 
 export const MainProductSection = () => {
+  const productContext = useContext(ProductContext);
+  const [productGroups, setProductGroups] = useState<
+    ProductFilterProps[] | null
+  >(null);
+  const [products, setProducts] = useState<ProductCardApi[] | null>(null);
+
+  const productTypeIds = useMemo(() => {
+    return getParamValue(productContext.params, "productTypeId")?.split("-");
+  }, [getParamValue(productContext.params, "productTypeId")]);
+
+  useEffect(() => {
+    if (location.search === "") {
+      return;
+    }
+    ProductApi.getProductGroup(location.search).then(
+      (productGroups: ProductFilterProps[]) => {
+        setProductGroups(productGroups);
+      }
+    );
+  }, [getParamValue(productContext.params, "categoryId")]);
+
+  useEffect(() => {
+    if (location.search === "") {
+      return;
+    }
+    ProductApi.getProduct(location.search).then(
+      (products: ProductCardApi[]) => {
+        setProducts(products);
+      }
+    );
+  }, [productContext.params]);
+
+  if (productGroups === null || products === null) {
+    return <></>;
+  }
+
   return (
-    <section className="content-container flex gap-6">
-      <SidebarFilter>
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-        <FilterGroup
-          title="Brand"
-          filters={[
-            { label: "Asus" },
-            { label: "Acer" },
-            { label: "Apple" },
-            { label: "Dell" },
-          ]}
-        />
-      </SidebarFilter>
-      <ProductGridWrapper className="flex-1">
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-        <ProductCard
-          to={"#"}
-          title="NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design"
-          imgURL="http://mcsmuscle.ddns.net/product-sales/2.jpeg"
-          lastPrice={40}
-          currentPrice={34.3}
-          rate={4.5}
-        />
-      </ProductGridWrapper>
+    <section className="content-container flex flex-col gap-10">
+      <div className="flex gap-2 min-h-[44px] flex-wrap">
+        {productTypeIds &&
+          productGroups?.map((productGroup) => {
+            return (
+              <>
+                {productGroup.productType.map((type, index) => {
+                  if (productTypeIds.includes(`${type.id}`)) {
+                    return (
+                      <Chip
+                        key={index}
+                        {...type}
+                      />
+                    );
+                  }
+                })}
+              </>
+            );
+          })}
+      </div>
+      <div className="flex gap-6">
+        <SidebarFilter>
+          {productGroups?.map((productGroup, index) => {
+            return (
+              <FilterGroup
+                key={index}
+                {...productGroup}
+              />
+            );
+          })}
+        </SidebarFilter>
+        <ProductGridWrapper className="flex-1">
+          {products?.map((product, index) => {
+            return (
+              <ProductCard
+                key={index}
+                to={"#"}
+                {...product}
+              />
+            );
+          })}
+        </ProductGridWrapper>
+      </div>
     </section>
   );
 };

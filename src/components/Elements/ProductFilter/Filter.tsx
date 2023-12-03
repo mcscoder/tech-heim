@@ -1,23 +1,40 @@
 import { TickIcon } from "@/constants";
-import { useState } from "react";
+import { ProductContext } from "@/contexts/Product";
+import { getParamValue, productTypeId } from "@/utils";
+import { useContext, useEffect, useState } from "react";
 
 export interface FilterProps {
-  label: string;
-  onClick?: () => void;
+  id: number;
+  title: string;
 }
 
-export const Filter = ({ label, onClick = () => {} }: FilterProps) => {
+export const Filter = ({ id, title }: FilterProps) => {
+  const productContext = useContext(ProductContext);
   const [activated, setActivated] = useState<boolean>(false);
 
+  // Handle initialize value
+  useEffect(() => {
+    const productTypeId = getParamValue(
+      productContext.params,
+      "productTypeId"
+    )?.split("-");
+
+    if (productTypeId === undefined) {
+      setActivated(false);
+    } else {
+      setActivated(productTypeId.includes(`${id}`));
+    }
+  }, [getParamValue(productContext.params, "productTypeId")]);
+
   const handleActivated = () => {
-    setActivated(!activated);
-    onClick();
+    productContext.setParams({
+      ...productTypeId(productContext.params, `${id}`, activated),
+    });
   };
 
   return (
     <button
       className="inline-flex items-center gap-4 hover:text-Primary duration-200"
-      // onClick={onClick}
       onClick={handleActivated}
     >
       <div
@@ -27,7 +44,7 @@ export const Filter = ({ label, onClick = () => {} }: FilterProps) => {
       >
         <TickIcon className={`m-[-3px] ${activated ? "" : "opacity-0"}`} />
       </div>
-      <p>{label}</p>
+      <p>{title}</p>
     </button>
   );
 };

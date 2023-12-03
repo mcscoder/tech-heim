@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import { Button } from "..";
+import { ProductContext } from "@/contexts/Product";
+import { clearProductType } from "@/utils";
 
 interface SidebarFilterProps {
   children: React.ReactNode;
-  handleClear?: () => void;
 }
 
-export const SidebarFilter = ({
-  children,
-  handleClear,
-}: SidebarFilterProps) => {
+export const SidebarFilter = ({ children }: SidebarFilterProps) => {
+  const productContext = useContext(ProductContext);
+
+  const handleClear = () => {
+    productContext.setParams({ ...clearProductType(productContext.params) });
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between p-4">
