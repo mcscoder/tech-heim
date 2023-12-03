@@ -61,8 +61,16 @@ import CloseIcon from "@/assets/icons/close.svg?react";
 import LocationAddIcon from "@/assets/icons/location-add.svg?react";
 import SmsIcon from "@/assets/icons/sms.svg?react";
 import CallIncomingIcon from "@/assets/icons/call-incoming.svg?react";
+import CallIcon from "@/assets/icons/call.svg?react";
+import Home2Icon from "@/assets/icons/home-2.svg?react";
+import SignPostIcon from "@/assets/icons/sign-post.svg?react";
+import DirectIcon from "@/assets/icons/direct.svg?react";
 
 export {
+  DirectIcon,
+  SignPostIcon,
+  Home2Icon,
+  CallIcon,
   LocationAddIcon,
   SmsIcon,
   CallIncomingIcon,

@@ -3,7 +3,7 @@ import { Button } from "..";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   inputID?: string;
-  onChange?: (value: string) => void;
+  onDataChange?: (value: string) => void;
   label?: string;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
@@ -13,7 +13,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   {
     inputID,
-    onChange,
+    onDataChange = () => {},
     label,
     startIcon,
     endIcon,
@@ -43,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       )}
       <input
         type="text"
-        onChange={onChange}
+        onChange={(e) => onDataChange(e.target.value)}
         id={inputID}
         ref={ref}
         placeholder={placeholder}

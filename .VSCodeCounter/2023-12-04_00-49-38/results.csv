@@ -1,0 +1,311 @@
+"filename", "language", "JavaScript", "JSON with Comments", "TypeScript", "JSON", "HTML", "XML", "Markdown", "TypeScript JSX", "CSS", "comment", "blank", "total"
+"/home/mcs/Workspace/react/tech-heim/.eslintrc.cjs", "JavaScript", 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 35
+"/home/mcs/Workspace/react/tech-heim/.prettierrc", "JSON", 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 1, 13
+"/home/mcs/Workspace/react/tech-heim/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 122, 0, 0, 0, 15, 137
+"/home/mcs/Workspace/react/tech-heim/index.html", "HTML", 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 1, 14
+"/home/mcs/Workspace/react/tech-heim/package-lock.json", "JSON", 0, 0, 0, 6380, 0, 0, 0, 0, 0, 0, 1, 6381
+"/home/mcs/Workspace/react/tech-heim/package.json", "JSON", 0, 0, 0, 49, 0, 0, 0, 0, 0, 0, 1, 50
+"/home/mcs/Workspace/react/tech-heim/postcss.config.js", "JavaScript", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/home/mcs/Workspace/react/tech-heim/public/vite.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"/home/mcs/Workspace/react/tech-heim/src/App.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 3, 13
+"/home/mcs/Workspace/react/tech-heim/src/api/Api.ts", "TypeScript", 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"/home/mcs/Workspace/react/tech-heim/src/api/Auth.ts", "TypeScript", 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"/home/mcs/Workspace/react/tech-heim/src/api/Product.ts", "TypeScript", 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/home/mcs/Workspace/react/tech-heim/src/api/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/accessories.svg", "XML", 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 18
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/american-express.svg", "XML", 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 15
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/arrow-circle-left.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/arrow-circle-right.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/arrow-down-rounded.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/arrow-right.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/arrow-up-rounded.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/arrow-up.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/bag-happy.svg", "XML", 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/bag.svg", "XML", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/call-incoming.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/call.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/camera.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/card.svg", "XML", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/cart-bag.svg", "XML", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/cart.svg", "XML", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/close.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/copyright.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/data.svg", "XML", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/delivery.svg", "XML", 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/dollar-circle.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/e-mail.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/edit.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/eye-slash.svg", "XML", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/eye.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/facebook-color.svg", "XML", 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 14
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/facebook-filled.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/facebook.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/game.svg", "XML", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 10
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/google.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/guaranteed.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/head-phone.svg", "XML", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 10
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/heart.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/instagram-color.svg", "XML", 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 1, 34
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/instagram.svg", "XML", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 1, 7
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/key.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/laptop.svg", "XML", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/location-add.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/location.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/logo.svg", "XML", 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 23
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/logout.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/mail.svg", "XML", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/master-card.svg", "XML", 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 17
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/message-question.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/minus.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/mobile.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/paypal.svg", "XML", 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 20
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/phone.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/plus.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/search.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/sms.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/star.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/tablet.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/tick.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/trash.svg", "XML", 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/truck.svg", "XML", 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/twitter-color.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/twitter.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/user-circle.svg", "XML", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/user.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/visa.svg", "XML", 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 15
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/watch-status.svg", "XML", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/youtube-color.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/icons/youtube.svg", "XML", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/apple.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/cannon.svg", "XML", 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/huawei.svg", "XML", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 10
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/lenovo.svg", "XML", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/paypal.svg", "XML", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/samsung.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/shopee-pay.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"/home/mcs/Workspace/react/tech-heim/src/assets/logos/sony.svg", "XML", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/Cart.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 2, 36
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/components/CartItemWrapper.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 4, 61
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/components/CartSummary.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 4, 33
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/components/CartWrapper.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 2, 8
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/components/ItemWrapper.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 2, 12
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/components/TotalItemCount.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 2, 12
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/components/index.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/home/mcs/Workspace/react/tech-heim/src/components/Cart/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/AccountSidebar/AccountSideMenu.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 2, 15
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/AccountSidebar/MenuItem.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3, 24
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/AccountSidebar/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Button/Button.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 5, 56
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Button/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Carousel/Carousel.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 2, 5, 24
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Carousel/SwiperButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 4, 21
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Carousel/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Category/Category.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 31, 0, 0, 4, 35
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Category/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/CheckBox/CheckBox.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 44, 0, 0, 2, 46
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/CheckBox/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Chip/Chip.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 4, 27
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Chip/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Comment/Comment.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 4, 34
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Comment/CommentField.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 2, 19
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Comment/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ContactMethod/ContactMethod.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 2, 20
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ContactMethod/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Count/Count.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 3, 32
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Count/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/FAQ/Description.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 2, 8
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/FAQ/Question.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 4, 20
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/FAQ/Title.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 4, 24
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/FAQ/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Form/Form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 3, 29
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Form/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Icon/Icon.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 4, 21
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Icon/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/IconText/IconText.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 3, 24
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/IconText/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Input/Input.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 65, 0, 0, 3, 68
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Input/TextField.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 2, 22
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Input/UserInput.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 81, 0, 0, 5, 86
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Input/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Link/Link.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 5, 45
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Link/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Menu/Subcategory.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 38, 0, 0, 4, 42
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Menu/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Message/Message.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 32, 0, 0, 4, 36
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Message/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Method/Method.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 22, 0, 0, 4, 26
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Method/MethodOption.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 3, 29
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Method/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PaymentDetail/PaymentDetail.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 24, 0, 0, 3, 27
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PaymentDetail/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PercentDiscount/PercentDiscount.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 5, 20
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PercentDiscount/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PersonalData/PhoneNumber.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 4, 17
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PersonalData/UserFullName.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 35, 0, 0, 4, 39
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/PersonalData/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCard/OrderSummaryCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 39, 0, 0, 3, 42
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCard/PaymentProductCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 4, 66
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCard/ProductCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 62, 0, 3, 4, 69
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCard/SaleCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 4, 55
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCard/index.ts", "TypeScript", 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCategory/ProductCategory.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 31, 0, 0, 3, 34
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductCategory/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductFilter/Filter.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 43, 0, 1, 7, 51
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductFilter/FilterGroup.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 37, 0, 0, 5, 42
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductFilter/SidebarFilter.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 27, 0, 0, 5, 32
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/ProductFilter/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/SectionTitle/SectionTitle.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 32, 0, 0, 4, 36
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/SectionTitle/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Stepper/Stepper.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 78, 0, 0, 13, 91
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/Stepper/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Elements/index.ts", "TypeScript", 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 1, 27
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/DefaultLayout/DefaultLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 2, 16
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/DefaultLayout/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/Footer.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 2, 16
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooter/MainFooter.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 2, 10
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooter/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooterContent/MainFooterContent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 3, 26
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooterContent/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooterLinkGroup/MainFooterLinkGroup.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 3, 31
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooterLinkGroup/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooterMisc/MainFooterMisc.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 2, 36
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/MainFooterMisc/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/PolicyFooter/PolicyFooter.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 2, 21
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/PolicyFooter/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/PolicyFooterContent/PolicyFooterContent.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 27, 0, 0, 2, 29
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/PolicyFooterContent/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/components/index.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Footer/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/Header.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 2, 38
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/AccountButton/AccountButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 38, 0, 1, 6, 45
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/AccountButton/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/CartButton/CartButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 5, 28
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/CartButton/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/Navbar/Navbar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 2, 10
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/Navbar/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/Navigation/Navigation.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 2, 10
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/Navigation/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/NavigationItem/NavigationItem.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 3, 26
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/NavigationItem/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/SearchButton/SearchButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 3, 20
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/SearchButton/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/UserFeature/UserFeature.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 2, 10
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/UserFeature/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/components/index.ts", "TypeScript", 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 1, 8
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Header/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Overlay/Overlay.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 35, 0, 0, 4, 39
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Overlay/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/ProductGridWrapper/ProductGridWrapper.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 3, 14
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/ProductGridWrapper/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Wrapper/Wrapper.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 3, 11
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/Wrapper/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/Layouts/index.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/LoginModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 41, 0, 0, 5, 46
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/LoginForm/LoginForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 7, 64
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/LoginForm/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/OtherMethod/OtherMethod.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 3, 54
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/OtherMethod/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/RegisterBar/RegisterTabBar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 32, 0, 0, 3, 35
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/RegisterBar/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/RegisterForm/RegisterForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 81, 0, 2, 8, 91
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/RegisterForm/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/RegisterTab/RegisterTab.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 32, 0, 0, 4, 36
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/RegisterTab/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/components/index.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/home/mcs/Workspace/react/tech-heim/src/components/LoginModal/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/ProfileMenu/ProfileMenu.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 56, 0, 0, 4, 60
+"/home/mcs/Workspace/react/tech-heim/src/components/ProfileMenu/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/SearchModal/SearchModal.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 3, 37
+"/home/mcs/Workspace/react/tech-heim/src/components/SearchModal/components/SearchSuggest.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 25, 0, 0, 3, 28
+"/home/mcs/Workspace/react/tech-heim/src/components/SearchModal/components/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/components/SearchModal/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/constants/Api.ts", "TypeScript", 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"/home/mcs/Workspace/react/tech-heim/src/constants/AppPath.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 234, 0, 0, 8, 242
+"/home/mcs/Workspace/react/tech-heim/src/constants/Icons.ts", "TypeScript", 0, 0, 130, 0, 0, 0, 0, 0, 0, 0, 2, 132
+"/home/mcs/Workspace/react/tech-heim/src/constants/index.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/home/mcs/Workspace/react/tech-heim/src/constants/logos.ts", "TypeScript", 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 2, 20
+"/home/mcs/Workspace/react/tech-heim/src/constants/routePaths.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"/home/mcs/Workspace/react/tech-heim/src/contexts/Auth.ts", "TypeScript", 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/home/mcs/Workspace/react/tech-heim/src/contexts/Product.ts", "TypeScript", 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 3, 13
+"/home/mcs/Workspace/react/tech-heim/src/contexts/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/index.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 79, 4, 24, 107
+"/home/mcs/Workspace/react/tech-heim/src/main.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 2, 11
+"/home/mcs/Workspace/react/tech-heim/src/pages/Blog/Blog.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/pages/Blog/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Contact/Contact.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 78, 0, 0, 3, 81
+"/home/mcs/Workspace/react/tech-heim/src/pages/Contact/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/FAQ/FAQ.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 43, 0, 0, 2, 45
+"/home/mcs/Workspace/react/tech-heim/src/pages/FAQ/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/Home.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 2, 23
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/BestSellerSection/BestSellerSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 46, 0, 0, 5, 51
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/BestSellerSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/CategorySection/CategorySection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 6, 42
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/CategorySection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/HeroSection/HeroSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 2, 32
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/HeroSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/NewProductSection/NewProductSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 44, 0, 0, 5, 49
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/NewProductSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/SaleSection/SaleSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 75, 0, 0, 5, 80
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/SaleSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/TopBrandSection/TopBrandSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 24, 0, 0, 2, 26
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/TopBrandSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/components/index.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/home/mcs/Workspace/react/tech-heim/src/pages/Home/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/PaymentProcess.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 2, 13
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/components/CommonLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 85, 0, 0, 4, 89
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/components/StepperSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 2, 12
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/components/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/layouts/Cart.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 74, 0, 0, 4, 78
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/layouts/Checkout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 46, 0, 0, 4, 50
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/layouts/Payment.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 35, 0, 0, 3, 38
+"/home/mcs/Workspace/react/tech-heim/src/pages/PaymentProcess/layouts/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/Product.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 2, 12
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/components/Categories/Categories.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 4, 93
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/components/Categories/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/components/MainProductSection/MainProductSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 92, 0, 0, 7, 99
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/components/MainProductSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/components/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/pages/Product/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/ProductDetail.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 1, 3, 21
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/CommentSection/CommentSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 44, 0, 1, 3, 48
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/CommentSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/OverViewSection/OverViewSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 6, 95
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/OverViewSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/PurchaseSection/PurchaseSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 4, 27
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/PurchaseSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/SimilarProductSection/SimilarProductSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 54, 0, 0, 3, 57
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/SimilarProductSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/TechnicalDetailSection/TechnicalDetailSection.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 2, 36
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/TechnicalDetailSection/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/components/index.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/home/mcs/Workspace/react/tech-heim/src/pages/ProductDetail/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/User/Account.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 2, 12
+"/home/mcs/Workspace/react/tech-heim/src/pages/User/components/PersonalData.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 2, 14
+"/home/mcs/Workspace/react/tech-heim/src/pages/User/components/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/pages/User/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/pages/index.ts", "TypeScript", 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 1, 9
+"/home/mcs/Workspace/react/tech-heim/src/providers/AppState.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 3, 10
+"/home/mcs/Workspace/react/tech-heim/src/providers/Auth.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 4, 18
+"/home/mcs/Workspace/react/tech-heim/src/providers/Product.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 4, 22
+"/home/mcs/Workspace/react/tech-heim/src/providers/index.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/home/mcs/Workspace/react/tech-heim/src/redux/actions/AuthAction.ts", "TypeScript", 0, 0, 45, 0, 0, 0, 0, 0, 0, 0, 7, 52
+"/home/mcs/Workspace/react/tech-heim/src/redux/actions/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/redux/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/redux/reducers/AuthReducer.ts", "TypeScript", 0, 0, 58, 0, 0, 0, 0, 0, 0, 0, 8, 66
+"/home/mcs/Workspace/react/tech-heim/src/redux/reducers/index.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/home/mcs/Workspace/react/tech-heim/src/routes/AppProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 2, 7
+"/home/mcs/Workspace/react/tech-heim/src/routes/AppRouter.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 76, 0, 0, 2, 78
+"/home/mcs/Workspace/react/tech-heim/src/routes/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/types/Auth.ts", "TypeScript", 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 4, 16
+"/home/mcs/Workspace/react/tech-heim/src/types/Product.ts", "TypeScript", 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/home/mcs/Workspace/react/tech-heim/src/types/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/utils/index.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/mcs/Workspace/react/tech-heim/src/utils/money.ts", "TypeScript", 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"/home/mcs/Workspace/react/tech-heim/src/utils/product.ts", "TypeScript", 0, 0, 80, 0, 0, 0, 0, 0, 0, 6, 13, 99
+"/home/mcs/Workspace/react/tech-heim/src/vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 3
+"/home/mcs/Workspace/react/tech-heim/tailwind.config.js", "JavaScript", 54, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 56
+"/home/mcs/Workspace/react/tech-heim/tsconfig.json", "JSON with Comments", 0, 20, 0, 0, 0, 0, 0, 0, 0, 9, 3, 32
+"/home/mcs/Workspace/react/tech-heim/tsconfig.node.json", "JSON", 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 1, 11
+"/home/mcs/Workspace/react/tech-heim/vite.config.ts", "TypeScript", 0, 0, 9, 0, 0, 0, 0, 0, 0, 1, 2, 12
+"Total", "-", 94, 20, 637, 6451, 13, 476, 122, 3734, 79, 35, 600, 12261
