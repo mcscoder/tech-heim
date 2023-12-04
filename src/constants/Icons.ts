@@ -65,8 +65,10 @@ import CallIcon from "@/assets/icons/call.svg?react";
 import Home2Icon from "@/assets/icons/home-2.svg?react";
 import SignPostIcon from "@/assets/icons/sign-post.svg?react";
 import DirectIcon from "@/assets/icons/direct.svg?react";
+import SecuritySafeIcon from "@/assets/icons/security-safe.svg?react";
 
 export {
+  SecuritySafeIcon,
   DirectIcon,
   SignPostIcon,
   Home2Icon,

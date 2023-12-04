@@ -8,6 +8,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   endIconType?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  onEndIconClick?: () => void;
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
@@ -18,6 +19,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     startIcon,
     endIcon,
     endIconType = "button",
+    onEndIconClick = () => {},
     placeholder = "",
     className = "",
     ...props
@@ -59,6 +61,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
             endIcon={endIcon}
             className=""
             type={endIconType}
+            onClick={onEndIconClick}
           />
         </div>
       )}

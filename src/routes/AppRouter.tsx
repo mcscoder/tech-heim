@@ -11,6 +11,7 @@ import {
   PaymentProcess,
   PersonalData,
   ProductDetail,
+  Security,
 } from "@/pages";
 import { ProductProvider } from "@/providers";
 import { createBrowserRouter } from "react-router-dom";
@@ -69,6 +70,10 @@ export const appRouter = createBrowserRouter([
           {
             path: "personal-data",
             Component: PersonalData,
+          },
+          {
+            path: "security",
+            Component: Security,
           },
         ],
       },
