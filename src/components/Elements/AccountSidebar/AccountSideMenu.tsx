@@ -1,4 +1,4 @@
-import { SecuritySafeIcon, UserIcon } from "@/constants";
+import { GiftIcon, SecuritySafeIcon, UserIcon } from "@/constants";
 import { MenuItem } from ".";
 
 export const AccountSideMenu = () => {
@@ -13,6 +13,11 @@ export const AccountSideMenu = () => {
         to={"/account/security"}
         startIcon={<SecuritySafeIcon />}
         title="Security & access"
+      />
+      <MenuItem
+        to={"/account/discount"}
+        startIcon={<GiftIcon />}
+        title="Discounts"
       />
     </section>
   );

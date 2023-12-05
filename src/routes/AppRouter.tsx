@@ -5,6 +5,7 @@ import {
   Cart,
   Checkout,
   Contact,
+  Discount,
   FAQ,
   Home,
   Payment,
@@ -74,6 +75,10 @@ export const appRouter = createBrowserRouter([
           {
             path: "security",
             Component: Security,
+          },
+          {
+            path: "discount",
+            Component: Discount,
           },
         ],
       },

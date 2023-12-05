@@ -1,4 +1,4 @@
-export const apiURL = "https://8c75-116-98-98-130.ngrok-free.app";
+export const apiURL = "http://192.168.1.40:8080";
 export const apiEndPoint = {
   users: "/users",
   homeCategories: "/home-categories",
