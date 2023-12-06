@@ -1,9 +1,9 @@
-import { GiftIcon, SecuritySafeIcon, UserIcon } from "@/constants";
+import { GiftIcon, HeartIcon, SecuritySafeIcon, UserIcon } from "@/constants";
 import { MenuItem } from ".";
 
 export const AccountSideMenu = () => {
   return (
-    <section className="flex flex-col bg-gray-f9f rounded-lg">
+    <section className="flex flex-col bg-gray-f9f rounded-lg min-w-[300px]">
       <MenuItem
         to={"/account/personal-data"}
         startIcon={<UserIcon />}
@@ -18,6 +18,11 @@ export const AccountSideMenu = () => {
         to={"/account/discount"}
         startIcon={<GiftIcon />}
         title="Discounts"
+      />
+      <MenuItem
+        to={"/account/wish-list"}
+        startIcon={<HeartIcon />}
+        title="Wish list"
       />
     </section>
   );

@@ -13,6 +13,7 @@ import {
   PersonalData,
   ProductDetail,
   Security,
+  WishList,
 } from "@/pages";
 import { ProductProvider } from "@/providers";
 import { createBrowserRouter } from "react-router-dom";
@@ -79,6 +80,10 @@ export const appRouter = createBrowserRouter([
           {
             path: "discount",
             Component: Discount,
+          },
+          {
+            path: "wish-list",
+            Component: WishList,
           },
         ],
       },
