@@ -4,3 +4,4 @@ export * from "./Footer";
 export * from "./Overlay";
 export * from "./ProductGridWrapper";
 export * from "./Wrapper";
+export * from "./ScreenLoader";

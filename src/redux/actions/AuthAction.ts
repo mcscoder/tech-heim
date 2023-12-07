@@ -1,21 +1,26 @@
 import { AuthTypes } from "@/types";
 
 export enum AuthActionTypes {
-  LOGIN = "LOGIN",
-  LOGOUT = "LOGOUT",
-  REGISTER = "REGISTER",
-  RESET_ERROR = "RESET_ERROR",
-  UPDATE_USER = "UPDATE_USER",
+  LOGIN,
+  LOGOUT,
+  REGISTER,
+  RESET_ERROR,
+  UPDATE_USER,
 }
 
 export type AuthAction =
   | {
       type: AuthActionTypes.LOGIN;
-      payload: AuthTypes.User | null;
+      payload: {
+        userData: AuthTypes.UserData | null;
+      };
     }
   | {
       type: AuthActionTypes.REGISTER;
-      payload: AuthTypes.User | null;
+      payload: {
+        registerState: boolean;
+        message: string | null;
+      };
     }
   | {
       type: AuthActionTypes.RESET_ERROR;
@@ -24,17 +29,22 @@ export type AuthAction =
       type: AuthActionTypes.LOGOUT;
     };
 
-export const login = (user: AuthTypes.User | null): AuthAction => {
+export const login = (userData: AuthTypes.UserData | null): AuthAction => {
   return {
     type: AuthActionTypes.LOGIN,
-    payload: user,
+    payload: {
+      userData,
+    },
   };
 };
 
-export const register = (user: AuthTypes.User | null): AuthAction => {
+export const register = (
+  registerState: boolean,
+  message: string | null
+): AuthAction => {
   return {
     type: AuthActionTypes.REGISTER,
-    payload: user,
+    payload: { registerState, message },
   };
 };
 

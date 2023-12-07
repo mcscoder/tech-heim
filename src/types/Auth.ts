@@ -1,15 +1,23 @@
 export interface User {
   id: number | string;
-  fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
 }
 
+export type UserData = Pick<User, "firstName" | "lastName" | "email">;
+
 export type UserLogin = Pick<User, "email" | "password">;
 
-export const userLoginFilter = (user: UserLogin): string => {
-  const filter = `email=${user.email}&password=${user.password}`;
-  return filter;
-};
+export type UserRegister = Pick<
+  User,
+  "email" | "password" | "firstName" | "lastName"
+>;
 
-export type UserRegister = Pick<User, "email" | "password" | "fullName">;
+export type UserFullName = Pick<User, "firstName" | "lastName">;
+
+export interface AuthenticationToken {
+  token: string | null;
+  refreshToken: string | null;
+}
