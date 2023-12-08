@@ -7,3 +7,23 @@ export interface SearchParamTypes {
   productTypeId?: string;
   sort?: SortTypes;
 }
+
+export interface ProductImage {
+  imageURL: string;
+}
+
+export interface ProductTechnical {
+  title: string;
+  description: string;
+}
+
+export interface Product {
+  id: number;
+  name: string;
+  currentPrice: number;
+  lastPrice: number | null;
+  quantity: number;
+  sold: number;
+  productImage: ProductImage[];
+  productTechnical: ProductTechnical[];
+}
