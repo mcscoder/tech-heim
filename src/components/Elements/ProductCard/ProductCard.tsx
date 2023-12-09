@@ -2,34 +2,27 @@ import { CartIcon, HeartIcon, StarIcon, TrashIcon } from "@/constants";
 import { Link } from "react-router-dom";
 import { Button, IconText, PercentDiscount } from "..";
 import { formatUSD } from "@/utils";
+import { ProductTypes } from "@/types";
+import { useCartContext } from "@/hooks";
 
-export interface ProductCardApi {
-  id: number;
-  name: string;
-  imageURLs: { imageURL: string }[];
-  lastPrice: number | null;
-  currentPrice: number;
-  rate: number;
-}
-
-type ProductCardProps = ProductCardApi & {
+export type ProductCardProps = ProductTypes.ProductCardResponseType & {
   to: string;
   inWishList?: boolean;
-  handleAddToCart?: () => void;
   handleWishItem?: () => void;
 };
 
 export const ProductCard = ({
-  // id,
+  id,
   name,
-  imageURLs = [],
+  productImage = [],
   lastPrice,
   currentPrice,
   rate,
   to,
   inWishList = false,
 }: ProductCardProps) => {
-  console.log(imageURLs[0].imageURL);
+  const { handleAddProduct } = useCartContext();
+
   return (
     <div className="flex flex-col group hover:scale-105 duration-100 relative hover:z-50">
       <Link
@@ -45,7 +38,7 @@ export const ProductCard = ({
         )}
         <div className="border-b group-hover:border-b-primary-75 pb-4 duration-100">
           <img
-            src={imageURLs[0].imageURL}
+            src={productImage[0].imageURL}
             alt={name}
           />
         </div>
@@ -76,6 +69,7 @@ export const ProductCard = ({
           <Button
             variant="outlined"
             startIcon={<CartIcon />}
+            onClick={() => handleAddProduct(id)}
           >
             Add to cart
           </Button>

@@ -1,17 +1,15 @@
-import { useContext } from "react";
 import { Button } from "..";
-import { ProductContext } from "@/contexts/Product";
-import { clearProductType } from "@/utils";
+import { useProductContext } from "@/hooks";
 
 interface SidebarFilterProps {
   children: React.ReactNode;
 }
 
 export const SidebarFilter = ({ children }: SidebarFilterProps) => {
-  const productContext = useContext(ProductContext);
+  const { setParams, clearProductType } = useProductContext();
 
   const handleClear = () => {
-    productContext.setParams({ ...clearProductType(productContext.params) });
+    setParams({ ...clearProductType() });
   };
 
   return (

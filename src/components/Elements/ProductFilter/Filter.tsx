@@ -1,34 +1,26 @@
 import { TickIcon } from "@/constants";
-import { ProductContext } from "@/contexts/Product";
-import { getParamValue, productTypeId } from "@/utils";
-import { useContext, useEffect, useState } from "react";
+import { useProductContext } from "@/hooks";
+import { ProductTypes } from "@/types";
+import { useEffect, useState } from "react";
 
-export interface FilterProps {
-  id: number;
-  title: string;
-}
-
-export const Filter = ({ id, title }: FilterProps) => {
-  const productContext = useContext(ProductContext);
+export const Filter = ({ id, title }: ProductTypes.ProductType) => {
+  const { setParams, getParamValue, productTypeId } = useProductContext();
   const [activated, setActivated] = useState<boolean>(false);
 
   // Handle initialize value
   useEffect(() => {
-    const productTypeId = getParamValue(
-      productContext.params,
-      "productTypeId"
-    )?.split("-");
+    const productTypeId = getParamValue("productTypeId")?.split("-");
 
     if (productTypeId === undefined) {
       setActivated(false);
     } else {
       setActivated(productTypeId.includes(`${id}`));
     }
-  }, [getParamValue(productContext.params, "productTypeId")]);
+  }, [getParamValue("productTypeId")]);
 
   const handleActivated = () => {
-    productContext.setParams({
-      ...productTypeId(productContext.params, `${id}`, activated),
+    setParams({
+      ...productTypeId(`${id}`, activated),
     });
   };
 

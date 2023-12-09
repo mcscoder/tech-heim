@@ -24,6 +24,23 @@ export interface Product {
   lastPrice: number | null;
   quantity: number;
   sold: number;
+  rate: number;
   productImage: ProductImage[];
   productTechnical: ProductTechnical[];
+}
+
+export type ProductCardResponseType = Pick<
+  Product,
+  "id" | "name" | "currentPrice" | "lastPrice" | "rate" | "productImage"
+>;
+
+export interface ProductType {
+  id: number;
+  title: string;
+}
+
+export interface ProductGroup {
+  id: number;
+  title: string;
+  productType: ProductType[];
 }

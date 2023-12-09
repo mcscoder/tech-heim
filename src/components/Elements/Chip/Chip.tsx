@@ -1,14 +1,12 @@
-import { useContext } from "react";
-import { FilterProps } from "..";
-import { productTypeId } from "@/utils";
-import { ProductContext } from "@/contexts/Product";
+import { ProductTypes } from "@/types";
+import { useProductContext } from "@/hooks";
 
-export const Chip = ({ id, title }: FilterProps) => {
-  const productContext = useContext(ProductContext);
+export const Chip = ({ id, title }: ProductTypes.ProductType) => {
+  const { setParams, productTypeId } = useProductContext();
 
   const handleRemoveFilter = () => {
-    productContext.setParams({
-      ...productTypeId(productContext.params, `${id}`, true),
+    setParams({
+      ...productTypeId(`${id}`, true),
     });
   };
 

@@ -1,14 +1,12 @@
 import { ArrowDownRoundedIcon, ArrowUpRoundedIcon } from "@/constants";
 import { useState } from "react";
-import { Filter, FilterProps } from ".";
+import { Filter } from ".";
+import { ProductTypes } from "@/types";
 
-export interface ProductFilterProps {
-  id: number;
-  title: string;
-  productType: FilterProps[];
-}
-
-export const FilterGroup = ({ title, productType }: ProductFilterProps) => {
+export const FilterGroup = ({
+  title,
+  productType,
+}: ProductTypes.ProductGroup) => {
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const handleExpanding = () => {

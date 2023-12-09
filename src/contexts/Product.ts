@@ -1,12 +1,9 @@
+import { ProductAction, ProductState } from "@/redux";
 import { createContext } from "react";
-import { SetURLSearchParams } from "react-router-dom";
 
 export interface ProductContextProps {
-  params: URLSearchParams;
-  setParams: SetURLSearchParams;
+  productState: ProductState;
+  productDispatch: React.Dispatch<ProductAction>;
 }
 
-export const ProductContext = createContext<ProductContextProps>({
-  params: new URLSearchParams(),
-  setParams: () => {},
-});
+export const ProductContext = createContext<ProductContextProps | null>(null);

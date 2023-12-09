@@ -1,49 +1,44 @@
-import { ProductApi } from "@/api";
 import {
   Chip,
   FilterGroup,
   ProductCard,
-  ProductCardApi,
-  ProductFilterProps,
   SidebarFilter,
 } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
-import { ProductContext } from "@/contexts/Product";
-import { getParamValue } from "@/utils";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useProductContext } from "@/hooks";
+import { useEffect, useMemo } from "react";
 
 export const MainProductSection = () => {
-  const productContext = useContext(ProductContext);
-  const [productGroups, setProductGroups] = useState<
-    ProductFilterProps[] | null
-  >(null);
-  const [products, setProducts] = useState<ProductCardApi[] | null>(null);
+  const {
+    params,
+    getParamValue,
+    getProductGroups,
+    getProducts,
+    productGroups,
+    products,
+  } = useProductContext();
 
   const productTypeIds = useMemo(() => {
-    return getParamValue(productContext.params, "productTypeId")?.split("-");
-  }, [getParamValue(productContext.params, "productTypeId")]);
+    return getParamValue("productTypeId")?.split("-");
+  }, [getParamValue("productTypeId")]);
 
+  console.log(params);
+
+  // Handle get product group depend on category
   useEffect(() => {
     if (location.search === "") {
       return;
     }
-    ProductApi.getProductGroup(location.search).then(
-      (productGroups: ProductFilterProps[]) => {
-        setProductGroups(productGroups);
-      }
-    );
-  }, [getParamValue(productContext.params, "categoryId")]);
+    getProductGroups();
+  }, [getParamValue("categoryId")]);
 
+  // Handle get product items depend on params
   useEffect(() => {
     if (location.search === "") {
       return;
     }
-    ProductApi.getProduct(location.search).then(
-      (products: ProductCardApi[]) => {
-        setProducts(products);
-      }
-    );
-  }, [productContext.params]);
+    getProducts();
+  }, [params]);
 
   if (productGroups === null || products === null) {
     return <></>;
