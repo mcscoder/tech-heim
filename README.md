@@ -73,7 +73,7 @@
 - Method: `GET`
 - Search params:
   - `categoryId=id`
-    - example: `/productGroup?categoryId=2`
+    - Example: `/productGroup?categoryId=2`
 
 ### Response json
 ```json
@@ -252,23 +252,110 @@
 ```
 
 ### Response json
+- `Anything that can be make sense or not`
+
+# 6. Product details
+## Get product detail
+- Endpoint: `/product/:productId`
+- Method: `GET`
+- Params:
+  - `:productId`
+    - Example: `1`
+- Combine all, example:
+  - `/product/1`
+  - `/product/2`
+  - `/product/3`
+  - `/product/...`
+
+### Response json
 ```json
 {
-  // product table
-  "id": 1,
+  "id": 1, // int
   "name": "...", // string
   "currentPrice": "...", // double
   "lastPrice": "...", // double
+  "quantity": "...", // int
+  "sold": "...", // int
 
   // productImage table
   "productImage": [
     {
-      "imageURL": "..." // string
-    }
+      "imageURL": "...", // string
+    },
+    {
+      "imageURL": "...", // string
+    },
     // ...
   ],
 
-  // user_product table
-  "quantity": "...", // int
+  // productTechnical table
+  "productTechnical": [
+    {
+      "title": "...", // string
+      "description": "...", // string
+    },
+    {
+      "title": "...", // string
+      "description": "...", // string
+    },
+    // ...
+  ],
+
+  "user": [
+    {
+      "firstName": "...", // string
+      "lastName": "...", // string
+      
+      // productComment table
+      "productComment": [
+        {
+          "title": "...", // string
+          "description": "...", // string
+        },
+        {
+          "title": "...", // string
+          "description": "...", // string
+        },
+        // ...
+      ]
+    },
+    {
+      "firstName": "...", // string
+      "lastName": "...", // string
+
+      // productComment table
+      "productComment": [
+        {
+          "description": "...", // string
+        },
+        {
+          "description": "...", // string
+        },
+        // ...
+      ]
+    },
+    // ...
+  ],
 }
 ```
+
+## Post comment
+- Endpoint: `/product/comment`
+- Method: `POST`
+
+### Request Header
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Request body
+```json
+{
+  "description": "...", // string
+},
+```
+
+### Response json
+- `Anything that can be make sense or not`
