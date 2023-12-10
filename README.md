@@ -298,13 +298,27 @@
 }
 ```
 
-### Response json
+### Response
+
+#### If the token is `valid`
+
+- Status: `200`
 
 ```json
 {
   "firstName": "...", // string
   "lastName": "...", // string
   "email": "..." // string
+}
+```
+
+#### If the token is `invalid`
+
+- Status: `498`
+
+```json
+{
+  "message": "The token is invalid"
 }
 ```
 
