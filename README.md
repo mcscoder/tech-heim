@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
 # 1. Product item
+
 - Endpoint: `/product`
 - Method: `GET`
 - Search params:
@@ -16,6 +17,7 @@
   - `/product?categoryId=2&productTypeId=2-3-9-34-56&sort=ascending`
 
 ### Response json
+
 ```json
 [
   {
@@ -69,6 +71,7 @@
 ```
 
 # 2. Product group
+
 - Endpoint: `/productGroup`
 - Method: `GET`
 - Search params:
@@ -76,6 +79,7 @@
     - Example: `/productGroup?categoryId=2`
 
 ### Response json
+
 ```json
 [
   {
@@ -130,54 +134,164 @@
   }
   // ...
 ]
-
 ```
 
 # 3. User authentication
-- Endpoint: `/user/authentication`
+
+## 3.1. Login
+
+- Endpoint: `/user/login`
 - Method: `POST`
 
 ### Request body
+
 ```json
 {
   "email": "...", // string
-  "password": "...", //string
+  "password": "..." //string
 }
 ```
 
-### Response json
+### Response
+
+#### If email and password is `correct`
+
+- Status: `200`
+
 ```json
 {
   "token": "...", // string
+  "refreshToken": "..." // string
 }
 ```
 
-# 4. User data
-- Endpoint: `/user`
-- Method: `GET`
+#### If email or password is `incorrect`
 
-### Request header
+- Status: `400, 401,...`
+
 ```json
 {
-  "token": "..." // string
+  "message": "Your email or password is incorrect"
 }
 ```
 
-### Response json
+## 3.2. Register
+
+- Endpoint: `/user/register`
+- Method: `POST`
+
+### Request body
+
 ```json
 {
   "firstName": "...", // string
   "lastName": "...", // string
   "email": "...", // string
+  "password": "..." //string
 }
 ```
 
-# 5. User cart
-## Get product from cart
-- Endpoint: `/user/cart`
+### Response
+
+#### If email is `not exist`
+
+- Status: `200`
+
+```json
+{
+  "message": "Your account has been created"
+}
+```
+
+#### If email is `exist`
+
+- Status: `400, 401,...`
+
+```json
+{
+  "message": "Your email already exist"
+}
+```
+
+## 3.3. Get code to change the password
+
+- Endpoint: `/user/code`
+- Method: `POST`
+
+### Request body
+
+```json
+{
+  "email": "..." // string
+}
+```
+
+### Response
+
+#### If email `exist`
+
+- Status: `200`
+
+```json
+{
+  "message": "Check your email to get the code"
+}
+```
+
+#### If email does `not exist`
+
+- Status: `400, 401,...`
+
+```json
+{
+  "message": "Email does not exist"
+}
+```
+
+## 3.4. New password
+
+- Endpoint: `/user/new-password`
+- Method: `POST`
+
+### Request body
+
+```json
+{
+  "email": "...", // string
+  "code": "...", // string
+  "password": "..." // string
+}
+```
+
+### Response
+
+#### If code is `correct`
+
+- Status: `200`
+
+```json
+{
+  "message": "Your password has been changed"
+}
+```
+
+#### If code is `incorrect`
+
+- Status: `400, 401,...`
+
+```json
+{
+  "message": "Code is incorrect"
+}
+```
+
+# 4. User data
+
+- Endpoint: `/user`
 - Method: `GET`
 
 ### Request header
+
 ```json
 {
   "token": "..." // string
@@ -185,6 +299,32 @@
 ```
 
 ### Response json
+
+```json
+{
+  "firstName": "...", // string
+  "lastName": "...", // string
+  "email": "..." // string
+}
+```
+
+# 5. User cart
+
+## Get product from cart
+
+- Endpoint: `/user/cart`
+- Method: `GET`
+
+### Request header
+
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Response json
+
 ```json
 [
   {
@@ -234,10 +374,12 @@
 ```
 
 ## Add product into cart
+
 - Endpoint: `/user/cart`
 - Method: `POST`
 
 ### Request header
+
 ```json
 {
   "token": "..." // string
@@ -245,17 +387,21 @@
 ```
 
 ### Request body
+
 ```json
 {
-  "id": 1, // productId
+  "id": 1 // productId
 }
 ```
 
 ### Response json
+
 - `Anything that can be make sense or not`
 
 # 6. Product details
+
 ## Get product detail
+
 - Endpoint: `/product/:productId`
 - Method: `GET`
 - Params:
@@ -268,6 +414,7 @@
   - `/product/...`
 
 ### Response json
+
 ```json
 {
   "id": 1, // int
@@ -280,11 +427,11 @@
   // productImage table
   "productImage": [
     {
-      "imageURL": "...", // string
+      "imageURL": "..." // string
     },
     {
-      "imageURL": "...", // string
-    },
+      "imageURL": "..." // string
+    }
     // ...
   ],
 
@@ -292,12 +439,12 @@
   "productTechnical": [
     {
       "title": "...", // string
-      "description": "...", // string
+      "description": "..." // string
     },
     {
       "title": "...", // string
-      "description": "...", // string
-    },
+      "description": "..." // string
+    }
     // ...
   ],
 
@@ -305,17 +452,17 @@
     {
       "firstName": "...", // string
       "lastName": "...", // string
-      
+
       // productComment table
       "productComment": [
         {
           "title": "...", // string
-          "description": "...", // string
+          "description": "..." // string
         },
         {
           "title": "...", // string
-          "description": "...", // string
-        },
+          "description": "..." // string
+        }
         // ...
       ]
     },
@@ -326,24 +473,26 @@
       // productComment table
       "productComment": [
         {
-          "description": "...", // string
+          "description": "..." // string
         },
         {
-          "description": "...", // string
-        },
+          "description": "..." // string
+        }
         // ...
       ]
-    },
+    }
     // ...
-  ],
+  ]
 }
 ```
 
 ## Post comment
+
 - Endpoint: `/product/comment`
 - Method: `POST`
 
 ### Request Header
+
 ```json
 {
   "token": "..." // string
@@ -351,6 +500,7 @@
 ```
 
 ### Request body
+
 ```json
 {
   "description": "...", // string
@@ -358,4 +508,5 @@
 ```
 
 ### Response json
+
 - `Anything that can be make sense or not`
