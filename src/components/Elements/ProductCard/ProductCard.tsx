@@ -24,7 +24,7 @@ export const ProductCard = ({
   const { handleAddProduct } = useCartContext();
 
   return (
-    <div className="flex flex-col group hover:scale-105 duration-100 relative hover:z-50">
+    <div className="flex flex-col group hover:scale-105 duration-100 relative hover:z-[1]">
       <Link
         to={to}
         className="flex flex-col gap-4 relative p-4"
