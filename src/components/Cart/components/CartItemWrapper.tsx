@@ -1,13 +1,12 @@
 import { Count, IconText } from "@/components/Elements";
 import { DeliveryIcon, GuaranteedIcon } from "@/constants";
 import { CartTypes } from "@/types";
-import { formatUSD, getTotalProductPrice } from "@/utils";
+import { formatUSD } from "@/utils";
 
 export const CartItemWrapper = ({
   id,
   name,
   currentPrice,
-  lastPrice,
   productImage,
   quantity,
 }: CartTypes.CartItem) => {
@@ -43,13 +42,7 @@ export const CartItemWrapper = ({
         </div>
         <div className="flex items-center justify-between">
           <p className="font-body-md text-gray-d2d">
-            {formatUSD(
-              getTotalProductPrice({
-                quantity: quantity,
-                currentPrice: currentPrice,
-                lastPrice: lastPrice,
-              }).totalCurrentPrice
-            )}
+            {formatUSD(currentPrice)}
           </p>
           <Count
             quantity={quantity}

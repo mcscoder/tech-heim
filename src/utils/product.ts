@@ -1,11 +1,9 @@
-import { ProductTypes } from "@/types";
+import { CartTypes } from "@/types";
 
 export type PricedProductType = Pick<
-  ProductTypes.Product,
-  "currentPrice" | "lastPrice"
-> & {
-  quantity: number;
-};
+  CartTypes.CartItem,
+  "currentPrice" | "lastPrice" | "quantity"
+>;
 
 export interface TotalProductPriceType {
   totalCurrentPrice: number;
@@ -31,13 +29,12 @@ export const getTotalCartPrice = (
 
   for (const product of pricedProducts) {
     totalCurrentPrice += product.currentPrice * product.quantity;
-    if (product.lastPrice) {
-      totalLastPrice += product.lastPrice * product.quantity;
-    }
+    totalLastPrice +=
+      (product.lastPrice || product.currentPrice) * product.quantity;
   }
 
   return {
     totalCurrentPrice: totalCurrentPrice,
-    totalLastPrice: totalLastPrice || null,
+    totalLastPrice: totalLastPrice,
   };
 };
