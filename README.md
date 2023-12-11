@@ -524,3 +524,21 @@
 ### Response json
 
 - `Anything that can be make sense or not`
+
+```json
+{
+  "code": {
+    "email": "...",
+    "exp": "..."
+  }
+}
+```
+- Example:
+```json
+{
+  "123456": {
+    "email": "abc@gmail.com",
+    "exp": "12312312"
+  }
+}
+```
