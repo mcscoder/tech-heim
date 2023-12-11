@@ -10,5 +10,9 @@ export const formatUSD = (amount: number) => {
 };
 
 export const getPercentage = (lastPrice: number, currentPrice: number) => {
-  return (currentPrice / lastPrice) * 100;
+  return Math.round((currentPrice / lastPrice) * 100);
+};
+
+export const getDiscount = (lastPrice: number, currentPrice: number) => {
+  return getPercentage(lastPrice, currentPrice) - 100;
 };

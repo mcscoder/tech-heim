@@ -11,11 +11,10 @@ import {
   Payment,
   PaymentProcess,
   PersonalData,
-  ProductDetail,
   Security,
   WishList,
 } from "@/pages";
-import { ProductProvider } from "@/providers";
+import { ProductDetailProvider, ProductProvider } from "@/providers";
 import { createBrowserRouter } from "react-router-dom";
 
 export const appRouter = createBrowserRouter([
@@ -33,7 +32,7 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "product/:productId",
-        Component: ProductDetail,
+        Component: ProductDetailProvider,
       },
       {
         path: "blog",

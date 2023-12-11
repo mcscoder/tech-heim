@@ -1,30 +1,23 @@
 import { StarIcon } from "@/constants";
 import { IconText } from "..";
-
-export interface CommentProps {
-  username: string;
-  rate: number;
-  description: string;
-  className?: string;
-}
+import { ProductTypes } from "@/types";
 
 export const Comment = ({
-  username,
-  rate,
+  firstName,
+  lastName,
   description,
-  className = "",
-}: CommentProps) => {
-  const commentClasses = `flex flex-col bg-gray-f9f rounded-lg p-4 gap-3 ${className}`;
+}: ProductTypes.ProductComment) => {
+  const commentClasses = `flex flex-col bg-gray-f9f rounded-lg p-4 gap-3`;
 
   return (
     <section className={commentClasses}>
       <div className="flex items-center justify-between">
-        <h5>{username}</h5>
+        <h5>{`${firstName} ${lastName}`}</h5>
         <IconText
           startIcon={<StarIcon />}
           className="border rounded-lg px-2 py-1 border-Primary text-Primary"
         >
-          {rate}
+          {4}
         </IconText>
       </div>
       <p className="font-body-md">{description}</p>

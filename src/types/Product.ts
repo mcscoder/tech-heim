@@ -1,3 +1,5 @@
+import { AuthTypes } from ".";
+
 export type SearchParamKeys = "categoryId" | "productTypeId" | "sort";
 
 export type SortTypes = "ascending" | "descending";
@@ -17,6 +19,10 @@ export interface ProductTechnical {
   description: string;
 }
 
+export type ProductComment = AuthTypes.UserFullName & {
+  description: string;
+};
+
 export interface Product {
   id: number;
   name: string;
@@ -27,6 +33,8 @@ export interface Product {
   rate: number;
   productImage: ProductImage[];
   productTechnical: ProductTechnical[];
+  productGroup: Pick<ProductGroup, "title" | "productType">[];
+  productComment: ProductComment[];
 }
 
 export type ProductCardResponseType = Pick<

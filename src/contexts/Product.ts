@@ -1,9 +1,9 @@
 import { ProductAction, ProductState } from "@/redux";
 import { createContext } from "react";
 
-export interface ProductContextProps {
+export interface ProductContextType {
   productState: ProductState;
   productDispatch: React.Dispatch<ProductAction>;
 }
 
-export const ProductContext = createContext<ProductContextProps | null>(null);
+export const ProductContext = createContext<ProductContextType | null>(null);
