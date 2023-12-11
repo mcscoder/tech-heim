@@ -527,8 +527,8 @@
 
 ```json
 {
-  "code": {
-    "email": "...",
+  "email": {
+    "code": "...",
     "exp": "..."
   }
 }
@@ -536,8 +536,8 @@
 - Example:
 ```json
 {
-  "123456": {
-    "email": "abc@gmail.com",
+  "abc@gmail.com": {
+    "code": "123456",
     "exp": "12312312"
   }
 }
