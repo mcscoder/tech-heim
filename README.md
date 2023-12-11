@@ -414,7 +414,7 @@
 
 # 6. Product details
 
-## Get product detail
+## 6.1. Get product detail
 
 - Endpoint: `/product/:productId`
 - Method: `GET`
@@ -462,38 +462,41 @@
     // ...
   ],
 
-  "user": [
+  // productGroup table
+  "productGroup": [
+    {
+      "title": "...", // string
+
+      // productType table
+      "productType": [
+        {
+          "title": "..." // string
+        }
+      ]
+    },
+    {
+      "title": "...", // string
+
+      // productType table
+      "productType": [
+        {
+          "title": "..." // string
+        }
+      ]
+    }
+    // ...
+  ],
+
+  "productComment": [
     {
       "firstName": "...", // string
       "lastName": "...", // string
-
-      // productComment table
-      "productComment": [
-        {
-          "title": "...", // string
-          "description": "..." // string
-        },
-        {
-          "title": "...", // string
-          "description": "..." // string
-        }
-        // ...
-      ]
+      "description": "..." // string
     },
     {
       "firstName": "...", // string
       "lastName": "...", // string
-
-      // productComment table
-      "productComment": [
-        {
-          "description": "..." // string
-        },
-        {
-          "description": "..." // string
-        }
-        // ...
-      ]
+      "description": "..." // string
     }
     // ...
   ]
@@ -533,7 +536,9 @@
   }
 }
 ```
+
 - Example:
+
 ```json
 {
   "abc@gmail.com": {
