@@ -15,12 +15,18 @@ export const CommentSection = () => {
           <CommentField />
         </div>
         <div className="flex flex-col gap-4 flex-[3]">
-          {productDetail.productComment?.map((comment, index) => (
-            <Comment
-              key={index}
-              {...comment}
-            />
-          ))}
+          {productDetail.productComment ? (
+            productDetail.productComment.map((comment, index) => (
+              <Comment
+                key={index}
+                {...comment}
+              />
+            ))
+          ) : (
+            <div className="flex items-center justify-center h-full">
+              <p className="font-body-xl text-gray-71">No comments yet</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

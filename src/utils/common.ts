@@ -16,6 +16,33 @@ export const handleShowPassword = (ref: React.RefObject<HTMLInputElement>) => {
   }
 };
 
+export const isEmailFormat = (email: string) => {
+  // leebinn69@gmail.com
+  // leebinn69 ~ [^\s@]
+  // @ ~ +@
+  // gmail ~ [^\s@]
+  // . ~ +\.
+  // com ~ [^\s@]
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+export const handleEmailFormat = (
+  e: React.ChangeEvent<HTMLInputElement>,
+  ref: React.RefObject<HTMLInputElement>
+) => {
+  const email = e.target.value;
+  const inputRef = ref.current;
+
+  if (inputRef) {
+    if (isEmailFormat(email)) {
+      inputRef.setCustomValidity("");
+    } else {
+      inputRef.setCustomValidity("Enter a valid email");
+    }
+  }
+};
+
 export const getToken = (): AuthTypes.AuthenticationToken => {
   return {
     token: localStorage.getItem("token"),

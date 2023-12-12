@@ -15,17 +15,21 @@ export const Cart = () => {
       {cartItems !== null ? (
         <CartWrapper>
           <TotalItemCount quantity={cartItems.length} />
-          <ItemWrapper>
-            {cartItems.map((cartItem, index) => {
-              return (
-                <CartItemWrapper
-                  key={index}
-                  {...cartItem}
-                />
-              );
-            })}
-          </ItemWrapper>
-          <CartSummary cartItems={cartItems} />
+          {cartItems.length !== 0 && (
+            <>
+              <ItemWrapper>
+                {cartItems.map((cartItem, index) => {
+                  return (
+                    <CartItemWrapper
+                      key={index}
+                      {...cartItem}
+                    />
+                  );
+                })}
+              </ItemWrapper>
+              <CartSummary cartItems={cartItems} />
+            </>
+          )}
         </CartWrapper>
       ) : (
         <></>

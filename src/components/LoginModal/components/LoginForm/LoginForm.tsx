@@ -8,7 +8,7 @@ import { EMailIcon, EyeIcon, KeyIcon } from "@/constants";
 import { useAuthContext } from "@/hooks";
 import { resetError } from "@/redux";
 import { AuthTypes } from "@/types";
-import { handleShowPassword } from "@/utils";
+import { handleEmailFormat, handleShowPassword } from "@/utils";
 import { useEffect, useRef, useState } from "react";
 
 export const LoginForm = () => {
@@ -57,6 +57,7 @@ export const LoginForm = () => {
           placeholder="E-mail"
           ref={emailInputRef}
           required
+          onChange={(e) => handleEmailFormat(e, emailInputRef)}
         />
         <Input
           label="Password"

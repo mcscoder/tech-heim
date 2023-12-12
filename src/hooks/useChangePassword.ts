@@ -1,6 +1,6 @@
 import { FormProps, MessageType } from "@/components/Elements";
 import { useScreenLoader } from "@/components/Layouts";
-import { getRequestURL } from "@/utils";
+import { getRequestURL, isEmailFormat } from "@/utils";
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
 
@@ -16,7 +16,17 @@ export const useChangePassword = () => {
   const { handleCallApi } = useScreenLoader();
 
   const handleGetCode = (email: string) => {
-    console.log(email);
+    if (!isEmailFormat(email)) {
+      setFormState((prev) => {
+        return {
+          ...prev,
+          error: "Enter a valid email",
+          success: undefined,
+        };
+      });
+      return;
+    }
+
     handleCallApi(async () => {
       try {
         const requestURL = getRequestURL("code");

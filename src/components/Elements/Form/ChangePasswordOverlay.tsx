@@ -20,7 +20,10 @@ export const ChangePasswordOverlay = ({
     useChangePassword();
 
   const handleEmailSubmit = () => {
-    handleGetCode(emailRef.current?.value as string);
+    if (emailRef.current) {
+      const email = emailRef.current.value;
+      handleGetCode(email);
+    }
   };
 
   const handleResetPassword = () => {
@@ -51,15 +54,13 @@ export const ChangePasswordOverlay = ({
       className="flex flex-col gap-3"
       {...formState}
     >
-      <div
-        onSubmit={handleEmailSubmit}
-        className="flex gap-4"
-      >
+      <div className="flex gap-4">
         <Input
           label="Email"
           ref={emailRef}
           disabled={formState.email}
           required
+          // onChange={}
         />
         <Button
           variant="outlined"

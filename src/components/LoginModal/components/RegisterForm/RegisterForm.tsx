@@ -3,7 +3,7 @@ import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
 import { useAuthContext } from "@/hooks";
 import { register, resetError } from "@/redux";
 import { AuthTypes } from "@/types";
-import { handleShowPassword } from "@/utils";
+import { handleEmailFormat, handleShowPassword } from "@/utils";
 import { useEffect, useRef } from "react";
 
 export const RegisterForm = () => {
@@ -74,6 +74,7 @@ export const RegisterForm = () => {
         placeholder="E-mail"
         ref={emailRef}
         required
+        onChange={(e) => handleEmailFormat(e, emailRef)}
       />
       <Input
         label="Password"
