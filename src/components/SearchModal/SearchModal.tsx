@@ -11,7 +11,7 @@ export const SearchModal = ({ onClick }: SearchModalProps) => {
   return (
     <Overlay
       className="flex items-center justify-center"
-      onClick={onClick}
+      onCLickClose={onClick}
     >
       <div className="px-12 py-8 w-[800px] h-[500px] bg-white rounded-lg flex flex-col gap-12">
         <Form>

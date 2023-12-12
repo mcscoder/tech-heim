@@ -3,11 +3,11 @@ import { forwardRef } from "react";
 const VARIANTS = {
   fill: "text-white bg-Primary hover:bg-primary-600",
   outlined:
-    "text-Primary outline outline-2 outline-Primary hover:text-primary-600 hover:outline-primary-600",
+    "text-Primary border-2 border-Primary hover:text-primary-600 hover:border-primary-600",
   text: "text-Primary hover:text-primary-600",
   fillSecondary: "text-white bg-Secondary hover:bg-secondary-500",
   outlinedSecondary:
-    "text-Secondary outline outline-2 outline-Secondary hover:text-secondary-500 hover:outline-secondary-500",
+    "text-Secondary border-2 border-Secondary hover:text-secondary-500 hover:border-secondary-500",
   textSecondary: "text-Secondary hover:text-secondary-500",
   onlyIcon: "hover:text-Primary hover:bg-black/[.05]",
 };

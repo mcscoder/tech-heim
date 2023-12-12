@@ -11,5 +11,7 @@ export const apiEndPoint = {
   login: "/user/login",
   signup: "/user/signup",
   cart: "/user/cart",
+  code: "/user/code",
+  newPassword: "/user/new-password",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;

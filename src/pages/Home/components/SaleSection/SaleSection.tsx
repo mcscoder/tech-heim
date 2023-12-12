@@ -1,33 +1,23 @@
-import { getRequest } from "@/api";
-import {
-  Carousel,
-  Link,
-  SaleCard,
-  SaleCardApi,
-  SwiperNavigationButton,
-} from "@/components/Elements";
+import { Carousel, Link, SwiperNavigationButton } from "@/components/Elements";
 import {
   ArrowCircleLeftIcon,
   ArrowCircleRightIcon,
   ArrowRightIcon,
-  productRoute,
 } from "@/constants";
-import { useEffect, useState } from "react";
 import { Navigation } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
 
 export const SaleSection = () => {
-  const [productSales, setProductSales] = useState<SaleCardApi[] | null>(null);
+  // const [productSales, setProductSales] = useState<SaleCardApi[] | null>(null);
 
-  useEffect(() => {
-    getRequest("productSales", "").then((data: SaleCardApi[]) => {
-      setProductSales(data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getRequest("productSales", "").then((data: SaleCardApi[]) => {
+  //     setProductSales(data);
+  //   });
+  // }, []);
 
-  if (productSales === null) {
-    return;
-  }
+  // if (productSales === null) {
+  //   return;
+  // }
 
   return (
     <section className="content-container relative flex gap-20 bg-primary-500 rounded-lg pt-8 pl-8 pr-8">
@@ -49,7 +39,7 @@ export const SaleSection = () => {
         className="flex-1 flex flex-col gap-2 p-2"
         slidesPerView={4}
       >
-        {productSales.map((product) => {
+        {/* {productSales.map((product) => {
           return (
             <SwiperSlide key={product.id}>
               <SaleCard
@@ -61,7 +51,7 @@ export const SaleSection = () => {
               />
             </SwiperSlide>
           );
-        })}
+        })} */}
         <div className="flex items-center justify-end">
           <SwiperNavigationButton
             variant="onlyIcon"

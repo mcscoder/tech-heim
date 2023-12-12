@@ -52,7 +52,9 @@ export const useScreenLoader = () => {
 
   const handleCallApi = async (apiCall: () => Promise<void>) => {
     setLoading(true);
-    await apiCall();
+    await apiCall().catch((error) => {
+      console.log(error);
+    });
     setLoading(false);
   };
 

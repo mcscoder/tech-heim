@@ -54,7 +54,7 @@ export const UserInput = ({
             />
             {editData && (
               <Overlay
-                onClick={() => setEditData(false)}
+                onCLickClose={() => setEditData(false)}
                 className="flex items-center justify-center"
               >
                 <form

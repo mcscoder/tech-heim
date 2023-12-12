@@ -1,25 +1,19 @@
-import { getRequest } from "@/api";
-import {
-  ProductCard,
-  ProductCardApi,
-  SectionTitle,
-} from "@/components/Elements";
+import { SectionTitle } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
-import { ArrowRightIcon, productRoute } from "@/constants";
-import { useEffect, useState } from "react";
+import { ArrowRightIcon } from "@/constants";
 
 export const NewProductSection = () => {
-  const [newProducts, setNewProducts] = useState<ProductCardApi[] | null>(null);
+  // const [newProducts, setNewProducts] = useState<ProductCardApi[] | null>(null);
 
-  useEffect(() => {
-    getRequest("productNews", "").then((data: ProductCardApi[]) => {
-      setNewProducts(data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getRequest("productNews", "").then((data: ProductCardApi[]) => {
+  //     setNewProducts(data);
+  //   });
+  // }, []);
 
-  if (newProducts === null) {
-    return;
-  }
+  // if (newProducts === null) {
+  //   return;
+  // }
 
   return (
     <section className="content-container flex flex-col gap-8">
@@ -29,7 +23,8 @@ export const NewProductSection = () => {
         linkLabel="View all"
       />
       <ProductGridWrapper>
-        {newProducts.map((product) => {
+        <div></div>
+        {/* {newProducts.map((product) => {
           return (
             <ProductCard
               key={product.id}
@@ -41,7 +36,7 @@ export const NewProductSection = () => {
               rate={product.rate}
             />
           );
-        })}
+        })} */}
       </ProductGridWrapper>
     </section>
   );

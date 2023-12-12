@@ -1,16 +1,23 @@
-import { Button, Form, Input, Link } from "@/components/Elements";
+import {
+  Button,
+  ChangePasswordOverlay,
+  Form,
+  Input,
+} from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon } from "@/constants";
 import { useAuthContext } from "@/hooks";
 import { resetError } from "@/redux";
 import { AuthTypes } from "@/types";
 import { handleShowPassword } from "@/utils";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const LoginForm = () => {
   const { authState, authDispatch, handleUserLogin } = useAuthContext();
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
+
+  const [isForgetPassword, setForgetPassword] = useState<boolean>(false);
 
   useEffect(() => {
     authDispatch(resetError());
@@ -34,33 +41,44 @@ export const LoginForm = () => {
   };
 
   return (
-    <Form
-      onSubmit={handleFormSubmit}
-      className="flex flex-col gap-3"
-      error={authState.login.error}
-    >
-      <h3 className="text-center">Log in to Tech Heim</h3>
-      <Input
-        label="E-mail"
-        startIcon={<EMailIcon />}
-        placeholder="E-mail"
-        ref={emailInputRef}
-        required
-      />
-      <Input
-        label="Password"
-        startIcon={<KeyIcon />}
-        placeholder="Password"
-        endIcon={<EyeIcon />}
-        onEndIconClick={() => handleShowPassword(passwordInputRef)}
-        type="password"
-        ref={passwordInputRef}
-        required
-      />
-      <Link className="justify-end text-primary-100 hover:text-Primary">
-        Forgot Password?
-      </Link>
-      <Button type="submit">Log In</Button>
-    </Form>
+    <>
+      {isForgetPassword && (
+        <ChangePasswordOverlay onCLickClose={() => setForgetPassword(false)} />
+      )}
+      <Form
+        onSubmit={handleFormSubmit}
+        className="flex flex-col gap-3"
+        error={authState.login.error}
+      >
+        <h3 className="text-center">Log in to Tech Heim</h3>
+        <Input
+          label="E-mail"
+          startIcon={<EMailIcon />}
+          placeholder="E-mail"
+          ref={emailInputRef}
+          required
+        />
+        <Input
+          label="Password"
+          startIcon={<KeyIcon />}
+          placeholder="Password"
+          endIcon={<EyeIcon />}
+          onEndIconClick={() => handleShowPassword(passwordInputRef)}
+          type="password"
+          ref={passwordInputRef}
+          required
+        />
+        <div className="flex justify-end">
+          <Button
+            variant="text"
+            type="button"
+            onClick={() => setForgetPassword(true)}
+          >
+            Forgot password ?
+          </Button>
+        </div>
+        <Button type="submit">Log In</Button>
+      </Form>
+    </>
   );
 };
