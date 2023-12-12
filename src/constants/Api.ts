@@ -13,5 +13,6 @@ export const apiEndPoint = {
   cart: "/user/cart",
   code: "/user/code",
   newPassword: "/user/new-password",
+  wishlist: "/user/wishlist",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;

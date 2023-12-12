@@ -36,7 +36,7 @@ export const ProfileMenu = () => {
           Orders
         </Subcategory>
         <Subcategory
-          to="#"
+          to="/account/wish-list"
           startIcon={<HeartIcon />}
         >
           Wish List

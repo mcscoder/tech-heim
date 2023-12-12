@@ -1,12 +1,17 @@
-import { CartIcon, HeartIcon, StarIcon, TrashIcon } from "@/constants";
+import {
+  CartIcon,
+  HeartIcon,
+  StarIcon,
+  TrashIcon,
+  productPath,
+} from "@/constants";
 import { Link } from "react-router-dom";
 import { Button, IconText, PercentDiscount } from "..";
 import { formatUSD } from "@/utils";
 import { ProductTypes } from "@/types";
-import { useCartContext } from "@/hooks";
+import { useCartContext, useWishListContext } from "@/hooks";
 
 export type ProductCardProps = ProductTypes.ProductCardResponseType & {
-  to: string;
   inWishList?: boolean;
   handleWishItem?: () => void;
 };
@@ -18,15 +23,26 @@ export const ProductCard = ({
   lastPrice,
   currentPrice,
   rate,
-  to,
   inWishList = false,
 }: ProductCardProps) => {
   const { handleAddProduct } = useCartContext();
+  const {
+    handleAddProduct: handleAddWishList,
+    handleRemoveProduct: handleRemoveWishList,
+  } = useWishListContext();
+
+  const handleWishList = () => {
+    if (!inWishList) {
+      handleAddWishList(id);
+    } else {
+      handleRemoveWishList(id);
+    }
+  };
 
   return (
     <div className="flex flex-col group hover:scale-105 duration-100 relative hover:z-[1]">
       <Link
-        to={to}
+        to={productPath(id)}
         className="flex flex-col gap-4 relative p-4"
       >
         {lastPrice && (
@@ -75,6 +91,7 @@ export const ProductCard = ({
           </Button>
           <Button
             variant="onlyIcon"
+            onClick={handleWishList}
             startIcon={
               inWishList ? (
                 <TrashIcon

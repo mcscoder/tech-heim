@@ -2,6 +2,6 @@ export const productCategoryRoute = (paramID: string) => {
   return `/product/category/${paramID}`;
 };
 
-export const productRoute = (paramID: string) => {
-  return `/product/${paramID}`;
+export const productPath = (productId: number) => {
+  return `/product/${productId}`;
 };

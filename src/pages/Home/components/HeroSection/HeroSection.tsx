@@ -1,4 +1,5 @@
 import { Button } from "@/components/Elements";
+import { HeroLaptopImage } from "@/constants";
 
 export const HeroSection = () => {
   return (
@@ -22,7 +23,7 @@ export const HeroSection = () => {
       </div>
       <div className="flex-1">
         <img
-          src="https://s3-alpha-sig.figma.com/img/1674/8db2/4d54715f5a9efbe4e0abf224c5fa5484?Expires=1701648000&Signature=NlYTC7p6IzHqfevRnTAtkkNmDORPz68MpSyweCKxhODE4E4LtoehcplTwqBlFvw6hYDzzTyTOPS5OG9lzhX9Pxa3Vq6APie5LwmseJlnZo0KvZITkjvCjDempYZfO~8b1-ShagCuW8h1Db6Nosn5njmiQru3tzw8-Du4n8k~TRSnE5nUsYk-5D3yvfTgKCxwiyGiCr9~Dk4EAQHH3UkZAA-815dga1J9~RfO34R6-Ez1HNTtRpbpRIR1BJGZ3ILo6tULjOuvQTL5hbT9Dqg1Oy06K8BCzqEzi50U7C2NLo0jPaSwsM8EKRUqY3F~ipFSEixv~PTGo5-yHjdj56W6gA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+          src={HeroLaptopImage}
           alt="laptop"
         />
       </div>

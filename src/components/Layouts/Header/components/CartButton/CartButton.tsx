@@ -1,7 +1,8 @@
 import { Cart } from "@/components/Cart";
 import { Button } from "@/components/Elements";
 import { BagIcon } from "@/constants";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useLocation } from "react-router";
 
 export const CartButtonContext = createContext<React.Dispatch<
   React.SetStateAction<boolean>
@@ -9,6 +10,8 @@ export const CartButtonContext = createContext<React.Dispatch<
 
 export const CartButton = () => {
   const [cartActive, setCartActive] = useState<boolean>(false);
+
+  useEffect(() => setCartActive(false), [useLocation().pathname]);
 
   const handleCartButton = () => {
     setCartActive(!cartActive);
