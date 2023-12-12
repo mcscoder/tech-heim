@@ -13,7 +13,7 @@ export const Cart = () => {
 
   return (
     <section className="flex gap-24 items-start">
-      <div className="flex flex-col gap-6 items-start flex-[3]">
+      <div className="flex flex-col gap-6 flex-[3]">
         {cartItems.map((cartItem, index) => {
           return (
             <PaymentProductCard
