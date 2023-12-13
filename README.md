@@ -520,6 +520,7 @@
 
 ```json
 {
+  "id": "...", // int
   "description": "...", // string
 },
 ```
