@@ -1,6 +1,6 @@
 import { useScreenLoader } from "@/components/Layouts";
 import { ProductDetailContext } from "@/contexts";
-import { getRequestURL } from "@/utils";
+import { getRequestURL, getToken } from "@/utils";
 import axios from "axios";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
@@ -34,5 +34,34 @@ export const useProductDetailContext = () => {
     });
   };
 
-  return { productDetail, setProductDetail, productId, getProductDetail };
+  const handlePostComment = (description: string) => {
+    handleCallApi(async () => {
+      try {
+        const requestURL = getRequestURL("comment");
+        await axios.post(
+          requestURL,
+          {
+            id: productDetail.id,
+            description,
+          },
+          {
+            headers: {
+              token: getToken().token,
+            },
+          }
+        );
+        getProductDetail();
+      } catch (error) {
+        console.log((error as Error).message);
+      }
+    });
+  };
+
+  return {
+    productDetail,
+    setProductDetail,
+    productId,
+    getProductDetail,
+    handlePostComment,
+  };
 };

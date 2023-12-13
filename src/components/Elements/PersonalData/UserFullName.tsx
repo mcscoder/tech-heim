@@ -1,40 +1,25 @@
 import { UserIcon } from "@/constants";
-import { Input, UserInput } from "..";
-import { useRef, useState } from "react";
+import { UserInput } from "..";
+import { useAuthContext } from "@/hooks";
+// import { useState } from "react";
 
 export const UserFullName = () => {
-  const [firstName, setFirstName] = useState<string>("Son");
-  const [lastName, setLastName] = useState<string>("Mai");
+  const { authState } = useAuthContext();
 
-  const firstNameRef = useRef<HTMLInputElement>(null);
-  const lastNameRef = useRef<HTMLInputElement>(null);
+  // const [displayForm, setDisplayForm] = useState<boolean>(false);
 
   return (
-    <UserInput
-      data={`${firstName} ${lastName}`}
-      startIcon={<UserIcon />}
-      editable={true}
-      editTitle="First name and Last name"
-      label="Full name"
-      saveButtonTitle="Save"
-      className="flex flex-col gap-4"
-      onSave={() => {
-        setFirstName(firstNameRef.current?.value as string);
-        setLastName(lastNameRef.current?.value as string);
-      }}
-    >
-      <Input
-        label="First name"
-        ref={firstNameRef}
-        defaultValue={firstName}
-        required
+    <>
+      <UserInput
+        data={`${authState.user?.firstName} ${authState.user?.lastName}`}
+        startIcon={<UserIcon />}
+        editable
+        // onClickEditData={() => setDisplayForm(true)}
+        label="Full name"
       />
-      <Input
-        label="Last name"
-        ref={lastNameRef}
-        defaultValue={lastName}
-        required
-      />
-    </UserInput>
+      {/* {displayForm && (
+        <UserFullNameOverlay onCLickClose={() => setDisplayForm(false)} />
+      )} */}
+    </>
   );
 };

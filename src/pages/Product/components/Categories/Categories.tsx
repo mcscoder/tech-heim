@@ -52,8 +52,7 @@ export const categoryItems: ProductCategoryProps[] = [
 ];
 
 export const Categories = () => {
-  const { setParams, getParamValue, paramKeyValuePair, productTypeId } =
-    useProductContext();
+  const { setParams, getParamValue, paramKeyValuePair } = useProductContext();
 
   return (
     <section className="content-container flex items-center justify-center gap-8">
@@ -72,15 +71,6 @@ export const Categories = () => {
           />
         );
       })}
-      <ProductCategory
-        icon={<LaptopIcon />}
-        label="Test Button"
-        onClick={() =>
-          setParams({
-            ...productTypeId("something"),
-          })
-        }
-      />
     </section>
   );
 };

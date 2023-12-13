@@ -91,7 +91,7 @@ export const useAuthContext = () => {
       try {
         // Post user data
         const registerResponse = await userRegisterAuth(user);
-        if (registerResponse.status !== 200) {
+        if (registerResponse.status !== 201) {
           throw new Error("Email is exist");
         }
         authDispatch(register(true, null));

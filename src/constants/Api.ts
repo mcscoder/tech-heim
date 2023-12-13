@@ -1,3 +1,4 @@
+// export const apiURL = "http://172.20.10.3:8080";
 export const apiURL = "http://25.30.27.67:8080";
 export const apiEndPoint = {
   users: "/users",
@@ -14,5 +15,6 @@ export const apiEndPoint = {
   code: "/user/code",
   newPassword: "/user/new-password",
   wishlist: "/user/wishlist",
+  comment: "/product/comment",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;
