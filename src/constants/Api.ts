@@ -16,5 +16,6 @@ export const apiEndPoint = {
   newPassword: "/user/new-password",
   wishlist: "/user/wishlist",
   comment: "/product/comment",
+  homeProduct: "/home/product",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;

@@ -1,23 +1,25 @@
-import { Carousel, Link, SwiperNavigationButton } from "@/components/Elements";
+import {
+  Carousel,
+  Link,
+  SaleCard,
+  SwiperNavigationButton,
+} from "@/components/Elements";
 import {
   ArrowCircleLeftIcon,
   ArrowCircleRightIcon,
   ArrowRightIcon,
 } from "@/constants";
+import { useHomeProductState } from "@/hooks";
+import { useEffect } from "react";
 import { Navigation } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
 
 export const SaleSection = () => {
-  // const [productSales, setProductSales] = useState<SaleCardApi[] | null>(null);
+  const { products, getSaleProducts } = useHomeProductState();
 
-  // useEffect(() => {
-  //   getRequest("productSales", "").then((data: SaleCardApi[]) => {
-  //     setProductSales(data);
-  //   });
-  // }, []);
-
-  // if (productSales === null) {
-  //   return;
-  // }
+  useEffect(() => {
+    getSaleProducts();
+  }, []);
 
   return (
     <section className="content-container relative flex gap-20 bg-primary-500 rounded-lg pt-8 pl-8 pr-8">
@@ -39,19 +41,16 @@ export const SaleSection = () => {
         className="flex-1 flex flex-col gap-2 p-2"
         slidesPerView={4}
       >
-        {/* {productSales.map((product) => {
+        {products?.map((product, index) => {
           return (
-            <SwiperSlide key={product.id}>
-              <SaleCard
-                to={productRoute(`${product.id}`)}
-                title={product.title}
-                imgURL={product.imgURL}
-                lastPrice={product.lastPrice}
-                currentPrice={product.currentPrice}
-              />
+            <SwiperSlide
+              key={index}
+              className="flex"
+            >
+              <SaleCard {...product} />
             </SwiperSlide>
           );
-        })} */}
+        })}
         <div className="flex items-center justify-end">
           <SwiperNavigationButton
             variant="onlyIcon"

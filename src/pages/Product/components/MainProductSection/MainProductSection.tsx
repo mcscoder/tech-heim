@@ -1,11 +1,12 @@
 import {
+  Button,
   Chip,
   FilterGroup,
   ProductCard,
   SidebarFilter,
 } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
-import { useProductContext } from "@/hooks";
+import { useItemsPerPage, useProductContext } from "@/hooks";
 import { useEffect, useMemo } from "react";
 
 export const MainProductSection = () => {
@@ -22,7 +23,12 @@ export const MainProductSection = () => {
     return getParamValue("productTypeId")?.split("-");
   }, [getParamValue("productTypeId")]);
 
-  console.log(params);
+  const {
+    itemsPerPage,
+    updateItemsPerPage,
+    increaseItemsPerPage,
+    isItemsPerPageMaximized,
+  } = useItemsPerPage(6, products?.length);
 
   // Handle get product group depend on category
   useEffect(() => {
@@ -39,6 +45,10 @@ export const MainProductSection = () => {
     }
     getProducts();
   }, [params]);
+
+  useEffect(() => {
+    updateItemsPerPage(6, products?.length);
+  }, [products]);
 
   if (productGroups === null || products === null) {
     return <></>;
@@ -76,17 +86,28 @@ export const MainProductSection = () => {
             );
           })}
         </SidebarFilter>
-        <ProductGridWrapper className="flex-1">
-          {products?.map((product, index) => {
-            return (
-              <ProductCard
-                key={index}
-                to={"#"}
-                {...product}
-              />
-            );
-          })}
-        </ProductGridWrapper>
+        <div className="flex flex-col flex-1 gap-24">
+          <ProductGridWrapper className="flex-1">
+            {products?.slice(0, itemsPerPage).map((product, index) => {
+              return (
+                <ProductCard
+                  key={index}
+                  {...product}
+                />
+              );
+            })}
+          </ProductGridWrapper>
+          <div className="flex justify-center">
+            <Button
+              variant="outlined"
+              onClick={() => increaseItemsPerPage(6)}
+              disabled={isItemsPerPageMaximized()}
+              className="px-12"
+            >
+              More
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

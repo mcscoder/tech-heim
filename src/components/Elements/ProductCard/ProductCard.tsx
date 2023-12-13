@@ -43,7 +43,7 @@ export const ProductCard = ({
     <div className="flex flex-col group hover:scale-105 duration-100 relative hover:z-[1]">
       <Link
         to={productPath(id)}
-        className="flex flex-col gap-4 relative p-4"
+        className="flex flex-col gap-4 relative p-4 flex-1"
       >
         {lastPrice && (
           <PercentDiscount
@@ -56,12 +56,13 @@ export const ProductCard = ({
           <img
             src={productImage[0].imageURL}
             alt={name}
+            className="h-[270px] object-cover"
           />
         </div>
         <p className="font-body-md group-hover:text-Primary line-clamp-2 duration-100">
           {name}
         </p>
-        <div className="flex items-end justify-between">
+        <div className="flex items-end justify-between flex-1">
           <div className="flex flex-col items-start">
             {/* last price */}
             {lastPrice && (
@@ -80,7 +81,8 @@ export const ProductCard = ({
           </IconText>
         </div>
       </Link>
-      <div className="absolute top-0 bottom-0 group-hover:-bottom-14 left-0 right-0 bg-white rounded-lg shadow-1 group-hover:shadow-2 border border-transparent group-hover:border-primary-75 -z-10 flex items-end">
+      {/* Border */}
+      <div className="absolute top-0 bottom-0 group-hover:-bottom-16 left-0 right-0 bg-white rounded-lg shadow-1 group-hover:shadow-2 border border-transparent group-hover:border-primary-75 -z-10 flex items-end">
         <div className="hidden group-hover:flex items-center justify-between p-4 flex-1">
           <Button
             variant="outlined"

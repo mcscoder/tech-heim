@@ -25,6 +25,7 @@ export const useWishListContext = () => {
           headers: {
             token: getToken().token,
           },
+          timeout: 10000,
         });
         setWishList(response.data);
       } catch (error) {

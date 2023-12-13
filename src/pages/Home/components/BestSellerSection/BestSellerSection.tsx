@@ -1,45 +1,47 @@
-import { SectionTitle } from "@/components/Elements";
+import { Button, ProductCard, SectionTitle } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
 import { ArrowRightIcon } from "@/constants";
-
+import { useHomeProductState, useItemsPerPage } from "@/hooks";
+import { useEffect } from "react";
 export const BestSellerSection = () => {
-  // const [bestSellerProduct, setBestSellerProduct] = useState<
-  //   ProductTypes.ProductCardResponseType[] | null
-  // >(null);
+  const { products, getBestSellerProducts } = useHomeProductState();
 
-  // useEffect(() => {
-  //   getRequest("productBestSellers", "").then((data: ProductCardApi[]) => {
-  //     setBestSellerProduct(data);
-  //   });
-  // }, []);
+  const { itemsPerPage, increaseItemsPerPage, isItemsPerPageMaximized } =
+    useItemsPerPage(4, products?.length);
 
-  // if (bestSellerProduct === null) {
-  //   return;
-  // }
+  useEffect(() => {
+    getBestSellerProducts();
+  }, []);
 
   return (
-    <section className="content-container flex flex-col gap-8">
-      <SectionTitle
-        title="Best Sellers"
-        linkIcon={<ArrowRightIcon />}
-        linkLabel="View all"
-      />
-      <ProductGridWrapper>
-        <div></div>
-        {/* {bestSellerProduct.map((product) => {
-          return (
-            <ProductCard
-              key={product.id}
-              to={productRoute(`${product.id}`)}
-              title={product.title}
-              imgURL={product.imgURL}
-              lastPrice={product.lastPrice}
-              currentPrice={product.currentPrice}
-              rate={product.rate}
-            />
-          );
-        })} */}
-      </ProductGridWrapper>
+    <section className="content-container flex flex-col gap-24">
+      <div className="flex flex-col gap-8">
+        <SectionTitle
+          title="Best Sellers"
+          linkIcon={<ArrowRightIcon />}
+          linkLabel="View all"
+        />
+        <ProductGridWrapper>
+          {products?.slice(0, itemsPerPage).map((product, index) => {
+            return (
+              <ProductCard
+                key={index}
+                {...product}
+              />
+            );
+          })}
+        </ProductGridWrapper>
+      </div>
+      <div className="flex justify-center">
+        <Button
+          variant="outlined"
+          onClick={() => increaseItemsPerPage(4)}
+          disabled={isItemsPerPageMaximized()}
+          className="px-12"
+        >
+          More
+        </Button>
+      </div>
     </section>
   );
 };
