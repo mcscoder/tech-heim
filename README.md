@@ -2,6 +2,8 @@
 
 # 1. Product item
 
+## 1.1. Get Product
+
 - Endpoint: `/product`
 - Method: `GET`
 - Search params:
@@ -16,7 +18,7 @@
 - Combine all of search params, Example:
   - `/product?categoryId=2&productTypeId=2-3-9-34-56&sort=ascending`
 
-### Response json
+### Response
 
 ```json
 [
@@ -68,6 +70,77 @@
   }
   // ...
 ]
+```
+
+## 1.2. Add product (only administrators can perform)
+
+- Endpoint: `/product`
+- Method: `POST`
+
+### Request header
+
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Request body
+
+```json
+{
+  "name": "...", // string
+  "currentPrice": "...", // double
+  "lastPrice": "...", // double
+  "quantity": "...", // int
+  "sold": 0, // int
+
+  // category table id
+  "categoryId": "...", // int
+
+  // productType table id
+  "productTypeId": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
+    // ...
+  ],
+
+  // productTechnical table
+  "productTechnical": [
+    {
+      "title": "...", // string
+      "description": "..." // string
+    },
+    {
+      "title": "...", // string
+      "description": "..." // string
+    }
+    // ...
+  ],
+
+  // productImage table
+  "productImage": [
+    {
+      "image": "..." // file
+    },
+    {
+      "image": "..." // file
+    }
+    // ...
+  ]
+}
+```
+
+### Response
+
+```json
+{
+  "message": "Product has been added" // string
+}
 ```
 
 # 2. Product group
