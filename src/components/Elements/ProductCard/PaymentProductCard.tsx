@@ -1,7 +1,7 @@
 import { DeliveryIcon, GuaranteedIcon } from "@/constants";
 import { Count, IconText } from "..";
 import { formatUSD } from "@/utils";
-import { useState } from "react";
+import { CartTypes } from "@/types";
 
 export interface PaymentProductCardProps {
   title: string;
@@ -12,25 +12,24 @@ export interface PaymentProductCardProps {
 }
 
 export const PaymentProductCard = ({
-  title,
-  imageURL,
-  lastPrice,
+  id,
+  name,
   currentPrice,
+  lastPrice,
+  productImage,
   quantity,
-}: PaymentProductCardProps) => {
-  const [productQuantity, setQuantity] = useState<number>(quantity);
-
+}: CartTypes.CartItem) => {
   return (
     <div className="flex items-center gap-6 px-4 py-2 shadow-1">
       <div className="flex-1">
         <img
-          src={imageURL}
-          alt={title}
+          src={productImage[0].imageURL}
+          alt={name}
           className="w-full h-full object-cover"
         />
       </div>
       <div className="flex flex-col gap-6 flex-[5]">
-        <h6>{title}</h6>
+        <h6>{name}</h6>
         <div className="flex flex-col gap-2">
           <IconText
             startIcon={<DeliveryIcon />}
@@ -55,8 +54,8 @@ export const PaymentProductCard = ({
             <p className="font-body-lg">{formatUSD(currentPrice)}</p>
           </div>
           <Count
-            quantity={productQuantity}
-            setQuantity={setQuantity}
+            quantity={quantity}
+            productId={id}
           />
         </div>
       </div>

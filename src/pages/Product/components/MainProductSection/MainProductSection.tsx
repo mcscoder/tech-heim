@@ -1,49 +1,54 @@
-import { ProductApi } from "@/api";
 import {
+  Button,
   Chip,
   FilterGroup,
   ProductCard,
-  ProductCardApi,
-  ProductFilterProps,
   SidebarFilter,
 } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
-import { ProductContext } from "@/contexts/Product";
-import { getParamValue } from "@/utils";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useItemsPerPage, useProductContext } from "@/hooks";
+import { useEffect, useMemo } from "react";
 
 export const MainProductSection = () => {
-  const productContext = useContext(ProductContext);
-  const [productGroups, setProductGroups] = useState<
-    ProductFilterProps[] | null
-  >(null);
-  const [products, setProducts] = useState<ProductCardApi[] | null>(null);
+  const {
+    params,
+    getParamValue,
+    getProductGroups,
+    getProducts,
+    productGroups,
+    products,
+  } = useProductContext();
 
   const productTypeIds = useMemo(() => {
-    return getParamValue(productContext.params, "productTypeId")?.split("-");
-  }, [getParamValue(productContext.params, "productTypeId")]);
+    return getParamValue("productTypeId")?.split("-");
+  }, [getParamValue("productTypeId")]);
 
+  const {
+    itemsPerPage,
+    updateItemsPerPage,
+    increaseItemsPerPage,
+    isItemsPerPageMaximized,
+  } = useItemsPerPage(6, products?.length);
+
+  // Handle get product group depend on category
   useEffect(() => {
     if (location.search === "") {
       return;
     }
-    ProductApi.getProductGroup(location.search).then(
-      (productGroups: ProductFilterProps[]) => {
-        setProductGroups(productGroups);
-      }
-    );
-  }, [getParamValue(productContext.params, "categoryId")]);
+    getProductGroups();
+  }, [getParamValue("categoryId")]);
 
+  // Handle get product items depend on params
   useEffect(() => {
     if (location.search === "") {
       return;
     }
-    ProductApi.getProduct(location.search).then(
-      (products: ProductCardApi[]) => {
-        setProducts(products);
-      }
-    );
-  }, [productContext.params]);
+    getProducts();
+  }, [params]);
+
+  useEffect(() => {
+    updateItemsPerPage(6, products?.length);
+  }, [products]);
 
   if (productGroups === null || products === null) {
     return <></>;
@@ -81,17 +86,28 @@ export const MainProductSection = () => {
             );
           })}
         </SidebarFilter>
-        <ProductGridWrapper className="flex-1">
-          {products?.map((product, index) => {
-            return (
-              <ProductCard
-                key={index}
-                to={"#"}
-                {...product}
-              />
-            );
-          })}
-        </ProductGridWrapper>
+        <div className="flex flex-col flex-1 gap-24">
+          <ProductGridWrapper className="flex-1">
+            {products?.slice(0, itemsPerPage).map((product, index) => {
+              return (
+                <ProductCard
+                  key={index}
+                  {...product}
+                />
+              );
+            })}
+          </ProductGridWrapper>
+          <div className="flex justify-center">
+            <Button
+              variant="outlined"
+              onClick={() => increaseItemsPerPage(6)}
+              disabled={isItemsPerPageMaximized()}
+              className="px-12"
+            >
+              More
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -22,3 +22,5 @@ export * from "./Method";
 export * from "./ContactMethod";
 export * from "./Chip";
 export * from "./FAQ";
+export * from "./AccountSidebar";
+export * from "./PersonalData";

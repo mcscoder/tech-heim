@@ -10,7 +10,7 @@ import {
 
 export const Home = () => {
   return (
-    <Wrapper className="gap-12 mb-10">
+    <Wrapper className="gap-20 mb-10">
       <HeroSection />
       <CategorySection />
       <SaleSection />

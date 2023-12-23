@@ -1,98 +1,40 @@
-import { ProductTypes } from "@/types";
+import { CartTypes } from "@/types";
 
-export const paramKeyValuePair = (
-  key: ProductTypes.SearchParamKeys,
-  value: string
-) => {
-  // computed property name
-  return { [key]: value };
-};
+export type PricedProductType = Pick<
+  CartTypes.CartItem,
+  "currentPrice" | "lastPrice" | "quantity"
+>;
 
-export const getParamValue = (
-  params: URLSearchParams,
-  key: ProductTypes.SearchParamKeys
-) => {
-  return params.get(key);
-};
+export interface TotalProductPriceType {
+  totalCurrentPrice: number;
+  totalLastPrice: number | null;
+}
 
-export const getParams = (
-  params: URLSearchParams
-): ProductTypes.SearchParamTypes => {
-  const categoryId = getParamValue(params, "categoryId");
-  const productTypeId = getParamValue(params, "productTypeId");
-  const sort = getParamValue(params, "sort");
-
+export const getTotalProductPrice = ({
+  quantity,
+  currentPrice,
+  lastPrice,
+}: PricedProductType): TotalProductPriceType => {
   return {
-    ...(categoryId && { categoryId: categoryId }),
-    ...(productTypeId && { productTypeId: productTypeId }),
-    ...((sort === "ascending" || sort === "descending") && { sort: sort }),
+    totalCurrentPrice: quantity * currentPrice,
+    totalLastPrice: lastPrice ? lastPrice * quantity : null,
   };
 };
 
-export const categoryId = (
-  params: URLSearchParams,
-  value: string
-): ProductTypes.SearchParamTypes => {
-  const currentParams: ProductTypes.SearchParamTypes = getParams(params);
-  return {
-    ...currentParams,
-    categoryId: value,
-  };
-};
+export const getTotalCartPrice = (
+  pricedProducts: PricedProductType[]
+): TotalProductPriceType => {
+  let totalCurrentPrice = 0;
+  let totalLastPrice = 0;
 
-export const productTypeId = (
-  params: URLSearchParams,
-  value: string,
-  remove: boolean = false
-): ProductTypes.SearchParamTypes => {
-  const currentParams: ProductTypes.SearchParamTypes = getParams(params);
-  const productTypeId = currentParams.productTypeId?.split("-");
-
-  // Handle initial productTypeId
-  if (productTypeId === undefined) {
-    return {
-      ...currentParams,
-      productTypeId: value,
-    };
-  }
-
-  // Handle add or remove filter
-  if (remove) {
-    // Handle remove
-    const indexToRemove = productTypeId.indexOf(value);
-    productTypeId.splice(indexToRemove, 1);
-  } else {
-    // Handle add
-    productTypeId.push(value);
-  }
-
-  // Remove object key if there is nothing filter
-  if (productTypeId.length === 0) {
-    delete currentParams.productTypeId;
-    return currentParams;
+  for (const product of pricedProducts) {
+    totalCurrentPrice += product.currentPrice * product.quantity;
+    totalLastPrice +=
+      (product.lastPrice || product.currentPrice) * product.quantity;
   }
 
   return {
-    ...currentParams,
-    productTypeId: productTypeId.join("-"),
+    totalCurrentPrice: totalCurrentPrice,
+    totalLastPrice: totalLastPrice,
   };
-};
-
-export const sort = (
-  params: URLSearchParams,
-  value: ProductTypes.SortTypes
-): ProductTypes.SearchParamTypes => {
-  const currentParams: ProductTypes.SearchParamTypes = getParams(params);
-  return {
-    ...currentParams,
-    sort: value,
-  };
-};
-
-export const clearProductType = (
-  params: URLSearchParams
-): ProductTypes.SearchParamTypes => {
-  const currentParams: ProductTypes.SearchParamTypes = getParams(params);
-  delete currentParams.productTypeId;
-  return currentParams;
 };

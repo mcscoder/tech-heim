@@ -1,45 +1,32 @@
+import { forwardRef } from "react";
+
 type CheckBoxProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   "type"
 > & {
   inputID: string;
-  startLabel?: string;
-  endLabel?: string;
 };
 
-export const CheckBox = ({
-  inputID,
-  startLabel,
-  endLabel,
-  className = "",
-  ...props
-}: CheckBoxProps) => {
-  return (
-    <div className={`inline-flex items-center ${className}`}>
-      {startLabel && (
+// https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forward_and_create_ref/
+export const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
+  function CheckBox({ inputID, ...props }, ref) {
+    return (
+      <>
         <label
           htmlFor={inputID}
-          className="pl-2 font-body-md text-gray-71 select-none cursor-pointer"
+          className="p-[3px] rounded-full border border-gray-71 cursor-pointer"
         >
-          {startLabel}
+          <input
+            id={inputID}
+            type="checkbox"
+            className="peer"
+            hidden
+            ref={ref}
+            {...props}
+          />
+          <div className="w-3 h-3 rounded-full peer-checked:bg-Primary"></div>
         </label>
-      )}
-      <div className="relative rounded-lg overflow-hidden w-[22px] h-[22px] border border-gray-71">
-        <input
-          id={inputID}
-          type="checkbox"
-          className="absolute top-[-1px] right-[-1px] bottom-[-1px] left-[-1px] rounded-lg cursor-pointer"
-          {...props}
-        />
-      </div>
-      {endLabel && (
-        <label
-          htmlFor={inputID}
-          className="pl-2 font-body-md text-gray-71 select-none cursor-pointer"
-        >
-          {endLabel}
-        </label>
-      )}
-    </div>
-  );
-};
+      </>
+    );
+  }
+);

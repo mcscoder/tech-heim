@@ -1,48 +1,48 @@
-import { getRequest } from "@/api";
-import {
-  ProductCard,
-  ProductCardApi,
-  SectionTitle,
-} from "@/components/Elements";
+import { Button, ProductCard, SectionTitle } from "@/components/Elements";
 import { ProductGridWrapper } from "@/components/Layouts";
-import { ArrowRightIcon, productRoute } from "@/constants";
-import { useEffect, useState } from "react";
+import { ArrowRightIcon } from "@/constants";
+import { useHomeProductState, useItemsPerPage } from "@/hooks";
+import { useEffect } from "react";
 
 export const NewProductSection = () => {
-  const [newProducts, setNewProducts] = useState<ProductCardApi[] | null>(null);
+  const { products, getNewProducts } = useHomeProductState();
+
+  const { itemsPerPage, increaseItemsPerPage, isItemsPerPageMaximized } =
+    useItemsPerPage(4, products?.length);
 
   useEffect(() => {
-    getRequest("productNews", "").then((data: ProductCardApi[]) => {
-      setNewProducts(data);
-    });
+    getNewProducts();
   }, []);
 
-  if (newProducts === null) {
-    return;
-  }
-
   return (
-    <section className="content-container flex flex-col gap-8">
-      <SectionTitle
-        title="New Products"
-        linkIcon={<ArrowRightIcon />}
-        linkLabel="View all"
-      />
-      <ProductGridWrapper>
-        {newProducts.map((product) => {
-          return (
-            <ProductCard
-              key={product.id}
-              to={productRoute(`${product.id}`)}
-              title={product.title}
-              imgURL={product.imgURL}
-              lastPrice={product.lastPrice}
-              currentPrice={product.currentPrice}
-              rate={product.rate}
-            />
-          );
-        })}
-      </ProductGridWrapper>
+    <section className="content-container flex flex-col gap-24">
+      <div className="flex flex-col gap-8">
+        <SectionTitle
+          title="New Products"
+          linkIcon={<ArrowRightIcon />}
+          linkLabel="View all"
+        />
+        <ProductGridWrapper>
+          {products?.slice(0, itemsPerPage).map((product, index) => {
+            return (
+              <ProductCard
+                key={index}
+                {...product}
+              />
+            );
+          })}
+        </ProductGridWrapper>
+      </div>
+      <div className="flex justify-center">
+        <Button
+          variant="outlined"
+          onClick={() => increaseItemsPerPage(4)}
+          disabled={isItemsPerPageMaximized()}
+          className="px-12"
+        >
+          More
+        </Button>
+      </div>
     </section>
   );
 };

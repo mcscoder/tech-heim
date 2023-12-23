@@ -23,7 +23,7 @@ export const LoginModal = ({
 
   return (
     <Overlay
-      onClick={onClick}
+      onCLickClose={onClick}
       className="flex items-center justify-center"
     >
       <div

@@ -3,22 +3,22 @@ const VARIANTS = {
   header: "top-[100px]",
 };
 
-interface OverlayProps {
+export interface OverlayProps {
   variant?: keyof typeof VARIANTS;
-  onClick?: () => void;
+  onCLickClose?: () => void;
   children?: React.ReactNode;
   className?: string;
 }
 
 export const Overlay = ({
   variant = "full",
-  onClick = () => {},
+  onCLickClose = () => {},
   children,
   className = "",
   ...props
 }: OverlayProps) => {
   const handleOnClick = () => {
-    onClick();
+    onCLickClose();
   };
 
   return (

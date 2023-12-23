@@ -3,8 +3,8 @@ import { LoginModal } from "@/components/LoginModal";
 import { ProfileMenu } from "@/components/ProfileMenu";
 import { UserIcon } from "@/constants";
 import { AuthContext } from "@/contexts";
-// import { UserIcon } from "@/constants";
 import { useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router";
 
 export const AccountButton = () => {
   const [loginModal, setLoginModal] = useState<boolean>(false);
@@ -14,7 +14,7 @@ export const AccountButton = () => {
   useEffect(() => {
     setLoginModal(false);
     setProfileMenu(false);
-  }, [loginContext?.authState.user]);
+  }, [loginContext?.authState.user, useLocation().pathname]);
 
   const isAuthenticated = loginContext?.authState.user; // null if not yet authenticated
 

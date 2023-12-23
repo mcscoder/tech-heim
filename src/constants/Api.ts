@@ -1,4 +1,5 @@
-export const apiURL = "https://8c75-116-98-98-130.ngrok-free.app";
+// export const apiURL = "http://172.20.10.3:8080";
+export const apiURL = "http://25.30.27.67:8080";
 export const apiEndPoint = {
   users: "/users",
   homeCategories: "/home-categories",
@@ -7,5 +8,14 @@ export const apiEndPoint = {
   productBestSellers: "/product-best-sellers",
   productGroup: "/productGroup",
   product: "/product",
+  user: "/user",
+  login: "/user/login",
+  signup: "/user/signup",
+  cart: "/user/cart",
+  code: "/user/code",
+  newPassword: "/user/new-password",
+  wishlist: "/user/wishlist",
+  comment: "/product/comment",
+  homeProduct: "/home/product",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;

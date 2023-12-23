@@ -1,8 +1,3 @@
-import { getRequest } from "@/api";
-import { Category } from "@/components/Elements";
-import { productCategoryRoute } from "@/constants";
-import { useEffect, useState } from "react";
-
 export interface HomeCategoriesApi {
   id: number;
   category: string;
@@ -10,23 +5,9 @@ export interface HomeCategoriesApi {
 }
 
 export const CategorySection = () => {
-  const [categories, setCategories] = useState<HomeCategoriesApi[] | null>(
-    null
-  );
-
-  useEffect(() => {
-    getRequest("homeCategories", "").then((data: HomeCategoriesApi[]) => {
-      setCategories(data);
-    });
-  }, []);
-
-  if (categories === null) {
-    return;
-  }
-
   return (
     <section className="content-container flex justify-between my-2">
-      {categories.map((category) => {
+      {/* {categories.map((category) => {
         return (
           <Category
             key={category.id}
@@ -35,7 +16,7 @@ export const CategorySection = () => {
             imgURL={category.imgURL}
           />
         );
-      })}
+      })} */}
     </section>
   );
 };

@@ -1,63 +1,85 @@
-import { userLoginAuth } from "@/api/Auth";
-import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
+import {
+  Button,
+  ChangePasswordOverlay,
+  Form,
+  Input,
+} from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon } from "@/constants";
-import { AuthContext } from "@/contexts";
-import { login, resetError } from "@/redux";
+import { useAuthContext } from "@/hooks";
+import { resetError } from "@/redux";
 import { AuthTypes } from "@/types";
-import { useContext, useEffect, useRef } from "react";
+import { handleEmailFormat, handleShowPassword } from "@/utils";
+import { useEffect, useRef, useState } from "react";
 
 export const LoginForm = () => {
-  const context = useContext(AuthContext);
+  const { authState, authDispatch, handleUserLogin } = useAuthContext();
+
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
 
+  const [isForgetPassword, setForgetPassword] = useState<boolean>(false);
+
   useEffect(() => {
-    context?.authDispatch(resetError());
+    authDispatch(resetError());
   }, []);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Get email and password
     const email = emailInputRef.current?.value || "";
     const password = passwordInputRef.current?.value || "";
 
-    userLoginAuth({ email: email, password: password }).then(
-      (users: AuthTypes.User[]) => {
-        const user: AuthTypes.User = users[0] || null;
-        context?.authDispatch(login(user));
-      }
-    );
+    // Create user login object
+    const userLogin: AuthTypes.UserLogin = {
+      email: email,
+      password: password,
+    };
+
+    // Handle request to the server
+    handleUserLogin(userLogin);
   };
 
   return (
-    <Form
-      onSubmit={handleFormSubmit}
-      className="flex flex-col gap-3"
-      error={context?.authState.error}
-    >
-      <h3 className="text-center">Log in to Tech Heim</h3>
-      <Input
-        startIcon={<EMailIcon />}
-        placeholder="E-mail"
-        ref={emailInputRef}
-        required
-      />
-      <Input
-        startIcon={<KeyIcon />}
-        placeholder="Password"
-        endIcon={<EyeIcon />}
-        type="password"
-        ref={passwordInputRef}
-        required
-      />
-      <Link className="justify-end text-primary-100 hover:text-Primary">
-        Forgot Password?
-      </Link>
-      <CheckBox
-        inputID="save-login"
-        endLabel="Keep me logged in"
-      />
-      <Button type="submit">Log In</Button>
-    </Form>
+    <>
+      {isForgetPassword && (
+        <ChangePasswordOverlay onCLickClose={() => setForgetPassword(false)} />
+      )}
+      <Form
+        onSubmit={handleFormSubmit}
+        className="flex flex-col gap-3"
+        error={authState.login.error}
+      >
+        <h3 className="text-center">Log in to Tech Heim</h3>
+        <Input
+          label="E-mail"
+          startIcon={<EMailIcon />}
+          placeholder="E-mail"
+          ref={emailInputRef}
+          required
+          onChange={(e) => handleEmailFormat(e, emailInputRef)}
+        />
+        <Input
+          label="Password"
+          startIcon={<KeyIcon />}
+          placeholder="Password"
+          endIcon={<EyeIcon />}
+          onEndIconClick={() => handleShowPassword(passwordInputRef)}
+          type="password"
+          ref={passwordInputRef}
+          required
+        />
+        <div className="flex justify-end">
+          <Button
+            variant="text"
+            type="button"
+            onClick={() => setForgetPassword(true)}
+          >
+            Forgot password ?
+          </Button>
+        </div>
+        <Button type="submit">Log In</Button>
+      </Form>
+    </>
   );
 };

@@ -1,82 +1,112 @@
-import { userLoginAuth, userRegisterAuth } from "@/api/Auth";
 import { Button, CheckBox, Form, Input, Link } from "@/components/Elements";
 import { EMailIcon, EyeIcon, KeyIcon, UserIcon } from "@/constants";
-import { AuthContext } from "@/contexts";
+import { useAuthContext } from "@/hooks";
 import { register, resetError } from "@/redux";
 import { AuthTypes } from "@/types";
-import { useContext, useEffect, useRef } from "react";
+import { handleEmailFormat, handleShowPassword } from "@/utils";
+import { useEffect, useRef } from "react";
 
 export const RegisterForm = () => {
-  const context = useContext(AuthContext);
+  const { authState, authDispatch, handleUserRegister } = useAuthContext();
 
-  const fullNameInputRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
-  const passwordInputRef = useRef<HTMLInputElement>(null);
+  const firstNameInputRef = useRef<HTMLInputElement>(null);
+  const lastNameInputRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const rePasswordRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    context?.authDispatch(resetError());
+    authDispatch(resetError());
   }, []);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const fullName = fullNameInputRef.current?.value || "";
-    const email = emailInputRef.current?.value || "";
-    const password = passwordInputRef.current?.value || "";
+    const firstName = firstNameInputRef.current?.value || "";
+    const lastName = lastNameInputRef.current?.value || "";
+    const email = emailRef.current?.value || "";
+    const password = passwordRef.current?.value || "";
+    const rePassword = rePasswordRef.current?.value || "";
 
-    userLoginAuth({ email: email, password: password }).then(
-      (users: AuthTypes.User[]) => {
-        const user = users[0] || null;
-        // if user is present that mean user is exists
-        if (user) {
-          context?.authDispatch(register(null));
-          return;
-        }
-        // if not we send a post request to create new user
-        userRegisterAuth({
-          fullName: fullName,
-          email: email,
-          password: password,
-        }).then((user: AuthTypes.User) => {
-          context?.authDispatch(register(user));
-        });
-      }
-    );
+    const userRegister: AuthTypes.UserRegister = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
+    console.log(userRegister);
+
+    if (password !== rePassword) {
+      authDispatch(register(false, "Password doesn't match"));
+      return;
+    }
+
+    // Handle request to the server
+    handleUserRegister(userRegister);
   };
 
   return (
     <Form
       onSubmit={handleFormSubmit}
       className="flex flex-col gap-3"
-      error={context?.authState.error}
+      error={authState.register.error}
     >
       <h3 className="text-center">Create your account</h3>
+      <div className="flex gap-2">
+        <Input
+          label="First name"
+          startIcon={<UserIcon />}
+          placeholder="First name"
+          ref={firstNameInputRef}
+          required
+        />
+        <Input
+          label="Last name"
+          startIcon={<UserIcon />}
+          placeholder="Last name"
+          ref={lastNameInputRef}
+          required
+        />
+      </div>
       <Input
-        startIcon={<UserIcon />}
-        placeholder="Full Name"
-        ref={fullNameInputRef}
-        required
-      />
-      <Input
+        label="E-mail"
         startIcon={<EMailIcon />}
         placeholder="E-mail"
-        ref={emailInputRef}
+        ref={emailRef}
         required
+        onChange={(e) => handleEmailFormat(e, emailRef)}
       />
       <Input
+        label="Password"
         startIcon={<KeyIcon />}
         placeholder="Password"
         endIcon={<EyeIcon />}
-        ref={passwordInputRef}
+        onEndIconClick={() => handleShowPassword(passwordRef)}
+        ref={passwordRef}
+        type="password"
+        required
+      />
+      <Input
+        label="Re-type password"
+        startIcon={<KeyIcon />}
+        placeholder="Password"
+        endIcon={<EyeIcon />}
+        onEndIconClick={() => handleShowPassword(rePasswordRef)}
+        ref={rePasswordRef}
         type="password"
         required
       />
       <div className="flex items-center gap-2">
         <CheckBox
           inputID="agree-term"
-          endLabel="I agree to all"
           required
         />
+        <label
+          htmlFor="agree-term"
+          className="font-body-md text-gray-71 cursor-pointer"
+        >
+          I agree to all
+        </label>
         <Link
           to="#"
           className="text-Primary font-underline-primary"

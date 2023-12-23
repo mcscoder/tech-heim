@@ -12,6 +12,10 @@ interface MessageProps {
   className?: string;
 }
 
+export interface MessageType {
+  message: string;
+}
+
 export const Message = ({
   variant,
   startIcon,

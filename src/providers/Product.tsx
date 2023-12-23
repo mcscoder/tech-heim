@@ -1,21 +1,35 @@
-import { ProductContext } from "@/contexts/Product";
+import { ProductContext } from "@/contexts";
+import { useProductContext } from "@/hooks";
 import { Product } from "@/pages";
-import { getParamValue, paramKeyValuePair } from "@/utils";
-import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { initialProductState, productReducer } from "@/redux";
+import { useEffect, useReducer } from "react";
 
-export const ProductProvider = () => {
-  const [params, setParams] = useSearchParams();
+interface InitialParamStateProps {
+  children: React.ReactNode;
+}
+
+const InitialParamState = ({ children }: InitialParamStateProps) => {
+  const { setParams, getParamValue, paramKeyValuePair } = useProductContext();
 
   useEffect(() => {
-    if (getParamValue(params, "categoryId") === null) {
+    if (getParamValue("categoryId") === null) {
       setParams(paramKeyValuePair("categoryId", "1"));
     }
   }, []);
+  return children;
+};
+
+export const ProductProvider = () => {
+  const [productState, productDispatch] = useReducer(
+    productReducer,
+    initialProductState
+  );
 
   return (
-    <ProductContext.Provider value={{ params, setParams }}>
-      <Product />
+    <ProductContext.Provider value={{ productState, productDispatch }}>
+      <InitialParamState>
+        <Product />
+      </InitialParamState>
     </ProductContext.Provider>
   );
 };

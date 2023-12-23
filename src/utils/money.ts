@@ -6,9 +6,14 @@ export const formatCurrency = (amount: number, currency: string) => {
 };
 
 export const formatUSD = (amount: number) => {
-  return formatCurrency(amount, "USD");
+  // return formatCurrency(amount, "USD");
+  return formatCurrency(amount, "VND");
 };
 
 export const getPercentage = (lastPrice: number, currentPrice: number) => {
-  return (currentPrice / lastPrice) * 100;
+  return Math.round((currentPrice / lastPrice) * 100);
+};
+
+export const getDiscount = (lastPrice: number, currentPrice: number) => {
+  return getPercentage(lastPrice, currentPrice) - 100;
 };

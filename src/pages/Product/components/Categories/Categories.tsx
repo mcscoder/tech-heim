@@ -10,9 +10,7 @@ import {
   TabletIcon,
   WatchStatusIcon,
 } from "@/constants";
-import { ProductContext } from "@/contexts/Product";
-import { getParamValue, paramKeyValuePair, productTypeId } from "@/utils";
-import { useContext } from "react";
+import { useProductContext } from "@/hooks";
 
 export const categoryItems: ProductCategoryProps[] = [
   {
@@ -54,16 +52,13 @@ export const categoryItems: ProductCategoryProps[] = [
 ];
 
 export const Categories = () => {
-  const productContext = useContext(ProductContext);
+  const { setParams, getParamValue, paramKeyValuePair } = useProductContext();
 
   return (
     <section className="content-container flex items-center justify-center gap-8">
       {categoryItems.map((categoryItem, index) => {
         const categoryId = index + 1;
-        const currentCategoryId = getParamValue(
-          productContext.params,
-          "categoryId"
-        );
+        const currentCategoryId = getParamValue("categoryId");
         return (
           <ProductCategory
             key={categoryId}
@@ -71,22 +66,11 @@ export const Categories = () => {
             icon={categoryItem.icon}
             label={categoryItem.label}
             onClick={() =>
-              productContext.setParams(
-                paramKeyValuePair("categoryId", `${categoryId}`)
-              )
+              setParams(paramKeyValuePair("categoryId", `${categoryId}`))
             }
           />
         );
       })}
-      <ProductCategory
-        icon={<LaptopIcon />}
-        label="Test Button"
-        onClick={() =>
-          productContext.setParams({
-            ...productTypeId(productContext.params, "something"),
-          })
-        }
-      />
     </section>
   );
 };

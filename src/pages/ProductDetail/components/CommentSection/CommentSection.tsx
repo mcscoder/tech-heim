@@ -1,28 +1,9 @@
-import { Comment, CommentField, CommentProps } from "@/components/Elements";
-
-const commentsData: CommentProps[] = [
-  {
-    username: "Alice Johnson",
-    rate: 4,
-    description:
-      "This is a great product! I really liked it. The quality is outstanding, and it exceeded my expectations. The packaging was also excellent, ensuring that the product arrived in perfect condition.",
-  },
-  {
-    username: "Bob Smith",
-    rate: 5,
-    description:
-      "Excellent service and fast delivery. I ordered this product, and it arrived sooner than I expected. The customer service was responsive and helpful. Overall, a very positive experience.",
-  },
-  {
-    username: "Charlie Brown",
-    rate: 3,
-    description:
-      "Good quality but a bit expensive. The product itself is of good quality, and I'm satisfied with its performance. However, I find the price to be on the higher side compared to similar products in the market.",
-  },
-  // Add more comments as needed
-];
+import { Comment, CommentField } from "@/components/Elements";
+import { useProductDetailContext } from "@/hooks";
 
 export const CommentSection = () => {
+  const { productDetail } = useProductDetailContext();
+
   return (
     <section className="content-container flex flex-col mb-12">
       <h5>Comments</h5>
@@ -34,12 +15,18 @@ export const CommentSection = () => {
           <CommentField />
         </div>
         <div className="flex flex-col gap-4 flex-[3]">
-          {commentsData.map((comment, index) => (
-            <Comment
-              key={index}
-              {...comment}
-            />
-          ))}
+          {productDetail.productComment ? (
+            productDetail.productComment.map((comment, index) => (
+              <Comment
+                key={index}
+                {...comment}
+              />
+            ))
+          ) : (
+            <div className="flex items-center justify-center h-full">
+              <p className="font-body-xl text-gray-71">No comments yet</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

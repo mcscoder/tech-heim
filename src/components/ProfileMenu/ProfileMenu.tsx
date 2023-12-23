@@ -24,10 +24,10 @@ export const ProfileMenu = () => {
     <div className="w-[300px] bg-white shadow-1 border border-solid border-black/5 rounded-b-lg absolute top-full right-0 mt-[1px] p-4">
       <div className="flex flex-col">
         <Subcategory
-          to="#"
+          to="/account/personal-data"
           startIcon={<UserCircleIcon />}
         >
-          {authContext?.authState.user?.fullName}
+          {`${authContext?.authState.user?.firstName} ${authContext?.authState.user?.lastName}`}
         </Subcategory>
         <Subcategory
           to="#"
@@ -36,7 +36,7 @@ export const ProfileMenu = () => {
           Orders
         </Subcategory>
         <Subcategory
-          to="#"
+          to="/account/wish-list"
           startIcon={<HeartIcon />}
         >
           Wish List

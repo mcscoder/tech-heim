@@ -27,7 +27,7 @@ export const navigationLinks: NavigationLinkObject[] = [
     label: "Home",
   },
   {
-    path: "/product",
+    path: "/product?categoryId=1",
     label: "Products",
   },
   {

@@ -3,30 +3,47 @@ import { ProductGridWrapper } from "@/components/Layouts";
 
 const productList = [
   {
-    title: "Apple 2022 MacBook Pro Laptop with M2 chip 14-inch",
-    imgURL:
-      "https://s3-alpha-sig.figma.com/img/1fcd/36c3/3985708556a86f4cc5c672a8ca34e7a3?Expires=1702252800&Signature=B5fh~qYZV-NyGr7R40xi2MGk1OVKdWNXqnKkLgLeOk8rkBZ~hUVD1dsZCT0lAkxPjwdVkZurYxjEcGwns96mMlt2nARj5YwlEddBtHReOi7AoQwC3QFyVTwnvyso2UoWlEl~EhtfnLCMt3lbUWFYtBFBqrRA8TpInrdSXMkduFGfBvt1FuZ6hJSnkm5RcZJBWCnUzYSj9wVsf~ID-s5Hs13NSliM~OjrEw7vsi5-yyrRWu3FqjA-XnOqIzhFFf-FWgBBjYHzrPkltR~NXYCJ7XB3rbSxksdKVKquCFRXO-MwyBPM848dep8SDW-fibaOYyRd8i3sciyUZ8NIZu-Cbg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    name: "Apple 2022 MacBook Pro Laptop with M2 chip 14-inch",
+    productImage: [
+      {
+        imageURL:
+          "https://s3-alpha-sig.figma.com/img/924c/cba2/fe0805396358291d7f8fad4e3e7602e9?Expires=1703462400&Signature=IyJn-WFmfQgTfYo4b9Y6SGyApYD9ELCARkT~ok6fkPzoO1A~D8Z2aI1kmk46cmRKNUmIL~qEHIRwaKHU14gpEa~mwhxwYGDPR4f2Lk0nhYaqzO3FQ~AJqIkF~-XnnsWaiN0QcjSIv82zqahghu0sdYJiSp4F5CLQpcBR9nd5rXarDIyF6aY2555wsz4bU1OeR9wZd0M3WWaCHawln76rbNYv~Zy-0GP-InrLueXWUvnMxzRuiiM4Ou--wGQdfs1Gg5BI8IidhxYHZnRa3mMNLtb6qkT~8Cu~WJ29XsOLa21TXINkGpyxddxks3F~pyzjLRznPAIt--ycDt2CniYG5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      },
+    ],
     currentPrice: 109900,
     rate: 4.7,
   },
   {
-    title: "Apple 2022 MacBook Air Laptop with M2 chip",
-    imgURL:
-      "https://s3-alpha-sig.figma.com/img/1fcd/36c3/3985708556a86f4cc5c672a8ca34e7a3?Expires=1702252800&Signature=B5fh~qYZV-NyGr7R40xi2MGk1OVKdWNXqnKkLgLeOk8rkBZ~hUVD1dsZCT0lAkxPjwdVkZurYxjEcGwns96mMlt2nARj5YwlEddBtHReOi7AoQwC3QFyVTwnvyso2UoWlEl~EhtfnLCMt3lbUWFYtBFBqrRA8TpInrdSXMkduFGfBvt1FuZ6hJSnkm5RcZJBWCnUzYSj9wVsf~ID-s5Hs13NSliM~OjrEw7vsi5-yyrRWu3FqjA-XnOqIzhFFf-FWgBBjYHzrPkltR~NXYCJ7XB3rbSxksdKVKquCFRXO-MwyBPM848dep8SDW-fibaOYyRd8i3sciyUZ8NIZu-Cbg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    name: "Apple 2022 MacBook Air Laptop with M2 chip",
+    productImage: [
+      {
+        imageURL:
+          "https://s3-alpha-sig.figma.com/img/924c/cba2/fe0805396358291d7f8fad4e3e7602e9?Expires=1703462400&Signature=IyJn-WFmfQgTfYo4b9Y6SGyApYD9ELCARkT~ok6fkPzoO1A~D8Z2aI1kmk46cmRKNUmIL~qEHIRwaKHU14gpEa~mwhxwYGDPR4f2Lk0nhYaqzO3FQ~AJqIkF~-XnnsWaiN0QcjSIv82zqahghu0sdYJiSp4F5CLQpcBR9nd5rXarDIyF6aY2555wsz4bU1OeR9wZd0M3WWaCHawln76rbNYv~Zy-0GP-InrLueXWUvnMxzRuiiM4Ou--wGQdfs1Gg5BI8IidhxYHZnRa3mMNLtb6qkT~8Cu~WJ29XsOLa21TXINkGpyxddxks3F~pyzjLRznPAIt--ycDt2CniYG5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      },
+    ],
     currentPrice: 199900,
     rate: 4.7,
   },
   {
-    title: "Apple 2023 MacBook Air Laptop with M2 chip: 15.3-inch",
-    imgURL:
-      "https://s3-alpha-sig.figma.com/img/1fcd/36c3/3985708556a86f4cc5c672a8ca34e7a3?Expires=1702252800&Signature=B5fh~qYZV-NyGr7R40xi2MGk1OVKdWNXqnKkLgLeOk8rkBZ~hUVD1dsZCT0lAkxPjwdVkZurYxjEcGwns96mMlt2nARj5YwlEddBtHReOi7AoQwC3QFyVTwnvyso2UoWlEl~EhtfnLCMt3lbUWFYtBFBqrRA8TpInrdSXMkduFGfBvt1FuZ6hJSnkm5RcZJBWCnUzYSj9wVsf~ID-s5Hs13NSliM~OjrEw7vsi5-yyrRWu3FqjA-XnOqIzhFFf-FWgBBjYHzrPkltR~NXYCJ7XB3rbSxksdKVKquCFRXO-MwyBPM848dep8SDW-fibaOYyRd8i3sciyUZ8NIZu-Cbg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    name: "Apple 2023 MacBook Air Laptop with M2 chip: 15.3-inch",
+    productImage: [
+      {
+        imageURL:
+          "https://s3-alpha-sig.figma.com/img/924c/cba2/fe0805396358291d7f8fad4e3e7602e9?Expires=1703462400&Signature=IyJn-WFmfQgTfYo4b9Y6SGyApYD9ELCARkT~ok6fkPzoO1A~D8Z2aI1kmk46cmRKNUmIL~qEHIRwaKHU14gpEa~mwhxwYGDPR4f2Lk0nhYaqzO3FQ~AJqIkF~-XnnsWaiN0QcjSIv82zqahghu0sdYJiSp4F5CLQpcBR9nd5rXarDIyF6aY2555wsz4bU1OeR9wZd0M3WWaCHawln76rbNYv~Zy-0GP-InrLueXWUvnMxzRuiiM4Ou--wGQdfs1Gg5BI8IidhxYHZnRa3mMNLtb6qkT~8Cu~WJ29XsOLa21TXINkGpyxddxks3F~pyzjLRznPAIt--ycDt2CniYG5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      },
+    ],
     currentPrice: 139900,
     rate: 4.7,
   },
   {
-    title: "Apple 2022 MacBook Air Laptop with M2 chip",
-    imgURL:
-      "https://s3-alpha-sig.figma.com/img/1fcd/36c3/3985708556a86f4cc5c672a8ca34e7a3?Expires=1702252800&Signature=B5fh~qYZV-NyGr7R40xi2MGk1OVKdWNXqnKkLgLeOk8rkBZ~hUVD1dsZCT0lAkxPjwdVkZurYxjEcGwns96mMlt2nARj5YwlEddBtHReOi7AoQwC3QFyVTwnvyso2UoWlEl~EhtfnLCMt3lbUWFYtBFBqrRA8TpInrdSXMkduFGfBvt1FuZ6hJSnkm5RcZJBWCnUzYSj9wVsf~ID-s5Hs13NSliM~OjrEw7vsi5-yyrRWu3FqjA-XnOqIzhFFf-FWgBBjYHzrPkltR~NXYCJ7XB3rbSxksdKVKquCFRXO-MwyBPM848dep8SDW-fibaOYyRd8i3sciyUZ8NIZu-Cbg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    name: "Apple 2022 MacBook Air Laptop with M2 chip",
+    productImage: [
+      {
+        imageURL:
+          "https://s3-alpha-sig.figma.com/img/924c/cba2/fe0805396358291d7f8fad4e3e7602e9?Expires=1703462400&Signature=IyJn-WFmfQgTfYo4b9Y6SGyApYD9ELCARkT~ok6fkPzoO1A~D8Z2aI1kmk46cmRKNUmIL~qEHIRwaKHU14gpEa~mwhxwYGDPR4f2Lk0nhYaqzO3FQ~AJqIkF~-XnnsWaiN0QcjSIv82zqahghu0sdYJiSp4F5CLQpcBR9nd5rXarDIyF6aY2555wsz4bU1OeR9wZd0M3WWaCHawln76rbNYv~Zy-0GP-InrLueXWUvnMxzRuiiM4Ou--wGQdfs1Gg5BI8IidhxYHZnRa3mMNLtb6qkT~8Cu~WJ29XsOLa21TXINkGpyxddxks3F~pyzjLRznPAIt--ycDt2CniYG5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      },
+    ],
+    lastPrice: 123123123,
     currentPrice: 129900,
     rate: 4.7,
   },
@@ -41,11 +58,12 @@ export const SimilarProductSection = () => {
           return (
             <ProductCard
               to={"#"}
+              id={1}
               key={index}
-              title={item.title}
-              lastPrice={undefined}
+              name={item.name}
+              lastPrice={item.lastPrice || null}
               currentPrice={item.currentPrice}
-              imgURL={item.imgURL}
+              productImage={item.productImage}
               rate={item.rate}
             />
           );
