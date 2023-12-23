@@ -125,10 +125,10 @@
   // productImage table
   "productImage": [
     {
-      "image": "..." // file
+      "imageURL": "..." // string
     },
     {
-      "image": "..." // file
+      "imageURL": "..." // string
     }
     // ...
   ]
