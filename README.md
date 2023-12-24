@@ -31,7 +31,10 @@
     "quantity": "...", // int
     "sold": "...", // int
 
-    //productImage table
+    // categoryId
+    "categoryId": "...", // int
+
+    // productImage table
     "productImage": [
       {
         "imageURL": "..." // string
@@ -53,6 +56,9 @@
     "lastPrice": "...", // double
     "quantity": "...", // int
     "sold": "...", // int
+
+    // categoryId
+    "categoryId": "...", // int
 
     // productImage table
     "productImage": [
