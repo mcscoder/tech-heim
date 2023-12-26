@@ -80,18 +80,12 @@
 
 ## 1.2. Add product (only administrators can perform)
 
+### 1.2.1. Add `product` table
+
 - Endpoint: `/product`
 - Method: `POST`
 
-### Request header
-
-```json
-{
-  "token": "..." // string
-}
-```
-
-### Request body
+#### Request body
 
 ```json
 {
@@ -102,7 +96,28 @@
   "sold": 0, // int
 
   // category table id
-  "categoryId": "...", // int
+  "categoryId": "..." // int
+}
+```
+
+#### Response
+
+```json
+{
+  "productId": "..." // int
+}
+```
+
+### 1.2.2. Add `product_producttype` table
+
+- Endpoint: `/product/product-type`
+- Method: `POST`
+
+#### Request body
+
+```json
+{
+  "productId": "...", // int
 
   // productType table id
   "productTypeId": [
@@ -113,7 +128,28 @@
       "id": 2
     }
     // ...
-  ],
+  ]
+}
+```
+
+#### Response
+
+```json
+{
+  "message": "ok"
+}
+```
+
+### 1.2.3. Add `producttechnical` table
+
+- Endpoint: `/product/product-technical`
+- Method: `POST`
+
+#### Request body
+
+```json
+{
+  "productId": "...", // int
 
   // productTechnical table
   "productTechnical": [
@@ -126,7 +162,28 @@
       "description": "..." // string
     }
     // ...
-  ],
+  ]
+}
+```
+
+#### Response
+
+```json
+{
+  "message": "ok"
+}
+```
+
+### 1.2.4. Add `productimage` table
+
+- Endpoint: `/product/product-image`
+- Method: `POST`
+
+#### Request body
+
+```json
+{
+  "productId": "...", // int
 
   // productImage table
   "productImage": [
@@ -141,11 +198,11 @@
 }
 ```
 
-### Response
+#### Response
 
 ```json
 {
-  "message": "Product has been added" // string
+  "message": "ok"
 }
 ```
 
