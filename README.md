@@ -208,13 +208,15 @@
 
 # 2. Product group
 
+## 2.1. Get product group
+
 - Endpoint: `/productGroup`
 - Method: `GET`
 - Search params:
   - `categoryId=id`
     - Example: `/productGroup?categoryId=2`
 
-### Response json
+### Response
 
 ```json
 [
@@ -270,6 +272,56 @@
   }
   // ...
 ]
+```
+
+## 2.2. Add product group (only administrator can perform this)
+
+- Endpoint: `/productGroup`
+- Method: `POST`
+
+### Request body
+
+```json
+{
+  // category table
+  "categoryId": "...", // int
+
+  // productGroup table
+  "title": "..." // string
+}
+```
+
+### Response
+
+```json
+{
+  "message": "ok"
+}
+```
+
+## 2.3. Add product type (only administrator can perform this)
+
+- Endpoint: `/productType`
+- Method: `POST`
+
+### Request body
+
+```json
+{
+  // productGroup table
+  "productGroupId": "...", // int
+
+  // productType table
+  "title": "..." // string
+}
+```
+
+### Response
+
+```json
+{
+  "message": "ok"
+}
 ```
 
 # 3. User authentication
