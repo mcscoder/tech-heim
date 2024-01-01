@@ -1,20 +1,19 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Input, OverlayForm, UserInput } from "..";
 import { Home2Icon } from "@/constants";
-import { useBooleanState } from "@/hooks";
+import { useAuthContext, useBooleanState } from "@/hooks";
 
 export const Address = () => {
-  const [address, setAddress] = useState<string>(
-    "HubSpot, 25 First Street, Cambridge MA 02141, United States"
-  );
-
+  const { authState, handleChangeAddress } = useAuthContext();
   const { state, setState } = useBooleanState(false);
   const addressRef = useRef<HTMLInputElement>(null);
 
   const handleOnSubmit = () => {
-    // Handle with api here to sync to server
-    setAddress(addressRef.current?.value || "");
-    setState(false);
+    const address = addressRef.current?.value;
+    if (address) {
+      handleChangeAddress({ address });
+      setState(false);
+    }
   };
 
   return (
@@ -23,7 +22,7 @@ export const Address = () => {
         label="Address"
         startIcon={<Home2Icon />}
         editable
-        data={address}
+        data={authState.user?.address || "Empty"}
         onClickEditData={() => setState(true)}
       />
       {state && (
@@ -35,7 +34,7 @@ export const Address = () => {
         >
           <Input
             label="Address"
-            defaultValue={address}
+            defaultValue={authState.user?.address}
             ref={addressRef}
             required
           />

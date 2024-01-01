@@ -95,13 +95,48 @@ export const useAuthContext = () => {
   const handleChangeUserFullName = (userFullName: AuthTypes.UserFullName) => {
     handleCallApi(async () => {
       try {
-        const url = getRequestURL("userFullName");
+        const url = getRequestURL("updateUsername");
         await axios.post(url, userFullName, {
           headers: {
             token: getToken().token,
           },
         });
-        await getUserData();
+        const userDataResponse = await getUserData();
+        authDispatch(login(userDataResponse.data));
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  };
+
+  const handleChangePhoneNumber = (phoneNumber: { phoneNumber: string }) => {
+    handleCallApi(async () => {
+      try {
+        const url = getRequestURL("updatePhoneNumber");
+        await axios.post(url, phoneNumber, {
+          headers: {
+            token: getToken().token,
+          },
+        });
+        const userDataResponse = await getUserData();
+        authDispatch(login(userDataResponse.data));
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  };
+
+  const handleChangeAddress = (address: { address: string }) => {
+    handleCallApi(async () => {
+      try {
+        const url = getRequestURL("updateAddress");
+        await axios.post(url, address, {
+          headers: {
+            token: getToken().token,
+          },
+        });
+        const userDataResponse = await getUserData();
+        authDispatch(login(userDataResponse.data));
       } catch (error) {
         console.log(error);
       }
@@ -115,5 +150,7 @@ export const useAuthContext = () => {
     handleTokenLogin,
     handleUserRegister,
     handleChangeUserFullName,
+    handleChangePhoneNumber,
+    handleChangeAddress,
   };
 };

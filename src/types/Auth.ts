@@ -4,9 +4,14 @@ export interface User {
   lastName: string;
   email: string;
   password: string;
+  phoneNumber: string;
+  address: string;
 }
 
-export type UserData = Pick<User, "firstName" | "lastName" | "email">;
+export type UserData = Pick<
+  User,
+  "firstName" | "lastName" | "email" | "phoneNumber" | "address"
+>;
 
 export type UserLogin = Pick<User, "email" | "password">;
 

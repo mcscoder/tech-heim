@@ -1,19 +1,21 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Input, OverlayForm, UserInput } from "..";
 import { CallIcon } from "@/constants";
 import { handleNumberInput } from "@/utils";
-import { useBooleanState } from "@/hooks";
+import { useAuthContext, useBooleanState } from "@/hooks";
 
 export const PhoneNumber = () => {
-  const [phoneNumber, setPhoneNumber] = useState<string>("123123123");
+  const { authState, handleChangePhoneNumber } = useAuthContext();
 
   const { state, setState } = useBooleanState(false);
   const phoneNumberRef = useRef<HTMLInputElement>(null);
 
   const handleOnSubmit = () => {
-    // Handle with api here to sync to server
-    setPhoneNumber(phoneNumberRef.current?.value || "");
-    setState(false);
+    const phoneNumber = phoneNumberRef.current?.value;
+    if (phoneNumber) {
+      handleChangePhoneNumber({ phoneNumber });
+      setState(false);
+    }
   };
 
   return (
@@ -23,7 +25,7 @@ export const PhoneNumber = () => {
         startIcon={<CallIcon />}
         editable
         onClickEditData={() => setState(true)}
-        data={phoneNumber}
+        data={authState.user?.phoneNumber || "Empty"}
       />
       {state && (
         <OverlayForm
@@ -34,7 +36,7 @@ export const PhoneNumber = () => {
         >
           <Input
             label="Phone number"
-            defaultValue={phoneNumber}
+            defaultValue={authState.user?.phoneNumber}
             ref={phoneNumberRef}
             onChange={handleNumberInput}
             required

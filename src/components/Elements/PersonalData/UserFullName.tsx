@@ -4,14 +4,20 @@ import { useAuthContext, useBooleanState } from "@/hooks";
 import { useRef } from "react";
 
 export const UserFullName = () => {
-  const { authState } = useAuthContext();
+  const { authState, handleChangeUserFullName } = useAuthContext();
 
   const { state, setState } = useBooleanState(false);
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
 
   const handleOnSubmit = () => {
-    // Handle with api here to sync to server
+    const firstName = firstNameRef.current?.value;
+    const lastName = lastNameRef.current?.value;
+
+    if (firstName && lastName) {
+      handleChangeUserFullName({ firstName, lastName });
+      setState(false);
+    }
   };
 
   return (

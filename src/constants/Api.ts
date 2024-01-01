@@ -10,7 +10,6 @@ export const apiEndPoint = {
   productGroup: "/productGroup",
   product: "/product",
   user: "/user",
-  userFullName: "/user/full-name",
   login: "/user/login",
   signup: "/user/signup",
   cart: "/user/cart",
@@ -21,5 +20,8 @@ export const apiEndPoint = {
   homeProduct: "/home/product",
   order: "/order",
   addToOrder: "/order/add-to-order",
+  updateUsername: "/user/name",
+  updatePhoneNumber: "/user/phone",
+  updateAddress: "/user/address",
 };
 export type ApiEndPointTypes = keyof typeof apiEndPoint;
