@@ -26,7 +26,7 @@ export const OrderCard = () => {
           }
           className="text-Primary hover:text-primary-400"
         >
-          Order status
+          Order details
         </Link>
       </div>
     </div>

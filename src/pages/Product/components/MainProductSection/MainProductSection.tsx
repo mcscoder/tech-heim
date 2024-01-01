@@ -88,7 +88,7 @@ export const MainProductSection = () => {
         </SidebarFilter>
         {products && (
           <div className="flex flex-col flex-1 gap-24">
-            <ProductGridWrapper className="flex-1">
+            <ProductGridWrapper>
               {products?.slice(0, itemsPerPage).map((product, index) => {
                 return (
                   <ProductCard
