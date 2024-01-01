@@ -2,9 +2,12 @@ import { OrderCard } from "@/components/Elements";
 import { CommonLayout } from ".";
 import { useParams } from "react-router";
 import { OrderDetailed } from "@/components/Layouts";
+import { useOrderState } from "@/hooks";
 
 export const Order = () => {
   const { orderId } = useParams();
+
+  const { orders } = useOrderState();
 
   return (
     <CommonLayout
@@ -13,12 +16,19 @@ export const Order = () => {
       className="flex flex-col gap-6"
     >
       {orderId ? (
-        <OrderDetailed />
+        <OrderDetailed {...orders[parseInt(orderId)]} />
       ) : (
         <>
-          <OrderCard />
-          <OrderCard />
-          <OrderCard />
+          {orders &&
+            orders.map((item, index) => {
+              return (
+                <OrderCard
+                  key={index}
+                  index={index}
+                  {...item}
+                />
+              );
+            })}
         </>
       )}
     </CommonLayout>

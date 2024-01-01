@@ -102,7 +102,6 @@ export const useAuthContext = () => {
           },
         });
         await getUserData();
-        w;
       } catch (error) {
         console.log(error);
       }

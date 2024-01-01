@@ -1,6 +1,9 @@
 import { Method, MethodOptionObject } from "@/components/Elements";
 import { CommonLayout } from "..";
 import { PaypalLogo, ShopeePayLogo } from "@/constants";
+import { useNavigate } from "react-router";
+import axios from "axios";
+import { getRequestURL, getToken } from "@/utils";
 
 const methodOptions: MethodOptionObject[] = [
   {
@@ -21,11 +24,22 @@ const methodOptions: MethodOptionObject[] = [
 ];
 
 export const Payment = () => {
+  const navigate = useNavigate();
+  const handleAddToOrder = async () => {
+    await axios.get(getRequestURL("addToOrder"), {
+      headers: {
+        token: getToken().token,
+      },
+    });
+    navigate("/");
+    location.reload();
+  };
+
   return (
     <CommonLayout
       returnPath="/payment-process/checkout"
       returnTitle="Return to checkout"
-      forwardAction={() => {}}
+      forwardAction={handleAddToOrder}
       forwardTitle="Confirm"
     >
       <div className="flex flex-col gap-2">

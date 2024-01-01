@@ -30,7 +30,7 @@ export const ProfileMenu = () => {
           {`${authContext?.authState.user?.firstName} ${authContext?.authState.user?.lastName}`}
         </Subcategory>
         <Subcategory
-          to="#"
+          to="/account/orders"
           startIcon={<CartBagIcon />}
         >
           Orders
