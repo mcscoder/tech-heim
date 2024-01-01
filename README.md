@@ -736,24 +736,81 @@
 
 ### Response json
 
-- `Anything that can be make sense or not`
-
 ```json
 {
-  "email": {
-    "code": "...",
-    "exp": "..."
-  }
+  "message": "ok"
 }
 ```
 
-- Example:
+# 7. Order
+
+## 7.1. Add to order
+
+- Endpoint: `/order/add-to-order`
+- Method: `GET`
+
+### Request header
 
 ```json
 {
-  "abc@gmail.com": {
-    "code": "123456",
-    "exp": "12312312"
-  }
+  "token": "..." // string
 }
+```
+
+### Response
+
+```json
+{
+  "message": "ok"
+}
+```
+
+## 7.1. Get orders
+
+- Endpoint: `/order`
+- Method: `GET`
+
+### Request header
+
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Response
+
+```json
+[
+  {
+    "id": "...", // string
+    "createAt": "...", // string
+
+    "orderedProduct": [
+      {
+        // product table
+        "id": 1,
+        "name": "...", // string
+        "currentPrice": "...", // double
+        "lastPrice": "...", // double
+
+        // productImage table
+        "productImage": [
+          {
+            "imageURL": "..." // string
+          },
+          {
+            "imageURL": "..." // string
+          }
+          // ...
+        ],
+
+        // user_product table
+        "quantity": "..." // int
+      }
+      // ...
+    ]
+  }
+  // ...
+]
 ```
