@@ -10,6 +10,7 @@ export const apiEndPoint = {
   productGroup: "/productGroup",
   product: "/product",
   user: "/user",
+  userFullName: "/user/full-name",
   login: "/user/login",
   signup: "/user/signup",
   cart: "/user/cart",

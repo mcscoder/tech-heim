@@ -18,31 +18,20 @@ export const useAuthContext = () => {
 
   const userLoginAuth = async (user: AuthTypes.UserLogin) => {
     const requestURL = getRequestURL("login");
-    const response = await axios.post(requestURL, user, {
-      headers: {
-        "ngrok-skip-browser-warning": "69420",
-      },
-    });
+    const response = await axios.post(requestURL, user);
     return response;
   };
 
   const userRegisterAuth = async (user: AuthTypes.UserRegister) => {
     const requestURL = getRequestURL("signup");
-    const response = await axios.post(requestURL, user, {
-      headers: {
-        "ngrok-skip-browser-warning": "69420",
-      },
-    });
+    const response = await axios.post(requestURL, user);
     return response;
   };
 
   const getUserData = async () => {
     const requestURL = getRequestURL("user");
     const response = await axios.get(requestURL, {
-      headers: {
-        "ngrok-skip-browser-warning": "69420",
-        token: getToken().token,
-      },
+      headers: { token: getToken().token },
     });
     return response;
   };
@@ -103,11 +92,29 @@ export const useAuthContext = () => {
     });
   };
 
+  const handleChangeUserFullName = (userFullName: AuthTypes.UserFullName) => {
+    handleCallApi(async () => {
+      try {
+        const url = getRequestURL("userFullName");
+        await axios.post(url, userFullName, {
+          headers: {
+            token: getToken().token,
+          },
+        });
+        await getUserData();
+        w;
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  };
+
   return {
     authState,
     authDispatch,
     handleUserLogin,
     handleTokenLogin,
     handleUserRegister,
+    handleChangeUserFullName,
   };
 };
