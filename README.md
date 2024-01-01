@@ -496,6 +496,8 @@
 
 # 4. User data
 
+## 4.1. Get user data
+
 - Endpoint: `/user`
 - Method: `GET`
 
@@ -528,6 +530,70 @@
 ```json
 {
   "message": "The token is invalid"
+}
+```
+
+## 4.2. Update first name last name
+
+- Endpoint: `/user/name`
+- Method: `POST`
+
+### Request header
+
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Request body
+
+```json
+{
+  "firstName": "...", // string
+  "lastName": "..." // string
+}
+```
+
+## 4.3. Update phone number
+
+- Endpoint: `/user/phone`
+- Method: `POST`
+
+### Request header
+
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Request body
+
+```json
+{
+  "phoneNumber": "..." // string
+}
+```
+
+## 4.4. Update address
+
+- Endpoint: `/user/address`
+- Method: `POST`
+
+### Request header
+
+```json
+{
+  "token": "..." // string
+}
+```
+
+### Request body
+
+```json
+{
+  "address": "..." // string
 }
 ```
 
