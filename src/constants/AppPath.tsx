@@ -31,10 +31,6 @@ export const navigationLinks: NavigationLinkObject[] = [
     label: "Products",
   },
   {
-    path: "/blog",
-    label: "Blog",
-  },
-  {
     path: "/faq",
     label: "FAQ",
   },

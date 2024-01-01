@@ -1,7 +1,6 @@
 import { DefaultLayout } from "@/components/Layouts";
 import {
   Account,
-  Blog,
   Cart,
   Checkout,
   Contact,
@@ -34,10 +33,6 @@ export const appRouter = createBrowserRouter([
       {
         path: "product/:productId",
         Component: ProductDetailProvider,
-      },
-      {
-        path: "blog",
-        Component: Blog,
       },
       {
         path: "faq",
