@@ -1,6 +1,6 @@
 // export const apiURL = "http://172.20.10.3:8080";
-// export const apiURL = "http://25.30.27.67:8080";
-export const apiURL = "http://192.168.137.1:8080";
+export const apiURL = "http://25.30.27.67:8080";
+// export const apiURL = "http://192.168.137.1:8080";
 export const apiEndPoint = {
   users: "/users",
   homeCategories: "/home-categories",

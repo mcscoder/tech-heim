@@ -8,6 +8,7 @@ import {
   Discount,
   FAQ,
   Home,
+  Order,
   Payment,
   PaymentProcess,
   PersonalData,
@@ -83,6 +84,14 @@ export const appRouter = createBrowserRouter([
           {
             path: "wish-list",
             Component: WishList,
+          },
+          {
+            path: "orders/:orderId",
+            Component: Order,
+          },
+          {
+            path: "orders",
+            Component: Order,
           },
         ],
       },

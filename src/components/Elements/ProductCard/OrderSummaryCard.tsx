@@ -9,8 +9,8 @@ export const OrderSummaryCard = ({
   quantity,
 }: CartTypes.CartItem) => {
   return (
-    <div className="flex items-center p-3 gap-2 border-b max-w-[400px]">
-      <div className="flex-1">
+    <div className="flex items-center p-3 gap-2 border-b">
+      <div className="h-[100px]">
         <img
           src={productImage[0].imageURL}
           alt={name}

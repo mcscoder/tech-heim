@@ -1,4 +1,10 @@
-import { GiftIcon, HeartIcon, SecuritySafeIcon, UserIcon } from "@/constants";
+import {
+  BagIcon,
+  GiftIcon,
+  HeartIcon,
+  SecuritySafeIcon,
+  UserIcon,
+} from "@/constants";
 import { MenuItem } from ".";
 
 export const AccountSideMenu = () => {
@@ -23,6 +29,11 @@ export const AccountSideMenu = () => {
         to={"/account/wish-list"}
         startIcon={<HeartIcon />}
         title="Wish list"
+      />
+      <MenuItem
+        to={"/account/orders"}
+        startIcon={<BagIcon />}
+        title="Orders"
       />
     </section>
   );
