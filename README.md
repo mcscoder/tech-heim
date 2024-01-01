@@ -206,6 +206,27 @@
 }
 ```
 
+## 1.3. Delete product
+
+- Endpoint: `/product/delete`
+- Method: `POST`
+
+### Request body
+
+```json
+{
+  "productId": "..." // int
+}
+```
+
+### Response
+
+```json
+{
+  "message": "ok"
+}
+```
+
 # 2. Product group
 
 ## 2.1. Get product group
