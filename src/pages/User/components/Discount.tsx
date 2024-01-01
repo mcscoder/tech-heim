@@ -1,9 +1,17 @@
-import { Input, UserInput } from "@/components/Elements";
+import { Input, OverlayForm, UserInput } from "@/components/Elements";
 import { CommonLayout } from ".";
 import { useRef } from "react";
+import { useBooleanState } from "@/hooks";
 
 export const Discount = () => {
   const discountRef = useRef<HTMLInputElement>(null);
+
+  const { state, setState } = useBooleanState(false);
+
+  const handleOnSubmit = () => {
+    // Handle with api here to sync to server
+    setState(false);
+  };
 
   return (
     <CommonLayout
@@ -12,17 +20,24 @@ export const Discount = () => {
     >
       <UserInput
         label="Discount code"
-        editTitle="Redeem discount code"
-        saveButtonTitle="Redeem"
-        editable={true}
+        editable
+        onClickEditData={() => setState(true)}
         data="Redeem your discount code"
-      >
-        <Input
-          label="Discount code"
-          placeholder="Discount code. Ex: 234-653-244"
-          ref={discountRef}
-        />
-      </UserInput>
+      />
+      {state && (
+        <OverlayForm
+          editTitle="Redeem discount code"
+          saveButtonTitle="Redeem"
+          onSubmit={handleOnSubmit}
+          onClickClose={() => setState(false)}
+        >
+          <Input
+            label="Discount code"
+            placeholder="Discount code. Ex: 234-653-244"
+            ref={discountRef}
+          />
+        </OverlayForm>
+      )}
     </CommonLayout>
   );
 };

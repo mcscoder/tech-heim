@@ -3,7 +3,7 @@ import { Form, FormProps } from ".";
 import { Button, Message } from "..";
 import { CloseIcon } from "@/constants";
 
-export type OverlayFormProps = Pick<OverlayProps, "onCLickClose"> &
+export type OverlayFormProps = Pick<OverlayProps, "onClickClose"> &
   Pick<FormProps, "error" | "success"> & {
     editTitle: string;
     saveButtonTitle: string;
@@ -13,7 +13,7 @@ export type OverlayFormProps = Pick<OverlayProps, "onCLickClose"> &
   };
 
 export const OverlayForm = ({
-  onCLickClose,
+  onClickClose,
   children,
   className,
   error,
@@ -30,7 +30,7 @@ export const OverlayForm = ({
   return (
     <Overlay
       className="flex items-center justify-center"
-      onCLickClose={onCLickClose}
+      onClickClose={onClickClose}
     >
       <Form
         onSubmit={handleFormSubmit}
@@ -42,7 +42,7 @@ export const OverlayForm = ({
             variant="onlyIcon"
             startIcon={<CloseIcon />}
             type="button"
-            onClick={onCLickClose}
+            onClick={onClickClose}
             className="p-1"
           />
         </div>

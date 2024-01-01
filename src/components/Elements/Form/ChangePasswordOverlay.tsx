@@ -6,10 +6,10 @@ import { handleShowPassword } from "@/utils";
 import { useChangePassword } from "@/hooks";
 import { OverlayProps } from "@/components/Layouts";
 
-export type ChangePasswordOverlayProps = Pick<OverlayProps, "onCLickClose">;
+export type ChangePasswordOverlayProps = Pick<OverlayProps, "onClickClose">;
 
 export const ChangePasswordOverlay = ({
-  onCLickClose,
+  onClickClose,
 }: ChangePasswordOverlayProps) => {
   const emailRef = useRef<HTMLInputElement>(null);
   const newPasswordRef = useRef<HTMLInputElement>(null);
@@ -49,7 +49,7 @@ export const ChangePasswordOverlay = ({
     <OverlayForm
       editTitle="Reset your password"
       saveButtonTitle="Reset"
-      onCLickClose={onCLickClose}
+      onClickClose={onClickClose}
       onSubmit={handleResetPassword}
       className="flex flex-col gap-3"
       {...formState}

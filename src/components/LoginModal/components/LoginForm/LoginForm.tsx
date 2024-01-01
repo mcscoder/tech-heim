@@ -43,7 +43,7 @@ export const LoginForm = () => {
   return (
     <>
       {isForgetPassword && (
-        <ChangePasswordOverlay onCLickClose={() => setForgetPassword(false)} />
+        <ChangePasswordOverlay onClickClose={() => setForgetPassword(false)} />
       )}
       <Form
         onSubmit={handleFormSubmit}

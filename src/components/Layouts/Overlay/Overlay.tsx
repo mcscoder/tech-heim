@@ -5,20 +5,20 @@ const VARIANTS = {
 
 export interface OverlayProps {
   variant?: keyof typeof VARIANTS;
-  onCLickClose?: () => void;
+  onClickClose?: () => void;
   children?: React.ReactNode;
   className?: string;
 }
 
 export const Overlay = ({
   variant = "full",
-  onCLickClose = () => {},
+  onClickClose = () => {},
   children,
   className = "",
   ...props
 }: OverlayProps) => {
   const handleOnClick = () => {
-    onCLickClose();
+    onClickClose();
   };
 
   return (
