@@ -50,7 +50,7 @@ export const MainProductSection = () => {
     updateItemsPerPage(6, products?.length);
   }, [products]);
 
-  if (productGroups === null || products === null) {
+  if (productGroups === null) {
     return <></>;
   }
 
@@ -86,28 +86,30 @@ export const MainProductSection = () => {
             );
           })}
         </SidebarFilter>
-        <div className="flex flex-col flex-1 gap-24">
-          <ProductGridWrapper className="flex-1">
-            {products?.slice(0, itemsPerPage).map((product, index) => {
-              return (
-                <ProductCard
-                  key={index}
-                  {...product}
-                />
-              );
-            })}
-          </ProductGridWrapper>
-          <div className="flex justify-center">
-            <Button
-              variant="outlined"
-              onClick={() => increaseItemsPerPage(6)}
-              disabled={isItemsPerPageMaximized()}
-              className="px-12"
-            >
-              More
-            </Button>
+        {products && (
+          <div className="flex flex-col flex-1 gap-24">
+            <ProductGridWrapper className="flex-1">
+              {products?.slice(0, itemsPerPage).map((product, index) => {
+                return (
+                  <ProductCard
+                    key={index}
+                    {...product}
+                  />
+                );
+              })}
+            </ProductGridWrapper>
+            <div className="flex justify-center">
+              <Button
+                variant="outlined"
+                onClick={() => increaseItemsPerPage(6)}
+                disabled={isItemsPerPageMaximized()}
+                className="px-12"
+              >
+                More
+              </Button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
