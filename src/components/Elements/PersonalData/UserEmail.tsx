@@ -1,19 +1,15 @@
 import { DirectIcon } from "@/constants";
 import { UserInput } from "..";
-import { useEffect, useState } from "react";
+import { useAuthContext } from "@/hooks";
 
 export const UserEmail = () => {
-  const [email, setEmail] = useState<string>("");
-
-  useEffect(() => {
-    setEmail("mcs@gmail.com");
-  }, []);
+  const { authState } = useAuthContext();
 
   return (
     <UserInput
       label="E-mail address"
       startIcon={<DirectIcon />}
-      data={email}
+      data={authState.user?.email || ""}
     />
   );
 };
