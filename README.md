@@ -851,7 +851,7 @@
   {
     "id": "...", // string
     "createAt": "...", // string
-    "status" "...", // boolean
+    "status": "...", // boolean
 
     "orderedProduct": [
       {
