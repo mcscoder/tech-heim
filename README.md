@@ -2,7 +2,7 @@
 
 # 1. Product item
 
-## 1.1. Get Product
+## 1.1. Get Product (last updated: 5/1/24)
 
 - Endpoint: `/product`
 - Method: `GET`
@@ -30,6 +30,7 @@
     "lastPrice": "...", // double
     "quantity": "...", // int
     "sold": "...", // int
+    "rate": "...", // int
 
     // categoryId
     "categoryId": "...", // int
@@ -37,39 +38,38 @@
     // productImage table
     "productImage": [
       {
-        "imageURL": "..." // string
-      },
-      {
-        "imageURL": "..." // string
-      },
-      {
+        "id": "...", // number
         "imageURL": "..." // string
       }
       // ...
-    ]
-  },
-  {
-    // product table
-    "id": 2,
-    "name": "...", // string
-    "currentPrice": "...", // double
-    "lastPrice": "...", // double
-    "quantity": "...", // int
-    "sold": "...", // int
+    ],
 
-    // categoryId
-    "categoryId": "...", // int
+    // productTechnical table
+    "productTechnical": [
+      {
+        "id": "...", // number
+        "title": "...", // string
+        "description": "..." // string
+      }
+      // ...
+    ],
 
-    // productImage table
-    "productImage": [
+    // productGroup & product_producttype table
+    "productGroup": [
       {
-        "imageURL": "..." // string
-      },
-      {
-        "imageURL": "..." // string
-      },
-      {
-        "imageURL": "..." // string
+        // productGroup table
+        "id": 1,
+        "title": "...", // string
+
+        // productType table
+        "productType": [
+          {
+            "id": 1,
+            "title": "...", // string
+            "description": "..." // string
+          }
+          // ...
+        ]
       }
       // ...
     ]
